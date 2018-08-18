@@ -1,3 +1,91 @@
-<div style="width: 100%;height: 100px;">
+<!-- <div style="width: 100%;height: 100px;">
 <h1>DAWSONS SERVICES</h1>
-</div>
+</div> -->
+<div class="topShare">
+        <div class="ShareLeft">
+            <ul class="list-unstyled clearfix">
+                <li style="display: inline-block;" id="exc-nse">
+                    <a ui-sref="market({chartType: 0})" href="/market">
+                        NIFTY: <span class="exc-ltp">11470.75</span> <i class="fa text-success fa-caret-up"></i>
+                        <cite><span class="exc-change">85.70</span> <span class="hidden-xs">(<span class="exc-changeper">0.75</span>%)</span></cite>
+                    </a>
+                </li>
+                <li style="display: inline-block;" id="exc-bse">
+                    <a ui-sref="market({chartType: 1})" href="/market">
+                        SENSEX: <span class="exc-ltp">37947.88</span> <i class="fa text-success fa-caret-up"></i>
+                        <cite><span class="exc-change">284.32</span> <span class="hidden-xs">(<span class="exc-changeper">0.75</span>%)</span></cite>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Non Logged in -->
+        <!-- ngIf: !isLoggedIn --><div class="AccountLogin dropdown hidden-xs hidden-sm ng-scope" ng-if="!isLoggedIn">
+            <div class="support-center">
+                <a href="" class="btn btn-support" id="suport-center" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" gtmdir-config="" gtmdir-key="Supportcenter" gtmdir-url="" aria-expanded="false">Support Center</a>
+                <div class="dropdown-menu NewheaderUpdate SupportCenter hidden-sm hiddem-xs" aria-labelledby="suport-center">
+                    <ul class="list-unstyled">
+                        <li><a ui-sref="faqs" gtmdir-config="" gtmdir-key="Supportcentersubmenu" gtmdir-text="Supportcenter|Visit FAQs" gtmdir-url="faqs" href="/faqs"><i class="icon-b icon-20 icon-warningh"></i> Visit FAQs</a></li>
+                        <li class="ng-binding"><i class="icon-b icon-20 icon-callh"></i> 1800-102-3335 <span>(8am - 8pm)</span></li>
+                        <li><a gtmdir-config="" gtmdir-key="Supportcentersubmenu" gtmdir-text="Supportcenter|Email" gtmdir-url="" href="mailto:helpdesk@edelweiss.in"><i class="icon-b icon-20 icon-messegeh"></i> helpdesk@edelweiss.in</a></li>
+                        <li><a ui-sref="location" gtmdir-config="" gtmdir-key="Supportcentersubmenu" gtmdir-text="Supportcenter|Location" gtmdir-url="location" href="/location"><i class="icon-b icon-20 icon-maph"></i> Locate Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-open-acc">
+                <a class="btn btn-primary" redirect-on-login="" rd-caller="accSel" target="_blank" gtmdir-config="" gtmdir-text="open an account|Trading &amp; Investment Account" gtmdir-key="EOpenaccount">Open an Account</a>
+            </div>
+            <!-- ngIf: currentState != 'login' && currentState != 'forgot-password' && currentState != 'forgot-loginid' && currentState != 'reset-2fa' && currentState != 'unblock-account' --><a class="login ng-scope" id="LogIN" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" gtmdir-config="" gtmdir-url="" gtmdir-key="ELogin" data-ng-if="currentState != 'login' &amp;&amp; currentState != 'forgot-password' &amp;&amp; currentState != 'forgot-loginid' &amp;&amp; currentState != 'reset-2fa' &amp;&amp; currentState != 'unblock-account'"> <span class="icon-b icon-10 icon-usert"></span> <span class="text">Login</span> </a><!-- end ngIf: currentState != 'login' && currentState != 'forgot-password' && currentState != 'forgot-loginid' && currentState != 'reset-2fa' && currentState != 'unblock-account' -->
+            <div class="dropdown-menu NewheaderUpdate TopLogInDetails" aria-labelledby="LogIN">
+                <h6>LOGIN TO</h6>
+                <div class="row">
+                    <div class="col-sm-3" style="width: 27%">
+                        <div class="ColLogIn" redirect-on-login="" rd-state="gba-prelogin" gtmdir-config="" gtmdir-text="gps dashboard" gtmdir-url="" gtmdir-key="ELoginpopupopts">
+                            <a class="head1 menu-popup-home-page">Guided Portfolios Dashboard</a>
+                            <p>Track the performance of your Guided Portfolios here.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="ColLogIn tocPopupInvoke ng-isolate-scope" open-toc-popup="single" gtmdir-config="" gtmdir-text="Buy/Sell" gtmdir-url="" gtmdir-key="ELoginpopupopts">
+                            <a href="javascript:void(0)" class="head1 menu-popup-home-page">Buy/Sell</a>
+                            <p>Quickly Buy Stocks, Mutual Funds, SIPs, Currency etc.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="width: 24%">
+                        <div class="ColLogIn ng-isolate-scope" open-toc-popup="single" toc-atab="5" gtmdir-config="" gtmdir-text="Transfer Funds" gtmdir-url="" gtmdir-key="ELoginpopupopts">
+                            <a href="javascript:void(0)" class="head1 menu-popup-home-page">Transfer Funds</a>
+                            <p>Transfer funds between your bank account and trading account with ease.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="width: 24%">
+                        <div class="ColLogIn" redirect-on-login="" rd-state="reports" rd-caller="reports" gtmdir-config="" gtmdir-text="My reports" gtmdir-url="" gtmdir-key="postloginoptions">
+                            <a class="head1 menu-popup-home-page">My reports</a>
+                            <p>View your portfolio overview and other reports here.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="TroubleInLogin">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="ColLogIn mg-b0" gtmdir-config="" gtmdir-text="Active Trader" gtmdir-url="active-trader" gtmdir-key="ActiveTraderclick">
+                                <h6>go to</h6> <a ui-sref="active-trader" gtmdir-config="" gtmdir-text="Active Trader" gtmdir-url="active-trader" gtmdir-key="ActiveTraderclick" class="head1" href="/active-trader"><i class="icon-b icon-20 icon-loung"></i> Active Trader ?</a>
+                                <p>Active traders will find themselves at home</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="ColLogIn NewBdrLeft mg-b0">
+                                <h6>Trouble Logging In?</h6> <a href="" class="btn btn-thin pd-all0" gtmdir-config="" gtmdir-text="Forgot password" gtmdir-url="" gtmdir-key="ELoginpopupopts" redirect-on-login="" rd-caller="forgetPwd"><i class="icon-b icon-20 icon-keyh"></i> Login Help</a>
+                                <br> <a ui-sref="faqs" class="btn btn-thin pd-all0" gtmdir-config="" gtmdir-text="See Faqs" gtmdir-url="faqs" gtmdir-key="ELoginpopupopts" href="/faqs"><i class="icon-b icon-20 icon-quest"></i> See FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngIf: !isLoggedIn -->
+        <!-- Non Logged in -->
+        <!-- Logged in -->
+        <!-- ngIf: isLoggedIn -->
+        <!-- Logged in -->
+
+        <div class="clearfix"></div>
+    </div>

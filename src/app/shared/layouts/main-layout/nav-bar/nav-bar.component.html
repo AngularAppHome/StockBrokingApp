@@ -1,6 +1,317 @@
 
-  <nav>
+  <!-- <nav>
     <a routerLink="/home" routerLinkActive="active">Home</a>
     <a routerLink="/page" routerLinkActive="active">Page</a>
   </nav>
+  <router-outlet></router-outlet> -->
+  <header id="headerCntr" class="headerCntr ng-scope" data-ng-if="!showPDF" ng-controller="headerCtrl">
+      <nav class="navbar navbar-fixed-top primary-bg">
+          <div class="container">
+             <top-bar></top-bar>
+              <!-- ngIf: isUnderMaintainance -->
+              <div class="nav-wrapper clearfix" ng-class="{ 'client-area-header':isLoggedIn}" itemscope="" itemtype="http://schema.org/Organization">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <img src="../assets/dist/assets/images/edel-logo.jpg" alt="Dawsons Services Logo" itemprop="logo" style="display:none;">
+                  <a class="navbar-brand" href="/" gtmdir-config="" gtmdir-key="ELogo" ></a>
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" onclick="toggleMenu(this);">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div id="bs-example-navbar-collapse-1" class="clearfix">
+                      <ul class="nav navbar-nav nav-first">
+                          <!-- ngIf: !isLoggedIn || !hasGoals -->
+                          <li ng-if="!isLoggedIn || !hasGoals" ng-class="{ 'active' : active=='gbaprelogin' }" gtmdir-config="" gtmdir-text="GUIDED PORTFOLIOS" gtmdir-url="gba-prelogin" gtmdir-key="Menuitems" class="ng-scope">
+                              <a ng-click="goToGBAPrelogin()" rel="2"><small>GUIDED</small>PORTFOLIOS</a> <!--ui-sref="gba-prelogin "  ng-click="goToGBAPrelogin()"-->
+                          </li><!-- end ngIf: !isLoggedIn || !hasGoals -->
+                          <!-- ngIf: isLoggedIn && hasGoals -->
+                          <li ng-class="{ 'active' : active=='oyoEquity' || active=='oyoMutualFund' || active=='oyonewissues'}">
+                              <a rel="1" ui-sref="oyo/mutualFund" gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems" href="/oyo/mutualfund"><small>SELF</small>INVESTING</a>
+                              <!-- Start Header sub menu -->
+                              <div class="headerSubMneu" id="1">
+                                  <div class="container">
+                                      <div class="SpaceLeft">
+                                          <ul class="list-unstyled OwnInvestmenu">
+                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | mutualFunds" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoMutualFund' }"><a ui-sref="oyo/mutualFund" href="/oyo/mutualfund">Mutual Funds</a></li>
+                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoEquity' }"><a ui-sref="oyo-equity" href="/oyo/equity">Equity</a></li>
+                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | Primary Market" gtmdir-url="oyo/new-issues" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyonewissues' }"><a ui-sref="oyo-newissues" href="/new-issues">Primary Market</a></li>
+                                              <li>
+                                                  <div class="ActiveTradermenu">
+                                                      <i class="icon-b icon-30 icon-tv"></i>
+                                                      <a ui-sref="active-trader" gtmdir-config="" gtmdir-text="SELF INVESTING | Active Trader" gtmdir-url="active-trader" gtmdir-key="ActiveTraderclick" href="/active-trader"><span>Active Trader?</span> Trade, view advanced charts &amp; receive short term ideas on our advanced platform <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                                  </div>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- End Header sub menu -->
+                          </li>
+                      </ul>
+                      <ul class="nav navbar-nav nav-second">
+                          <li gtmdir-config="" gtmdir-text="Watch MARKETS" gtmdir-url="market" gtmdir-key=" Menuitems" ng-class="{ 'active' : active=='market' }"><a ui-sref="market" href="/market"><span>Watch</span> MARKETS</a></li>
+                          <li ng-class="{ 'active' : active=='research' || active=='activeTrader'}">
+                              <a ui-sref="research" gtmdir-config="" gtmdir-text="View Research" gtmdir-url="research" gtmdir-key=" Menuitems" href="/research"><span>View</span>RESEARCH</a>
+                              <!-- Start Header sub menu -->
+                              <div class="headerSubMneu" id="viewResearch">
+                                  <div class="container">
+                                      <div class="SpaceLeft viewRrch">
+                                          <ul class="list-unstyled OwnInvestmenu">
+                                              <li ng-class="{ 'active' : active=='research' }"><a ui-sref="research" gtmdir-config="" gtmdir-text="View Research | Reports" gtmdir-url="research" gtmdir-key="Menuitems" href="/research">Reports</a></li>
+                                              <li ng-class="{'active' : active=='activeTrader' }"><a ui-sref="allRecoForActiveTradersEQ({redirectParam:'EQ,Long term'})" gtmdir-config="" gtmdir-text="View Research | Recommendations" gtmdir-url="oyo/equity/top-market-and-stock-recommendations/equity" gtmdir-key="Menuitems" href="/oyo/equity/top-market-and-stock-recommendations/equity?redirectParam=EQ%2CLong%20term">Recommendations</a></li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- End Header sub menu -->
+                          </li>
+                          <li ng-class="{ 'active' : (active=='learner' || active == 'insight') }">
+                              <a ui-sref="insight" rel="2" gtmdir-config="" gtmdir-text="Gain Knowledge" gtmdir-url="research" gtmdir-key=" Menuitems" href="/insight"><span>Gain</span> KNOWLEDGE</a>
+                              <!-- Start Header sub menu -->
+                              <div class="headerSubMneu" id="2">
+                                  <div class="container">
+                                      <div class="SpaceLeft">
+                                          <ul class="list-unstyled OwnInvestmenu">
+                                              <li ng-class="{'active' : active=='insight' }"><a ui-sref="insight" gtmdir-config="" gtmdir-text="Gain Knowledge | Insight" gtmdir-url="insight" gtmdir-key="Menuitems" href="/insight">Insights</a></li>
+                                              <li ng-class="{ 'active' : active=='learner' }"><a ui-sref="learner" gtmdir-config="" gtmdir-text="Gain Knowledge | Investology" gtmdir-url="Investology" gtmdir-key="Menuitems" href="/investology">Investology</a></li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- End Header sub menu -->
+                          </li>
+                      </ul>
+                      <div class="TopSearchHead" ng-class="{ 'SearchNewClk':searchFocussed}" style="">
+                          <form class="ng-pristine ng-valid">
+                              <div class="searchStrip">
+                                  <p class="ng-binding"><i class="icon-b icon-20 icon-powerb"></i> <span>SMART TIP:</span> #14 Search for: 'Automobile Sector'</p>
+                              </div>
+                              <a href="" class="closedSearchbtn" ng-click="hideSearchResultPopup()"></a>
+                              <div class="form-group">
+                                  <input type="text" ng-model-options="{ debounce: 300 }" class="form-control ng-pristine ng-valid ng-empty ng-touched" id="searchAnything" placeholder="What are you looking for?" data-ng-model="searchText" ng-click="focused();getSearchSuggestions()" data-ng-change="getSearchSuggestions(searchText)" autocomplete="off" search-maxlength="50" searchfocus="" ng-trim="false" style="">
+                                  <button class="btn head-search" ng-click="onSearchButtonClick(searchText);focused()">
+                                      <i class="icon-b icon-20 icon-searchh"></i>
+                                      <i class="icon-b icon-25 icon-searchNH"></i>
+                                  </button>
+                              </div>
+                              <!-- ngIf: searchTextMid -->
+                          </form>
+                      </div>
+                  </div>
+                  <!-- /.navbar-collapse -->
+                  <div class="clearfix"></div>
+              </div>
+              <!--Mobile Responsive-->
+              <!--Mobile Responsive-->
+              <div class="MobHeaderNew" id="mobMenuToggle">
+                  <div ng-show="!isLoggedIn" class="">
+                      <div class="MobCol-1 mg-b15">
+                          <a ui-sref="gba-prelogin" class="HeadIng arrownone" ng-class="{'active' : active == 'gbaprelogin'}" gtmdir-config="" gtmdir-text="GUIDED PORTFOLIOS" gtmdir-url="gba-prelogin" gtmdir-key="Menuitems1" onclick="closeMenu();" href="/gps">GUIDED PORTFOLIOS</a>
+                      </div>
+                      <div class="MobCol-1 mg-b15">
+                          <a href="#" class="HeadIng" onclick="subMenuToggle(this);">SELF INVESTING</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{'active' : active == 'oyoMutualFund'}"><a ui-sref="oyo/mutualFund" gtmdir-config="" gtmdir-text="SELF INVESTING | Mutual Funds" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems1" onclick="closeMenu();" href="/oyo/mutualfund">Mutual Funds</a></li>
+                                  <li ng-class="{'active' : active == 'oyoEquity'}"><a ui-sref="oyo-equity" gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems1" onclick="closeMenu();" href="/oyo/equity">Equity</a></li>
+                                  <li ng-class="{ 'active' : active=='oyonewissues' }"><a gtmdir-config="" gtmdir-text="SELF INVESTING | Primary Market" gtmdir-url="oyo/new-issues" gtmdir-key="Menuitems" ui-sref="oyo-newissues" onclick="closeMenu();" href="/new-issues">Primary Market</a></li>
+                              </ul>
+                              <div class="MobCol-1 BODERTop mg-t15">
+                                  <div class="SHowSubMenu pd-b0 active-TraderMenu">
+                                      <ul class="list-unstyled">
+                                          <li>
+                                              <i class="icon-b icon-30 icon-tv"></i>
+                                              <a ui-sref="active-trader" gtmdir-config="" href="/active-trader"><span>Active Trader?</span> Trade, view advanced charts &amp; receive short term ideas on our advanced platform <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                          </li>
+                                      </ul>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop mg-b15 mg-t15">
+                          <div class="SHowSubMenu pd-b0">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{'active' : active == 'market'}"><a ui-sref="market" href="/market" gtmdir-config="" gtmdir-text="Watch MARKETS" gtmdir-url="market" gtmdir-key=" Menuitems1" onclick="closeMenu();">Watch Markets</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1">
+                          <a href="javascript:void(0);" class="HeadIng" onclick="subMenuToggle(this);">View Research</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{ 'active' : active=='research' }"><a ui-sref="research" gtmdir-config="" gtmdir-text="View Research | Reports" gtmdir-url="research" gtmdir-key="Menuitems" href="/research">Reports</a></li>
+                                  <li class="mg-b15" ng-class="{'active' : active=='activeTrader' }"><a ui-sref="allRecoForActiveTradersEQ({redirectParam:'EQ,Long term'})" gtmdir-config="" gtmdir-text="View Research | Recommendations" gtmdir-url="oyo/equity/top-market-and-stock-recommendations/equity" gtmdir-key="Menuitems" href="/oyo/equity/top-market-and-stock-recommendations/equity?redirectParam=EQ%2CLong%20term">Recommendations</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 mg-b15">
+                          <a href="javascript:void(0);" class="HeadIng" onclick="subMenuToggle(this);">Gain Knowledge</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{'active' : active == 'insight'}"><a ui-sref="insight" onclick="closeMenu();" class="capitalize" gtmdir-config="" gtmdir-text="Gain Knowledge | Insight" gtmdir-url="insight" gtmdir-key="Menuitems" href="/insight">Insights</a></li>
+                                  <li ng-class="{'active' : active == 'learner'}"><a ui-sref="learner" onclick="closeMenu();" class="capitalize" gtmdir-config="" gtmdir-text="Gain Knowledge | Investology" gtmdir-url="Investology" gtmdir-key="Menuitems" href="/investology">Investology</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop">
+                          <div class="SHowSubMenu"> <a class="btn btn-primary btnOpen" redirect-on-login="" rd-caller="accSel" target="_blank" gtmdir-config="" gtmdir-text="open an account|Trading &amp; Investment Account" gtmdir-key="EOpenaccount">Open an Account</a></div>
+                      </div>
+                      <!-- ngIf: currentState != 'login' && currentState != 'forgot-password' && currentState != 'forgot-loginid' && currentState != 'reset-2fa' && currentState != 'unblock-account' --><div class="MobCol-1 BODERTop ng-scope" data-ng-if="currentState != 'login' &amp;&amp; currentState != 'forgot-password' &amp;&amp; currentState != 'forgot-loginid' &amp;&amp; currentState != 'reset-2fa' &amp;&amp; currentState != 'unblock-account'">
+                          <a href="" class="HeadIng mg-t15 text-capitalize" gtmdir-url="" gtmdir-key="ELogin1" onclick="subMenuToggle(this);"><i class="icon-b icon-20 icon-proPic"></i> Login To</a>
+                          <div class="SubMenuITEM haspopup">
+                              <ul class="list-unstyled">
+                                  <li><a href="" redirect-on-login="" rd-state="gba-postlogin" gtmdir-config="" gtmdir-text="GPS dashboard" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();">Guided Portfolios Dashboard</a></li>
+                                  <li><a href="" open-toc-popup="single" gtmdir-config="" gtmdir-text="Quick Buy/Sell" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();" class="ng-isolate-scope">Buy / Sell</a></li>
+                                  <li><a href="" open-toc-popup="single" toc-atab="5" gtmdir-config="" gtmdir-text="Quick Buy/Sell" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();" class="ng-isolate-scope">Transfer Funds</a></li>
+                                  <li><a href="" redirect-on-login="" rd-state="reports" rd-caller="reports" gtmdir-config="" gtmdir-text="My Reports" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();">My Reports</a></li>
+                              </ul>
+                              <div class="BODERTop pd-t15 pd-b15 mg-t15">
+                                  <ul class="list-unstyled">
+                                      <li><a href="" gtmdir-config="" gtmdir-text="Forgot password" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();" redirect-on-login="" rd-caller="forgetPwd">Login Help</a></li>
+                                      <li><a ui-sref="faqs" gtmdir-config="" gtmdir-text="See Faqs" gtmdir-url="faqs" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();" href="/faqs">See FAQs</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div><!-- end ngIf: currentState != 'login' && currentState != 'forgot-password' && currentState != 'forgot-loginid' && currentState != 'reset-2fa' && currentState != 'unblock-account' -->
+                  </div>
+                  <div ng-show="isLoggedIn" style="display: none;" ng-style="isLoggedIn &amp;&amp; {'display':'block'}" class="ng-hide">
+                      <div class="MobCol-1">
+                          <a href="" class="HeadIng" onclick="subMenuToggle(this);">Buy/Sell</a>
+                          <div class="SubMenuITEM">
+                              <div class="mg-b15 PlaceORder-menu">
+                                  <ul class="list-unstyled">
+                                      <li open-toc-popup="single" gtmdir-config="" gtmdir-label="Place Order" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">
+                                          <a href="" class="t-uppercase"><strong>Place Order</strong></a>
+                                          <p>Stocks, Mutual Funds, SIPs, Currency etc.</p>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <ul class="list-unstyled BODERTop pd-t15">
+                                  <li><a href="" open-toc-popup="single" toc-atab="2" gtmdir-config="" gtmdir-label="Order Status" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">Order Status</a></li>
+                                  <li><a href="" open-toc-popup="single" toc-atab="3" gtmdir-config="" gtmdir-label="My Positions" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">My Positions</a></li>
+                              </ul>
+                              <div class="BODERTop mg-t15 pd-t15 pd-b15 ">
+                                  <ul class="list-unstyled">
+                                      <li><a href="" open-toc-popup="single" toc-atab="4" gtmdir-config="" gtmdir-label="Funds Available" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">Fund Available</a></li>
+                                      <li><a href="" open-toc-popup="single" toc-atab="5" gtmdir-config="" gtmdir-label="Add Funds" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">Transfer Funds</a></li>
+                                  </ul>
+                              </div>
+                              <div class="BODERTop pd-t15 pd-b15 ">
+                                  <ul class="list-unstyled">
+                                      <li><!-- ngIf: accType != 'CO' --><a href="" open-toc-popup="single" toc-atab="6" gtmdir-config="" gtmdir-label="See Holdings" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" data-ng-if="accType != 'CO'" class="ng-scope ng-isolate-scope">See Holdings</a><!-- end ngIf: accType != 'CO' --></li>
+                                      <li><a href="javascript:void(0)" redirect-on-login="" rd-state="watchlist" gtmdir-config="" gtmdir-label="My Watchlist" gtmdir-text="my Portfolio" gtmdir-key="postloginoptions" onclick="closeMenu();">My Watchlist</a></li>
+                                      <li><a href="javascript:void(0)" redirect-on-login="" rd-state="alerts" gtmdir-config="" gtmdir-label="My Alerts" gtmdir-text="my Portfolio" gtmdir-key="postloginoptions" onclick="closeMenu();">My Alerts</a></li>
+                                      <li><a href="" open-toc-popup="single" toc-atab="12" gtmdir-config="" gtmdir-label="Margin Files" gtmdir-text="Quick Buy / Sell" gtmdir-key="postloginoptions" onclick="closeMenu();" class="ng-isolate-scope">Margin Files</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop">
+                          <a href="" class="HeadIng mg-t15" onclick="subMenuToggle(this);">My Reports</a>
+                          <div class="SubMenuITEM">
+                              <div class="PlaceORder-menu">
+                                  <ul class="list-unstyled">
+                                      <li>
+                                          <a ui-sref="reports" redirect-on-login="" rd-state="reports" rd-caller="reports" gtmdir-config="" gtmdir-label="MY REPORTS" gtmdir-text="my Portfolio" gtmdir-key="postloginoptions" class="t-uppercase" onclick="closeMenu();" href="/reports"><strong>ACCOUNT OVERVIEW</strong></a>
+                                          <p>View your portfolio overview</p>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <div class="BODERTop mg-t15 pd-t15 pd-b15">
+                                  <ul class="list-unstyled">
+                                      <li><a ui-sref="reports.historicalperformance" redirect-on-login="" rd-caller="reports" gtmdir-config="" gtmdir-label="Historical Performance" gtmdir-text="my Portfolio" gtmdir-key="postloginoptions" onclick="closeMenu();" href="/reports/historicalperformance">Historical Performance</a></li>
+                                      <li class="mg-b15">
+                                          <a ui-sref="reports.transactionhistory" redirect-on-login="" rd-caller="reports" gtmdir-config="" gtmdir-label="transaction history" gtmdir-text=" my portfolio" gtmdir-key=" postloginoptions" onclick="closeMenu();" href="/reports/transactionhistory">Transaction History</a>
+                                      </li>
+                                      <li><a href="" redirect-on-login="" rd-state="gba-postlogin" gtmdir-config="" gtmdir-text="GPS dashboard" gtmdir-url="" gtmdir-key="ELoginpopupopts1" onclick="closeMenu();">Guided Portfolios Dashboard</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop">
+                          <a href="#" class="HeadIng mg-t15" onclick="subMenuToggle(this);">Latest Updates<span class="badge"></span></a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li><a href="/clientarea/messages" gtmdir-config="" gtmdir-label="MESSAGE CENTER" gtmdir-key="profileclick" onclick="closeMenu();">Message Center <!-- ngIf: msgunread --></a></li>
+                                  <li class="mg-b15"><a href="/clientarea/servicerequest" gtmdir-config="" gtmdir-label="Service Request" gtmdir-key="profileclick" onclick="closeMenu();">Service Request <!-- ngIf: countpendingService --></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 mg-b15">
+                          <a href="#" class="HeadIng" onclick="subMenuToggle(this);">SELF INVESTING</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li><a href="/oyo/mutualfund" ui-sref="oyo/mutualFund" gtmdir-config="" gtmdir-text="SELF INVESTING | Mutual Funds" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems" onclick="closeMenu();">Mutual Funds</a></li>
+                                  <li><a href="/oyo/equity" ui-sref="oyo-equity" gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" onclick="closeMenu();">Equity</a></li>
+                                  <li><a ui-sref="oyo-newissues" gtmdir-config="" gtmdir-text="SELF INVESTING | Primary Market" gtmdir-url="oyo/new-issues" gtmdir-key="Menuitems" onclick="closeMenu();" href="/new-issues">Primary Market</a></li>
+                              </ul>
+                              <div class="MobCol-1 BODERTop mg-t15">
+                                  <div class="SHowSubMenu pd-b0 active-TraderMenu">
+                                      <ul class="list-unstyled">
+                                          <li>
+                                              <i class="icon-b icon-30 icon-tv"></i>
+                                              <a ui-sref="active-trader" gtmdir-config="" onclick="closeMenu();" href="/active-trader"><span>Active Trader?</span> Trade, view advanced charts &amp; receive short term ideas on our advanced platform <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- ngIf: !hasGoals --><div class="MobCo l-1 mg-b15 mg-t15 ng-scope" ng-if="!hasGoals">
+                          <a ng-class="{ 'active' : active=='gbaprelogin' }" ng-click="goToGBAPrelogin();" class="mobileHeaderWithoutMenu" gtmdir-config="" gtmdir-text="GUIDED PORTFOLIOS" gtmdir-url="gba-prelogin" gtmdir-key="Menuitems" onclick="closeMenu();">GUIDED PORTFOLIOS</a>
+                      </div><!-- end ngIf: !hasGoals -->
+                      <!-- ngIf: hasGoals -->
+                      <div class="MobCol-1 BODERTop mg-b0 mg-t15">
+                          <div class="SHowSubMenu">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{ 'active' : active=='market' }"><a ui-sref="market" href="/market" gtmdir-config="" gtmdir-text="Watch Markets" gtmdir-url="market" gtmdir-key="Menuitems" onclick="closeMenu();">Watch Markets</a></li>
+
+                              </ul>
+                          </div>
+                      </div>
+
+                      <div class="MobCol-1">
+                          <a href="javascript:void(0);" class="HeadIng" onclick="subMenuToggle(this);">View Research</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{ 'active' : active=='research' }"><a ui-sref="research" gtmdir-config="" gtmdir-text="View Research | Reports" gtmdir-url="research" gtmdir-key="Menuitems" href="/research">Reports</a></li>
+                                  <li class="mg-b15" ng-class="{'active' : active=='activeTrader' }"><a ui-sref="allRecoForActiveTradersEQ({redirectParam:'EQ,Long term'})" gtmdir-config="" gtmdir-text="View Research | Recommendations" gtmdir-url="oyo/equity/top-market-and-stock-recommendations/equity" gtmdir-key="Menuitems" href="/oyo/equity/top-market-and-stock-recommendations/equity?redirectParam=EQ%2CLong%20term">Recommendations</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 mg-b15">
+                          <a href="javascript:void(0);" class="HeadIng" onclick="subMenuToggle(this);">Gain Knowledge</a>
+                          <div class="SubMenuITEM">
+                              <ul class="list-unstyled">
+                                  <li ng-class="{'active' : active == 'insight'}"><a ui-sref="insight" onclick="closeMenu();" class="capitalize" gtmdir-config="" gtmdir-text="Gain Knowledge | Insight" gtmdir-url="insight" gtmdir-key="Menuitems" href="/insight">Insights</a></li>
+                                  <li ng-class="{'active' : active == 'learner'}"><a ui-sref="learner" onclick="closeMenu();" class="capitalize" gtmdir-config="" gtmdir-text="Gain Knowledge | Investology" gtmdir-url="Investology" gtmdir-key="Menuitems" href="/investology">Investology</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop mg-b15">
+                          <div class="SHowSubMenu">
+                              <ul class="list-unstyled">
+                                  <li><a href="javascript:void(0)" redirect-on-login="" gtmdir-config="" gtmdir-label="See Profile" gtmdir-key="profileclick" rd-state="my-profile" class="text-capitalize" onclick="closeMenu();"><i class="icon-b icon-20 icon-proPic"></i>See Profile</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="MobCol-1 BODERTop mg-b15">
+                          <div class="SHowSubMenu">
+                              <ul class="list-unstyled">
+                                  <li><a href="" class="text-capitalize" ng-click="logout();" gtmdir-config="" gtmdir-label="logout" gtmdir-key="profileclick" onclick="closeMenu();"><i class="icon-b icon-20 icon-downloadd"></i>Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <div class="overlay-mobilemenu" onclick="closeMenu();"></div>
+      <div class="overlay-search" ng-class="{ 'active' : searchFocussed}" ng-click="hideSearchResultPopup()" style=""></div>
+  </header>
   <router-outlet></router-outlet>
