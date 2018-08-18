@@ -1,3 +1,101 @@
-<p>
-  home works!
-</p>
+<div class="main-view">
+<!-- <ui-view autoscroll="false" class="ng-scope" style="">
+<section id="contentCntr1" class="contentCntr homeCntr ng-scope">
+
+</section>
+</ui-view> -->
+<div class="container">
+    <div class="lr-offset">
+        <!--  \ Home Blocks container / -->
+        <section class="todayPerspective mg-t15 mg-tmd40" id="block4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="notification-msg notification-warning ng-hide" ng-show="!notificationClosedStatus || NotificationMessage" style="display: none;">
+                        <p><span compile="NotificationMessage"></span><a href="javascript:void(0)"></a></p>
+                        <a class="close-notification" href="javascript:void(0)" ng-click="notificationClosed()" gtmdir-config="" gtmdir-label="" gtmdir-key="YellowBoxclose"></a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="single-striked mg-t20 mg-b20"><span class="home-heading">What do you want to do?</span></h3>
+                </div>
+                <div class="home-message-blocks">
+                    <div class="col-md-6 text-right text-sm-left" gtmdir-config="" gtmdir-text="Banner1" gtmdir-label="Show me" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/oyo/mutualfund" class="textblock" href="https://www.edelweiss.in/oyo/mutualfund">
+                            <!--<img ed-src="{{ImagePath[0]}}" alt="" class="picture">-->
+                            <h4 class="ng-binding">Show me</h4>
+                            <h3 style="padding-left:5px;" class="ng-binding">TOP MUTUAL FUNDS TO<br>
+INVEST IN</h3>
+                            <!-- ngIf: matchVideoName(0) -->
+                            <!-- ngIf: matchArticleName(0) -->
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-left text-sm-left" gtmdir-config="" gtmdir-text="Banner1" gtmdir-label="I have some money" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/gps" class="imageblock textblock bordered" href="https://www.edelweiss.in/gps">
+                            <img src="https://www.edelweiss.in/ewwebimages/WebImages//Home/81f94108-4a28-4ccc-8068-e4865d2aff99.PNG" alt="" class="picture">
+                            <h3 class="ng-binding">I HAVE SOME MONEY</h3>
+                            <h4 class="ng-binding">Tell me where to invest.</h4>
+                            <!-- ngIf: matchVideoName(1) -->
+                            <!-- ngIf: matchArticleName(1) -->
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                        <div class="block-sep">
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-right text-sm-left" gtmdir-config="" gtmdir-text="Banner2" gtmdir-label="Give Me" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/oyo/equity?id=1" class="textblock" href="https://www.edelweiss.in/oyo/equity?id=1">
+                            <!--<img ed-src="{{ImagePath[2]}}" alt="" class="picture">-->
+                            <h4 class="ng-binding">Give Me</h4>
+                            <h3 class="sans-serif">STOCK IDEAS TO INVEST</h3>
+                            <!-- ngIf: matchVideoName(2) -->
+                            <!-- ngIf: matchArticleName(2) -->
+                        </a>
+                    </div>
+                    <div class="col-md-5 text-left text-sm-left" gtmdir-config="" gtmdir-text="Banner2" gtmdir-label="I Have A Financial Target" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/gps?2" class="imageblock textblock bordered pd-spl" style="min-height:110px" href="https://www.edelweiss.in/gps?2">
+                            <img src="https://www.edelweiss.in/ewwebimages/WebImages//Home/e84ec6d7-a8b7-4b7f-af2e-904f413b40c3.PNG" alt="" class="picture">
+                            <h3 class="sans-serif pd-t15 ng-binding">I Have A Financial Target</h3>
+                            <!--img src="../assets/images/gps-logo.png" alt="" style="margin: 5px auto 0 auto;max-width: 295px;"-->
+                            <h4 class="ng-binding">and want to achieve it</h4>
+                            <!--span class="article-text" ="matchVideoName(3)">- Video</span>
+                            <span class="article-text" ="matchArticleName(3)">- Article</span-->
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-left text-sm-left" gtmdir-config="" gtmdir-text="Banner2" gtmdir-label="Embrace Financial Freedom" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/insight/today-s-perspective-1/Embrace-Financial-Freedom---This-Independence-Day-ec544c" class="textblock bordered" style="padding: 0 15px;" href="https://www.edelweiss.in/insight/today-s-perspective-1/Embrace-Financial-Freedom---This-Independence-Day-ec544c">
+                            <h3 class="sans-serif ng-binding" style="font-size: 36px;">EMBRACE FINANCIAL FREEDOM</h3>
+                            <h4 class="ng-binding">This Independence Day!</h4>
+                            <!-- ngIf: matchVideoName(4) -->
+                            <!-- ngIf: matchArticleName(4) -->
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                        <div class="block-sep"></div>
+                    </div>
+                    <div class="col-md-6 text-right text-sm-left " gtmdir-config="" gtmdir-text="Banner3" gtmdir-label="I want to know," gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/market" class="textblock" href="https://www.edelweiss.in/market">
+                            <!--<img ed-src="{{ImagePath[5]}}" alt="" class="picture">-->
+                            <h4 class="ng-binding">I want to know,</h4>
+                            <h3 class="ng-binding">HOW ARE MARKETS TODAY?</h3>
+                            <!-- ngIf: matchVideoName(5) -->
+                            <!-- ngIf: matchArticleName(5) -->
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-left text-sm-left" gtmdir-config="" gtmdir-text="Banner3" gtmdir-label="I am looking for" gtmdir-key="Banner">
+                        <a ng-href="https://www.edelweiss.in/oyo/mutualfund?id=4" class="imageblock textblock bordered" href="https://www.edelweiss.in/oyo/mutualfund?id=4">
+                            <img src="https://www.edelweiss.in/ewwebimages/WebImages//Home/b90e845d-6bad-4f1e-827e-29d5844a276f.JPG" alt="" class="picture">
+                            <h4 class="ng-binding">I am looking for</h4>
+                            <h3 class="sans-serif ng-binding">MORE THAN FD RETURNS.</h3>
+                            <!-- ngIf: matchVideoName(6) -->
+                            <!-- ngIf: matchArticleName(6) -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  \ Home Blocks container / -->
+    </div>
+</div>
+</div>
