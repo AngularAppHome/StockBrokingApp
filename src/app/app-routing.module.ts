@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { GpsComponent } from './components/gps/gps.component';
 
 export const ROUTES: Routes = [
     // routes from pages
     {path: 'home', component: HomeComponent, data: {title: 'Home'}},
     {path: 'page', component: PageComponent, data: {title: 'Page'}},
+    {path: 'gps', component: GpsComponent, data: {title: 'gps'}},
     {path: '**', component: HomeComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

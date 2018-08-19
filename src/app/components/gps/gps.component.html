@@ -1,0 +1,1684 @@
+<div class="main-view">
+<!-- <ui-view autoscroll="false" class="ng-scope" style="">
+<div class="market-overlay ng-scope" ng-click="hideRiskBox($event)" style="display: none;"></div>
+<section id="contentCntr" class="contentCntr  ng-scope">
+
+</section>
+
+</ui-view> -->
+<div class="container gps-container">
+
+  <div class="maintainanceCntr ng-hide" ng-init="gbaUndermaintanence = false" ng-show="gbaUndermaintanence">
+  <div class="top-brdr-block">
+    <div class="maintainance_inner">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="maintaince-img">
+                    <img class="image" src="assets/images/maintainnace_img.png">
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="maintainance-content">
+                    <h3>Site Under Maintenance</h3>
+                    <p>Thank you for your patience.</p>
+                    <h4>We'll be back shortly.</h4>
+                    <div class="get-in-touch">
+                        <h5>Get in touch:</h5>
+                        <ul class="list-unstyled list-inline">
+                            <li><a href=""><i class="icon"></i>1800 - 102 - 3335 </a> (8am - 8pm)</li>
+                            <li><a href="mailto:Feedback_EWin@edelweiss.in?subject=Edelweiss beta feedback"><i class="icon icon-mgs"></i> Feedback_EWin@edelweiss.in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  <div ng-show="!gbaUndermaintanence" class="">
+  <ol class="breadcrumb hidden-xs static-content">
+    <li><a ui-sref="home" href="/">Home</a></li>
+    <li class="active">Guided Portfolios</li>
+  </ol>
+  <!--<section class="teamVideo tailor-made bg-image hidden-div">
+    <youtube-video video-id="'03mdvztY2Dk'" player-vars="playerVars" player-width="'100%'" player="teamVideoPlayer"></youtube-video>
+    <div style="background-image: url('/assets/images/reasonBanner.jpg')" ng-show="showOverlay" class="video-banner"></div>
+    <div class="overlay" ng-show="showOverlay">
+        <div class="display-table">
+            <div class="display-table-cell">
+                <h1 ng-bind="headLine"></h1>
+                <p ng-bind="subHeadLine"></p>
+                <div class="play-icon" ng-click="hideIcon()" gtmdir-config gtmdir-cat="GUIDED PORTFOLIOS" gtmdir-key="videoall"></div>
+            </div>
+        </div>
+    </div>
+  </section>-->
+  <!--<div class="already-portfolio" id="portfolio">
+    <p ng-if="!isLoggedIn()">Already have a portfolio? <a href="javascript:void(0)" login-popup state="gba-postlogin" landingpage="Invest With Some Help" gtmdir-config gtmdir-key="GpsPreloginViewDashBoard">Login to view your dashboard ></a> </p>
+    <p ng-if="isLoggedIn()"><a ui-sref="gba-postlogin" gtmdir-config gtmdir-key="GpsPostloginViewDashBoard">View your dashboard ></a> </p>
+  </div>-->
+  <div class="start-investing">
+    <div class="top-brdr-block blocks top-padding-brdr-block" id="myInvest" ng-class="{'top-padding-brdr-block' : isCartAvailable}">
+        <div class="notification-msg notification-warning" ng-show="isCartAvailable">
+            <p><span>We have saved the portfolio that you last viewed. <a href="" ng-click="redirectToGPSCart()" gtmdir-config="" gtmdir-key="GpsCartView">Click here</a> to view it again.</span></p>
+            <a class="close-notification" href="javascript:void(0)" ng-click="removeGPSCart()" gtmdir-config="" gtmdir-key="GpsCartClose"></a>                        
+        </div>
+        <h1 class="heading top-padding-heading" ng-class="{'top-padding-heading' : isCartAvailable}">Start Your Financial Journey</h1>
+        <div class="tabs">
+            <ul class="tab-heading tab-heading-style" style="text-align:center;">                            
+                <li ng-click="prelogin.selectedTab = 'someMoney';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'someMoney'}" gtmdir-config="" gtmdir-label="i have some money" gtmdir-key="GpsPreloginTab" class="active">
+                    <a href=""><i class="ic icon-rupee"></i><h2>I have some money<small>and want to invest it</small></h2></a>
+                </li>
+                <li ng-click="prelogin.selectedTab = 'financialTarget';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'financialTarget'}" gtmdir-config="" gtmdir-label="i have financial target" gtmdir-key="GpsPreloginTab">
+                    <a href=""><i class="ic icon-cloud"></i><h2>I have a financial target<small>and want to achieve it</small></h2></a>
+                </li>
+                <li ng-click="prelogin.selectedTab = 'taxSaving';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'taxSaving'}" gtmdir-config="" gtmdir-label="I want to save tax" gtmdir-key="GpsPreloginTab">
+                    <a href=""><i class="ic icon-tax"></i><h2>I want to save tax<small> but don't know how </small></h2></a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="some-money tab-inner" ng-show="prelogin.selectedTab === 'someMoney'" id="someMoney">
+                    <div ng-show="stage === 1 " class="">
+                        <div class="mg-b10 field-area">
+                            I want to invest Rs.
+                            <input type="text" style="display: inline-block" currency-input="" ng-model="haveSomeMoney.amt" placeholder="enter amount" maxlength="7" ng-blur="validateHaveSomeMoneyAmt()" class="only-amount amount-field ng-pristine ng-untouched ng-not-empty ng-invalid ng-invalid-maxlength">,
+                            <span class="select-risk">
+                                <span class="roboto-bold black">
+                                    <div class="drop-box">
+                                        <div class="arrow-hide">
+                                            <select ng-model="haveSomeMoney.is_lumpsum" ng-change="durationChanged()" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                                <option value="false" selected="selected" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I have some money " gtmdir-key="GPSLandingPage">Monthly</option>
+                                                <option value="true" ng-selected="" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="onetime" gtmdir-key="GPSLandingPage">One-Time</option>
+                                            </select>
+                                        </div><i class="icon-arrow-down "></i>
+                                    </div>.
+                                </span>
+                            </span>I'm
+                            <input type="text" style="display:inline-block" integer="" ng-model="haveSomeMoney.qa[0].ans" placeholder="age" class="age-field ng-pristine ng-untouched ng-empty ng-valid-maxlength ng-pending" min="1" max="99" ng-blur="validateAge()" maxlength="2">years old,
+                            <span class="grey"></span> <!--onkeypress="return event.charCode >= 48 && event.charCode <= 57"-->
+                            <!--with  <input type="text" placeholder="" ng-model="haveSomeMoney.qa[0].ans" class="experiene-field"> years of <br />investment experience in Equity &amp; Mutual Funds.-->
+                        </div>
+  
+                        <div class="risk mg-b20 field-area">
+                            and prefer
+                            <div class="select-risk inline roboto-bold roboto-italic grey" ng-class="{'roboto-italic grey' : !haveSomeMoney.qa[1].ans, 'black': haveSomeMoney.qa[1].ans}">
+                                <a href="" ng-click="showRiskBox($event);isRiskboxToolTip = false;" style="font-size:26px" ng-keyup="keyCodeEvent($event)" class="ng-binding">
+                                    select a risk profile
+                                    <i ng-class="{'icon-arrow-down': !isRiskboxOpened, 'icon-up-down':isRiskboxOpened}" id="riskboxarrow" class="icon-arrow-down"></i>
+                                </a>
+  
+                                <!--<div class="ng-isolate-scope in gba-riskprofile-tooltip" uib-tooltip-popup="" content="{{riskToolTip}}" placement="auto right" popup-class="" ng-show="!isRiskboxToolTip && funToolTip();">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner" ng-bind="riskToolTip"></div>-->
+                                <!--ng-bind="{{tooltip.riskdropdown}}"-->
+                                <!--</div>-->
+                                <div class="tooltip in top Left ng-hide" ng-show="isRiskboxToolTip && funToolTip();">
+                                    <div class="tooltip-inner ng-binding">
+                                        <span class="tooltip-arrow">
+                                        </span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div type="'reason-money'" start-investing-data="haveSomeMoney.qa[1].ans" is-riskbox-opened="isRiskboxOpened" selected-tab="prelogin.selectedTab" is-riskbox-tool-tip="isRiskboxToolTip" class="ng-isolate-scope">
+  <div class="riskbox risk-profile" id="SomeMoney">
+  <div class="row drop-down riskbox-arrow-reason-money" ng-class="type=='portfolio'?
+  'riskbox-arrow':(type=='reason-money'?'riskbox-arrow-reason-money':(type=='reason-target'?'riskbox-arrow-reason-target':''))" style="">
+  <!--<button type="button" class="close riskbox-close" aria-label="Close" ng-click="hideRiskBox()"><span aria-hidden="true">×</span></button>-->
+  <a href="" class="close-button-right" ng-click="hideRiskBox()"></a>
+  
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[0].key}" id="lwrisk">
+        <div class="img-box yellow"><img src="../assets/images/meter-low-risk.png" alt="meter"></div>
+        <div class="textbox yellow">
+            <h4>Low Risk</h4>
+            <p>I want to protect my savings.</p>
+            <!--<p>I want to protect my savings, even if it means lower returns.</p>-->
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[1].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="medium risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[1].key}" id="mdrisk">
+        <div class="img-box orange"><img src="../assets/images/meter-medium-risk.png" alt="meter"></div>
+        <div class="textbox orange">
+            <h4>Medium Risk</h4>
+            <p>I invest to earn more than FD returns even if there are few risks.</p>
+            <!--<p>I invest to earn more than FD returns. I am ok with some fluctuations in my portfolio value to acheive the same.</p>-->
+            <!--<p>I want my money to beat the inflation rate and I’m generally ok with fluctuations in my portfolio value.</p>-->
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[2].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="high risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[2].key}" id="hgrisk">
+        <div class="img-box red"><img src="../assets/images/meter-high-risk.png" alt="meter"></div>
+        <div class="textbox red">
+            <h4>High Risk</h4>
+            <p>I love winning big, even if there is higher risk.</p>
+        </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="help text-right"><a class="helpright" href="" ng-click="showRiskDropdown($event)" ng-keyup="($event.keyCode==27)?hideRiskBox():return" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="im not sure" gtmdir-key="GPSrisktabs">I’m not sure, help me decide.</a></div>
+  </div>
+  </div>
+  <div class="select-dropdown risk-dropdown mg-b30 risk-help-reason-money" ng-class="type=='portfolio'?'risk-help-portfolio':(type=='reason-money'?'risk-help-reason-money':(type=='reason-target'?'risk-help-reason-target':''))" style="">
+  <!--<h3 class="heading hidden-xs hidden-sm">Answer the questions below and we will help you assess your risk appetite</h3>-->
+  <div id="reason-moneyriskSlider" class="carousel slide risk-slider" data-ride="" data-interval="false">
+  <ol class="carousel-indicators">
+    <!-- ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="active" data-slide-to="0" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="1" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="2" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="3" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="4" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="5" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="6" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="7" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="8" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) -->
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <!-- ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item active" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="1" style="">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            This quiz will help us understand your risk appetite. It is also mandatory under SEBI guidelines. 
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My investment experience with Stocks & Mutual Funds is…
+                <i class="ic-help " uib-tooltip="Please indicate how long you are investing in Equities/Mutual Funds. Longer the experience higher is the ability to understand and handle the financial risk. " tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="< 1 Year" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="< 1 Year" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 1 Year</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="1 - 3 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="1 - 3 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">1 - 3 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="3 - 5 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="3 - 5 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">3 - 5 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="5 - 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="5 - 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">5 - 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="> 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="> 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="2" style="">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            2/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My Current Investments are largely in?
+                <i class="ic-help " uib-tooltip="Please select the option which reflects the largest share of your financial investments excluding self-occupied house or property." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="FD/PF/PPF/NSC" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="FD/PF/PPF/NSC" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">FD/PF/PPF/NSC</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Gold &amp; Real Estate" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Gold &amp; Real Estate" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Gold &amp; Real Estate</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Insurance Products" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Insurance Products" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Insurance Products</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Mutual Funds" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Mutual Funds" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Mutual Funds</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Direct Stocks" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Direct Stocks" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Direct Stocks</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="3">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            3/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                When it comes to investing in stocks, I rate myself
+                <i class="ic-help " uib-tooltip="Expert level of proficiency in stocks investments indicates higher risk taking ability." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Ignorant" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Ignorant" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Ignorant</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Beginner" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Beginner" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Beginner</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Competent" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Competent" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Competent</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Proficient" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Proficient" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Proficient</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Expert" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Expert" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Expert</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="5">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            4/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                I generally invest for a period of
+                <i class="ic-help " uib-tooltip="Longer period of investments helps you to smooth out market fluctuations, has higher probability of generating superior returns and allows you to take higher risks." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="< 1 year" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="< 1 year" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 1 year</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="1 - 3 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="1 - 3 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">1 - 3 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="3 - 5 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="3 - 5 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">3 - 5 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="5 - 10 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="5 - 10 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">5 - 10 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="> 10 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="> 10 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 10 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="7">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            5/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My current &amp; future income sources are?
+                <i class="ic-help " uib-tooltip="Predictability of your future income allows you to take high risk and maintain dicipline towards your investments." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Highly uncertain" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Highly uncertain" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Highly uncertain</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Uncertain" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Uncertain" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Uncertain</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Stable with normal growth" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Stable with normal growth" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Stable with normal growth</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Stable with high growth" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Stable with high growth" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Stable with high growth</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="8">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            6/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My savings as a percentage of income is
+                <i class="ic-help " uib-tooltip="Savings include financial investments excluding EMIs over your net-of-tax income. Higher the savings proportion, higher the risk appetite." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="< 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="< 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="10% - 20%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="10% - 20%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">10% - 20%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="20% - 30%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="20% - 30%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">20% - 30%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="30% - 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="30% - 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">30% - 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="> 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="> 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="11">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            7/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                When are you likely to need these funds?
+                <i class="ic-help " uib-tooltip="It is preferred to have a longer period of disciplined investments in equity-related products to smooth out market fluctuations and offer superior returns. " tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When are you likely to need these funds?" gtmdir-label="< 1 Year" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="11" value="< 1 Year" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 1 Year</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When are you likely to need these funds?" gtmdir-label="1 - 3 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="11" value="1 - 3 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">1 - 3 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When are you likely to need these funds?" gtmdir-label="3 - 5 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="11" value="3 - 5 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">3 - 5 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When are you likely to need these funds?" gtmdir-label="5 - 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="11" value="5 - 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">5 - 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When are you likely to need these funds?" gtmdir-label="> 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="11" value="> 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="12">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            8/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My monthly income is
+                <i class="ic-help " uib-tooltip="Higher monthly income allows you to take high risk and maintain dicipline towards your investments." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Up to Rs. 20000" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Up to Rs. 20000" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Up to Rs. 20000</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 20000 - Rs. 50000" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 20000 - Rs. 50000" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 20000 - Rs. 50000</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 50000 - Rs. 1 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 50000 - Rs. 1 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 50000 - Rs. 1 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 1 Lakh - Rs. 2 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 1 Lakh - Rs. 2 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 1 Lakh - Rs. 2 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="> Rs. 2 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="> Rs. 2 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; Rs. 2 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="13">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            9/9
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My monthly financial liabilities as % of income are in the range of
+                <i class="ic-help " uib-tooltip="Count items e.g. EMI, Tution/School/College fees, Medicines etc. Higher the monthly financial liabilities, lower is your risk appetite. " tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="> 70%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="> 70%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 70%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="70% - 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="70% - 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">70% - 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="50% - 25%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="50% - 25%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">50% - 25%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="25% - 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="25% - 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">25% - 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label=" < 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value=" < 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding"> &lt; 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) -->
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="left carousel-control ng-hide" ng-show="prevDis" data-target="#reason-moneyriskSlider" role="button" data-slide="prev" ng-click="slideChange(0)" style="">
+    <span class="arrow" aria-hidden="true"></span>
+    <span class="icon-txt">Previous</span>
+  </a>
+  <a class="right carousel-control ng-hide" ng-show="nextDis" data-target="#reason-moneyriskSlider" role="button" data-slide="next" ng-click="slideChange(1)" style="">
+    <span class="arrow" aria-hidden="true"></span>
+    <span class="icon-txt">Next</span>
+  </a>
+  </div>
+  <!--<div class="help text-right"><a href ng-click="requestRiskRating()" class="helpright"><i class="fa fa-angle-left"></i> Submit </a></div>-->
+  
+  <div class="help text-right"><a href="" ng-click="showRiskBox($event,true)" class="helpright" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="click" gtmdir-label="I know my risk type" gtmdir-key="GPSriskquiz">&lt; I know my risk type, take me back</a></div>
+  
+  </div>
+  </div>
+  
+                        </div>
+                        <div class="minimum-rs hint-arrow" hidden="">
+                            <span>Minimum Rs 1,000</span>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div ng-show="haveSomeMoneyAmtFourLakhs" class="ng-hide">
+                        <!-- ngIf: !saveLeadInfoSuccess && !isLoggedIn() --><div class="investment-value-info mg-t50 mg-r0 ng-scope" ng-if="!saveLeadInfoSuccess &amp;&amp; !isLoggedIn()">
+                            <p>If your investment value exceeds Rs. 2 Lacs, we'd like to talk to you first to understand your goals a little better. Please enter your contact details, and we can get in touch with you shortly.</p>
+                            <div class="information-form mg-t20">
+                                <p>
+                                    <input type="text" name="name" placeholder="Name" id="saveLeadInfoName" data-ng-model="saveLeadInfo.Name" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="20">
+                                </p>
+                                <p>
+                                    <input type="tel" name="phonenumber" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Mobile Number" data-ng-model="saveLeadInfo.Phone" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="10">
+                                </p>
+                                <a href="" class="continue btn btn-primary mg-t10 disabled" ng-disabled="!saveLeadInfo.Name || !saveLeadInfo.Phone || saveLeadInfo.Phone.length != 10" ng-click="saveLeadInfoDetails()" disabled="disabled">Submit</a>
+                            </div>
+                        </div><!-- end ngIf: !saveLeadInfoSuccess && !isLoggedIn() -->
+  
+                        <!-- ngIf: !saveLeadInfoSuccess && isLoggedIn() -->
+  
+                        <br>
+                        <!-- ngIf: saveLeadInfoSuccess -->
+                    </div>
+                    <!--<div class="minimum-rs hint-arrow hidden-xs">
+                        <span>Minimum Rs 1,000</span>
+                    </div>-->
+                    <div class="pull mg-b10 ng-hide" ng-show="haveSomeMoneyAmt">
+                        <div class="alert inline-block alert-warning invest">
+                            <p class="red-color">You need to invest atleast Rs 1,000</p>
+                        </div>
+                    </div>
+                    <div class="pull mg-b10 ng-hide" ng-show="isMinor">
+                        <div class=" alert inline-block alert-warning invest">
+                            <p class="red-color">We are sorry, currently we are not open for Minors.</p>
+                        </div>
+                    </div>
+                    <div class="pull mg-b10 ng-hide" ng-show="merror">
+                        <div class=" alert inline-block alert-warning invest">
+                            <p class="red-color">Your request cannot be processed.Try again later.</p>
+                        </div>
+                    </div>
+                    <div class="PreLogin-yellow-bg mg-b20 ng-hide" ng-hide="!preValidateShowMe() || haveSomeMoney.qa[0].ans < 18 || haveSomeMoneyAmt || isMinor || haveSomeMoneyAmtFourLakhs">
+                        <form class="ng-pristine ng-valid">
+                            <div class="form-group">
+                                <div class="custom-checkbox toc-sm-chk">
+                                    <input type="checkbox" id="on1" ng-checked="disclairmer1" ng-model="disclairmer1" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                    <span class="icon-check"></span>
+                                </div>
+                                <label for="on1" class="disclaimer-cursor">The Risk Profile category is opted/derived based on the information provided by me voluntarily.</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox toc-sm-chk">
+                                    <input type="checkbox" id="on2" ng-checked="disclairmer2" ng-model="disclairmer2" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                    <span class=" icon-check"></span>
+                                </div>
+                                <label for="on2" class="disclaimer-cursor">The Guided view is indicative in nature and is based on the information provided by me voluntarily.</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                    <a href="" class="continue btn btn-primary disabled" ng-disabled="merror || !preValidateShowMe() || haveSomeMoney.qa[0].ans < 18 || !disclairmer1 || !disclairmer2" ng-hide="haveSomeMoneyAmtFourLakhs" ng-click="isRiskboxToolTip = false;getPortFolio();" gtmdir-config="" gtmdir-text="i have some money" gtmdir-key="GpsPreloginPortfolioButton" disabled="disabled">
+                        <!--ng-click="getPortFolio()"-->
+                        Show Me My Portfolio
+                    </a>
+                </div>
+                <div class="financial-target tab-inner ng-hide" ng-show="prelogin.selectedTab === 'financialTarget'" id="financialTarget">
+                    <!--1-->
+                    <div ng-show="stage2===1" class="">
+                        <div class="mg-b5 field-area" style="display:inline-block">
+                            I want to target Rs.
+                            <input type="text" style="display: inline-block" currency-input="" ng-model="haveFinancialTarget.amt" placeholder="enter amount" maxlength="10" class="only-amount amount-field ng-pristine ng-untouched ng-not-empty ng-invalid ng-invalid-maxlength" ng-blur="getSipAmount()"> in <!--onkeypress="return(event.charCode >= 48 && event.charCode <= 57)"-->
+  
+                            <input type="text" style="display: inline-block" integer="" class="age-field ng-pristine ng-untouched ng-valid" ng-model="haveFinancialTarget.duration" ng-blur="validateFinancialTargetDuration();" placeholder="no." maxlength="2"> years towards my
+  
+                            <input type="text" placeholder="enter target name" class="vaction-field gba-target ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="haveFTAdditionalAttr.portfolioName" maxlength="20">.
+                        </div>
+                        <div class="field-area mg-b30">
+                            I'm
+                            <input type="text" integer="" placeholder="age" class="age-field ng-pristine ng-untouched ng-empty ng-valid-maxlength ng-pending" maxlength="2" ng-blur="validateFinancialTargetAge()" ng-model="haveFinancialTarget.qa[0].ans"> years old.
+                            <!--and have already saved up Rs.
+                            <input class="only-amount amount-field" type="text" currency-input="" placeholder="enter amount" ng-model="haveFTAdditionalAttr.sAmount" ng-blur="getSipAmount()" /> for this.-->
+                        </div>
+                        <div class="pull mg-b10 ng-hide" ng-show="isFinancialTargetMinor">
+                            <div class="alert inline-block alert-warning invest">
+                                <p class="red-color">We are sorry, currently we are not open for Minors.</p>
+                            </div>
+                        </div>
+                        <div class="pull mg-b10 ng-hide" ng-show="isTargetYearValid &amp;&amp; !MaxDurationError">
+                            <div class="alert inline-block alert-warning invest">
+                                <p class="red-color">We are sorry, target year can't be less than 1 year.</p>
+                            </div>
+                        </div>
+                        <div class="pull mg-b10 ng-hide" ng-show="isTargetYearValid &amp;&amp; MaxDurationError">
+                            <div class="alert inline-block alert-warning invest">
+                                <p class="red-color">Maximum SIP period can not be higher than 20 years.</p>
+                            </div>
+                        </div>
+                        <div class="pull mg-b10 ng-hide" ng-show="terror">
+                            <div class="alert inline-block alert-warning invest">
+                                <p class="red-color">Your request cannot be processed.Try again later.</p>
+                            </div>
+                        </div>
+                        <div class="full relative mg-b40">
+                            <div class="alert alert-warning changeRisk roboto-bold ng-hide" ng-show="((haveFTAdditionalAttr.sipAmount < 1000 &amp;&amp; requiredAmount > 0) || haveFinancialTarget.amt < 15000)">
+                                Required investment amount is below minimum investment amount. Please use our Mutual Funds Section for the investments.
+                            </div>
+                            <div class="alert alert-warning changeRisk roboto-bold ng-hide" ng-show="requiredAmount < 0">
+                                You will be able to achieve your target with amount you have already saved. There is no need to save any more money
+                            </div>
+                            <div class="alert alert-warning changeRisk ng-hide" ng-show="haveFTAdditionalAttr.sipAmount >= 1000 &amp;&amp; requiredAmount > 0 &amp;&amp;  haveFinancialTarget.amt >= 15000">
+                                <p>
+                                    <!--changed-->
+                                    You can achieve this by investing approx. Rs <span class="roboto-bold ng-binding" ng-bind="(haveFTAdditionalAttr.sipAmount <100)?(haveFTAdditionalAttr.sipAmount|ceilTo10): (haveFTAdditionalAttr.sipAmount | ceilTo100 | toLocaleString) "></span> monthly with
+                                    <a href="" class="underline" ng-keyup="($event.keyCode==27)?hideRiskBox():return" ng-click="showRiskBox($event)">
+                                        <span class="roboto-bold ng-binding"> Medium Risk </span>
+                                    </a>
+                                </p>
+                                <div class="hint-arrow risk-type ">
+                                    <span>click to change risk type</span>
+                                </div>
+                            </div>
+                            <div type="'reason-target'" start-investing-data="haveFinancialTarget.qa[1].ans" is-riskbox-opened="isRiskBoxOpened" selected-tab="prelogin.selectedTab" addnattr="haveFTAdditionalAttr" sipamt="haveFTAdditionalAttr.sipAmount" required-amt="requiredAmount" class="ng-isolate-scope">
+  <div class="riskbox risk-profile" id="SomeMoney">
+  <div class="row drop-down riskbox-arrow-reason-target" ng-class="type=='portfolio'?
+  'riskbox-arrow':(type=='reason-money'?'riskbox-arrow-reason-money':(type=='reason-target'?'riskbox-arrow-reason-target':''))" style="">
+  <!--<button type="button" class="close riskbox-close" aria-label="Close" ng-click="hideRiskBox()"><span aria-hidden="true">×</span></button>-->
+  <a href="" class="close-button-right" ng-click="hideRiskBox()"></a>
+  
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[0].key}" id="lwrisk">
+        <div class="img-box yellow"><img src="../assets/images/meter-low-risk.png" alt="meter"></div>
+        <div class="textbox yellow">
+            <h4>Low Risk</h4>
+            <p>I want to protect my savings.</p>
+            <!--<p>I want to protect my savings, even if it means lower returns.</p>-->
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[1].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="medium risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap selected" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[1].key}" id="mdrisk" style="">
+        <div class="img-box orange"><img src="../assets/images/meter-medium-risk.png" alt="meter"></div>
+        <div class="textbox orange">
+            <h4>Medium Risk</h4>
+            <p>I invest to earn more than FD returns even if there are few risks.</p>
+            <!--<p>I invest to earn more than FD returns. I am ok with some fluctuations in my portfolio value to acheive the same.</p>-->
+            <!--<p>I want my money to beat the inflation rate and I’m generally ok with fluctuations in my portfolio value.</p>-->
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[2].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="high risk" gtmdir-key="GPSrisktabs">
+    <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[2].key}" id="hgrisk">
+        <div class="img-box red"><img src="../assets/images/meter-high-risk.png" alt="meter"></div>
+        <div class="textbox red">
+            <h4>High Risk</h4>
+            <p>I love winning big, even if there is higher risk.</p>
+        </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="help text-right"><a class="helpright" href="" ng-click="showRiskDropdown($event)" ng-keyup="($event.keyCode==27)?hideRiskBox():return" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="im not sure" gtmdir-key="GPSrisktabs">I’m not sure, help me decide.</a></div>
+  </div>
+  </div>
+  <div class="select-dropdown risk-dropdown mg-b30 risk-help-reason-target" ng-class="type=='portfolio'?'risk-help-portfolio':(type=='reason-money'?'risk-help-reason-money':(type=='reason-target'?'risk-help-reason-target':''))" style="">
+  <!--<h3 class="heading hidden-xs hidden-sm">Answer the questions below and we will help you assess your risk appetite</h3>-->
+  <div id="reason-targetriskSlider" class="carousel slide risk-slider" data-ride="" data-interval="false">
+  <ol class="carousel-indicators">
+    <!-- ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="active" data-slide-to="0" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="1" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="2" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="3" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="4" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="5" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="6" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-targetriskSlider" class="" data-slide-to="7" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) -->
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <!-- ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item active" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="1" style="">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            This quiz will help us understand your risk appetite. It is also mandatory under SEBI guidelines. 
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My investment experience with Stocks &amp; Mutual Funds is…
+                <i class="ic-help " uib-tooltip="Please indicate how long you are investing in Equities/Mutual Funds. Longer the experience higher is the ability to understand and handle the financial risk. " tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="< 1 Year" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="< 1 Year" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 1 Year</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="1 - 3 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="1 - 3 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">1 - 3 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="3 - 5 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="3 - 5 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">3 - 5 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="5 - 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="5 - 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">5 - 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My investment experience with Stocks &amp; Mutual Funds is…" gtmdir-label="> 10 Years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="1" value="> 10 Years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 10 Years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="2" style="">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            2/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My Current Investments are largely in?
+                <i class="ic-help " uib-tooltip="Please select the option which reflects the largest share of your financial investments excluding self-occupied house or property." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="FD/PF/PPF/NSC" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="FD/PF/PPF/NSC" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">FD/PF/PPF/NSC</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Gold &amp; Real Estate" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Gold &amp; Real Estate" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Gold &amp; Real Estate</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Insurance Products" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Insurance Products" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Insurance Products</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Mutual Funds" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Mutual Funds" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Mutual Funds</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My Current Investments are largely in?" gtmdir-label="Direct Stocks" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="2" value="Direct Stocks" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Direct Stocks</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="3">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            3/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                When it comes to investing in stocks, I rate myself
+                <i class="ic-help " uib-tooltip="Expert level of proficiency in stocks investments indicates higher risk taking ability." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Ignorant" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Ignorant" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Ignorant</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Beginner" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Beginner" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Beginner</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Competent" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Competent" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Competent</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Proficient" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Proficient" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Proficient</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="When it comes to investing in stocks, I rate myself" gtmdir-label="Expert" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="3" value="Expert" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Expert</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="5">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            4/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                I generally invest for a period of
+                <i class="ic-help " uib-tooltip="Longer period of investments helps you to smooth out market fluctuations, has higher probability of generating superior returns and allows you to take higher risks." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="< 1 year" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="< 1 year" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 1 year</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="1 - 3 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="1 - 3 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">1 - 3 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="3 - 5 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="3 - 5 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">3 - 5 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="5 - 10 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="5 - 10 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">5 - 10 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="I generally invest for a period of" gtmdir-label="> 10 years" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="5" value="> 10 years" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 10 years</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="7">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            5/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My current &amp; future income sources are?
+                <i class="ic-help " uib-tooltip="Predictability of your future income allows you to take high risk and maintain dicipline towards your investments." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Highly uncertain" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Highly uncertain" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Highly uncertain</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Uncertain" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Uncertain" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Uncertain</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Stable with normal growth" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Stable with normal growth" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Stable with normal growth</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My current &amp; future income sources are?" gtmdir-label="Stable with high growth" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="7" value="Stable with high growth" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Stable with high growth</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="8">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            6/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My savings as a percentage of income is
+                <i class="ic-help " uib-tooltip="Savings include financial investments excluding EMIs over your net-of-tax income. Higher the savings proportion, higher the risk appetite." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="< 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="< 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&lt; 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="10% - 20%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="10% - 20%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">10% - 20%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="20% - 30%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="20% - 30%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">20% - 30%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="30% - 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="30% - 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">30% - 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My savings as a percentage of income is" gtmdir-label="> 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="8" value="> 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="12">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            7/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My monthly income is
+                <i class="ic-help " uib-tooltip="Higher monthly income allows you to take high risk and maintain dicipline towards your investments." tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Up to Rs. 20000" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Up to Rs. 20000" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Up to Rs. 20000</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 20000 - Rs. 50000" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 20000 - Rs. 50000" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 20000 - Rs. 50000</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 50000 - Rs. 1 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 50000 - Rs. 1 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 50000 - Rs. 1 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="Rs. 1 Lakh - Rs. 2 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="Rs. 1 Lakh - Rs. 2 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">Rs. 1 Lakh - Rs. 2 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly income is" gtmdir-label="> Rs. 2 Lakh" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="12" value="> Rs. 2 Lakh" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; Rs. 2 Lakh</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="13">
+        <!--| filter: filterfn as qnRank-->
+        <h3 class="heading hidden-xs hidden-sm ng-binding">
+            8/8
+        </h3>
+        <div class="carousel-caption">
+            <div class="question ng-binding">
+                My monthly financial liabilities as % of income are in the range of
+                <i class="ic-help " uib-tooltip="Count items e.g. EMI, Tution/School/College fees, Medicines etc. Higher the monthly financial liabilities, lower is your risk appetite. " tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body=""></i>
+  
+            </div>
+            <ul>
+                <!-- ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="> 70%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="> 70%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">&gt; 70%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="70% - 50%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="70% - 50%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">70% - 50%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="50% - 25%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="50% - 25%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">50% - 25%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label="25% - 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value="25% - 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding">25% - 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values --><!-- ngIf: qn.type == 'string' --><li ng-repeat="v in qn.values" ng-if="qn.type == 'string'" class="ng-scope">
+                    <div class="inner">
+                        <div class="custom-radio" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="My monthly financial liabilities as % of income are in the range of" gtmdir-label=" < 10%" gtmdir-key="GPSriskquiz">
+                            <input type="radio" name="13" value=" < 10%" data-ng-model="Risk.qaList[qn.id]" ng-change="isSelected(value)" class="ng-pristine ng-untouched ng-valid ng-empty">
+                            <span class="icon-check"></span>
+                        </div>
+                        <h3 class="ng-binding"> &lt; 10%</h3>
+                    </div>
+                </li><!-- end ngIf: qn.type == 'string' --><!-- end ngRepeat: v in qn.values -->
+  
+                <!-- ngRepeat: r in qn.ranges -->
+            </ul>
+        </div>
+        <div class="help text-right"><!-- ngIf: isAnswrdQns --></div>
+    </div><!-- end ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) -->
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="left carousel-control ng-hide" ng-show="prevDis" data-target="#reason-targetriskSlider" role="button" data-slide="prev" ng-click="slideChange(0)" style="">
+    <span class="arrow" aria-hidden="true"></span>
+    <span class="icon-txt">Previous</span>
+  </a>
+  <a class="right carousel-control ng-hide" ng-show="nextDis" data-target="#reason-targetriskSlider" role="button" data-slide="next" ng-click="slideChange(1)" style="">
+    <span class="arrow" aria-hidden="true"></span>
+    <span class="icon-txt">Next</span>
+  </a>
+  </div>
+  <!--<div class="help text-right"><a href ng-click="requestRiskRating()" class="helpright"><i class="fa fa-angle-left"></i> Submit </a></div>-->
+  
+  <div class="help text-right"><a href="" ng-click="showRiskBox($event,true)" class="helpright" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="click" gtmdir-label="I know my risk type" gtmdir-key="GPSriskquiz">&lt; I know my risk type, take me back</a></div>
+  
+  </div>
+  </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="PreLogin-yellow-bg mg-b20 ng-hide" ng-hide="!preValidateShowMe2()||isUndefinedOrNull(haveFTAdditionalAttr.portfolioName) ||( haveFTAdditionalAttr.sipAmount < 1000 || requiredAmount < 0) || haveFinancialTarget.qa[0].ans < 18 || isFinancialTargetMinor || isTargetYearValid || haveSomeTargetAmtTwoLakhs">
+                            <form class="ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <div class="custom-checkbox toc-sm-chk">
+                                        <input type="checkbox" id="on3" ng-checked="disclairmer1" ng-model="disclairmer1" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                        <span class=" icon-check"></span>
+                                    </div>
+                                    <label for="on3" class="disclaimer-cursor">The Risk Profile category is opted/derived based on the information provided by me voluntarily.</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-checkbox toc-sm-chk">
+                                        <input type="checkbox" id="on4" ng-checked="disclairmer2" ng-model="disclairmer2" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                        <span class=" icon-check"></span>
+                                    </div>
+                                    <label for="on4" class="disclaimer-cursor">The Guided view is indicative in nature and is based on the information provided by me voluntarily.</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                        <a href="" class="continue btn btn-primary disabled" ng-disabled="terror || !preValidateShowMe2() ||( haveFTAdditionalAttr.sipAmount < 1000 || requiredAmount < 0) || haveFinancialTarget.qa[0].ans < 18 || !disclairmer1 || !disclairmer2" ng-hide="haveSomeTargetAmtTwoLakhs" ng-click="isRiskboxToolTip = false;getPortFolio();" gtmdir-config="" gtmdir-text="i have financial target" gtmdir-key="GpsPreloginPortfolioButton" disabled="disabled">Show Me My Portfolio</a>
+                        <!--ng-click="getPortFolio()"-->
+                    </div>
+  
+                    <!--2-->
+                    <div ng-show="haveSomeTargetAmtTwoLakhs" class="ng-hide">
+                        <!-- ngIf: !saveLeadInfoTargetSuccess && !isLoggedIn() --><div class="investment-value-info mg-t50 mg-r0 ng-scope" ng-if="!saveLeadInfoTargetSuccess &amp;&amp; !isLoggedIn()">
+                            <p>If your investment value exceeds Rs. 2 Lacs, we'd like to talk to you first to understand your goals a little better. Please enter your contact details, and we can get in touch with you shortly.</p>
+                            <div class="information-form mg-t20">
+                                <p>
+                                    <input type="text" name="name" placeholder="Name" id="saveLeadInfoNameTarget" data-ng-model="saveLeadInfoTarget.Name" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="20">
+                                </p>
+                                <p>
+                                    <input type="tel" name="phonenumber" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Mobile Number" data-ng-model="saveLeadInfoTarget.Phone" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="10">
+                                </p>
+                                <a href="" class="continue btn btn-primary mg-t10 disabled" ng-disabled="!saveLeadInfoTarget.Name || !saveLeadInfoTarget.Phone || saveLeadInfoTarget.Phone.length != 10" ng-click="saveLeadInfoTargetDetails()" disabled="disabled">Submit</a>
+                            </div>
+                        </div><!-- end ngIf: !saveLeadInfoTargetSuccess && !isLoggedIn() -->
+  
+                        <!-- ngIf: !saveLeadInfoTargetSuccess && isLoggedIn() -->
+  
+                        <br>
+                        <!-- ngIf: saveLeadInfoTargetSuccess -->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--tax saving-->
+                <div class="some-money tab-inner ng-hide" ng-show="prelogin.selectedTab === 'taxSaving'" id="taxSaving">
+                    <div ng-show="stage3 === 1 " class="">
+                        <div class="mg-b10 field-area">
+                            I want to invest Rs.
+                            <input type="text" style="display: inline-block" currency-input="" ng-model="haveTaxSavingTarget.amt" placeholder="enter amount" maxlength="7" ng-blur="validateHaveTaxSavingTargetAmt()" class="only-amount amount-field ng-pristine ng-untouched ng-not-empty ng-invalid ng-invalid-maxlength">
+                            <span class="select-risk">
+                                <span class="roboto-bold black">
+                                    <div class="drop-box">
+                                        <div class="arrow-hide">
+                                            <select ng-model="haveTaxSavingTarget.is_lumpsum" ng-change="taxPercentChanged(1)" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                                <option value="true" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I want to save tax | onetime" gtmdir-key="GPSLandingPage" selected="selected">One-Time</option>
+                                                <option value="false" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I want to save tax | monthly" gtmdir-key="GPSLandingPage">Monthly</option>
+  
+                                            </select>
+                                        </div><i class="icon-arrow-down "></i>
+                                    </div>
+                                </span>
+                            </span>
+                            <!-- ngIf: haveTaxSavingTarget.is_lumpsum == 'true' --><span ng-if="haveTaxSavingTarget.is_lumpsum == 'true'" class="ng-scope">.</span><!-- end ngIf: haveTaxSavingTarget.is_lumpsum == 'true' --><!--<span ng-if="haveTaxSavingTarget.is_lumpsum=='true'?false:true">-->
+                            <!-- ngIf: haveTaxSavingTarget.is_lumpsum == 'false' -->
+                            <!-- ngIf: haveTaxSavingTarget.is_lumpsum == 'true' --><input type="text" ng-if="haveTaxSavingTarget.is_lumpsum == 'true'" ng-hide="haveTaxSavingTarget.is_lumpsum == 'true'" ng-init="haveTaxSavingTarget.duration = 10" placeholder="no." class="age-field gba-prelogin-tax-saving-years ng-scope ng-hide" min="1" max="20" maxlength="2" ng-blur="validateTaxSavingDuration();"><!-- end ngIf: haveTaxSavingTarget.is_lumpsum == 'true' -->
+                            <!-- ngIf: haveTaxSavingTarget.is_lumpsum == 'false' --> <!-- ngIf: haveTaxSavingTarget.is_lumpsum == 'false' -->
+                            <br>
+                            <span> My income tax slab is</span>
+                            <span class="select-risk">
+                                <span class="roboto-bold black">
+                                    <div class="drop-box" style="padding-bottom:6px;">
+                                        <div class="arrow-hide">
+                                            <select ng-model="selectedTax" ng-change="taxPercentChanged()" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                                <option value="5" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I want to save tax|tax slab|5%" gtmdir-key="GPSLandingPage">5%</option>
+                                                <option value="20" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I want to save tax|tax slab|20%" gtmdir-key="GPSLandingPage">20%</option>
+                                                <option value="30" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I want to save tax|tax slab|30%" gtmdir-key="GPSLandingPage" selected="selected">30%</option>
+                                            </select>
+                                        </div><i class="icon-arrow-down "></i>
+                                    </div>
+                                </span>
+                            </span>
+                            <!--</span>-->
+                            <span>.</span>
+                            <span class="grey"></span>
+                        </div>
+                        <div class="minimum-rs hint-arrow" hidden="">
+                            <span>Minimum Rs 1,000</span>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div ng-show="haveTaxSavingAmtFourLacs" class="ng-hide">
+                        <!-- ngIf: !saveLeadInfoSuccess && !isLoggedIn() --><div class="investment-value-info mg-t50 mg-r0 ng-scope" ng-if="!saveLeadInfoSuccess &amp;&amp; !isLoggedIn()">
+                            <p>If your investment value exceeds Rs. 4 Lacs, we'd like to talk to you first to understand your goals a little better. Please enter your contact details, and we can get in touch with you shortly.</p>
+                            <div class="information-form mg-t20">
+                                <p>
+                                    <input type="text" name="name" placeholder="Name" id="saveLeadInfoName" data-ng-model="saveLeadInfo.Name" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="20">
+                                </p>
+                                <p>
+                                    <input type="tel" name="phonenumber" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Mobile Number" data-ng-model="saveLeadInfo.Phone" class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="10">
+                                </p>
+                                <a href="" class="continue btn btn-primary mg-t10 disabled" ng-disabled="!saveLeadInfo.Name || !saveLeadInfo.Phone || saveLeadInfo.Phone.length != 10" ng-click="saveLeadInfoDetails()" disabled="disabled">Submit</a>
+                            </div>
+                        </div><!-- end ngIf: !saveLeadInfoSuccess && !isLoggedIn() -->
+  
+                        <!-- ngIf: !saveLeadInfoSuccess && isLoggedIn() -->
+                        <br>
+                        <!-- ngIf: saveLeadInfoSuccess -->
+                    </div>
+  
+                    <!--errors-->
+                    <!--<div class="pull mg-b10" ng-show="taxCalAmountMessage">
+                        <div class="alert inline-block alert-warning invest">
+                            <p class="green-color">Tax you will save is Rs. {{taxCalAmount  | ceilToNearestLacSummary}}.</p>
+                        </div>
+                    </div>-->
+                    <div class="alert alert-warning changeRisk ng-hide" ng-show="taxCalAmountMessage">
+                        <!--style="margin-left: 163px; width: 651px; margin-bottom: 11px;"-->
+                        <p>Tax you will save is Rs.  <span class="roboto-bold ng-binding" ng-bind="(taxCalAmount  | ceilToNearestLacSummary) "></span></p>
+                    </div>
+                    <div class="pull mg-b10 ng-hide" ng-show="haveTaxSavingTargetAmt">
+                        <div class="alert inline-block alert-warning invest">
+                            <p class="red-color">You need to invest atleast Rs 1,000</p>
+                        </div>
+                    </div>
+                    <div class="pull mg-b10 ng-hide" ng-show="haveTaxSavingTargetAmtMultipleOf100">
+                        <div class="alert inline-block alert-warning invest">
+                            <p class="red-color">You need to invest in multiple of Rs 100</p>
+                        </div>
+                    </div>
+                    <div class="pull mg-b10 ng-hide" ng-show="haveTaxSavingTenor">
+                        <div class="alert inline-block alert-warning invest">
+                            <p class="red-color">Maximum SIP period can not be higher than 20 years.</p>
+                        </div>
+                    </div>
+  
+                    <div class="pull mg-b10 ng-hide" ng-show="merror">
+                        <div class=" alert inline-block alert-warning invest">
+                            <p class="red-color">Your request cannot be processed.Try again later.</p>
+                        </div>
+                    </div>
+                    <p class="gba-prelogin-tax-saving-para">Under section 80C, a deduction upto Rs. 1,50,000 can be claimed from your total income. Investment option under 80C includes ELSS, PF, PPF, FD, Insurance etc.</p>
+  
+                    <div class="PreLogin-yellow-bg mg-b20 ng-hide" ng-hide="preValidateShowMe3() || $scope.haveTaxSavingTargetAmt <= 0 || haveTaxSavingTarget.duration >20 || haveTaxSavingTargetAmtMultipleOf100 || haveTaxSavingAmtFourLacs">
+                        <form class="ng-pristine ng-valid">
+                            <div class="form-group">
+                                <div class="custom-checkbox toc-sm-chk">
+                                    <input type="checkbox" id="on2" ng-checked="disclairmer2" ng-model="disclairmer2" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                    <span class=" icon-check"></span>
+                                </div>
+                                <label for="on2" class="disclaimer-cursor">The Guided view is indicative in nature and is based on the information provided by me voluntarily.</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+  
+                    <a href="" class="continue btn btn-primary disabled" ng-disabled="merror || preValidateShowMe3() || haveTaxSavingTarget.duration >20  || !disclairmer2" ng-hide="haveTaxSavingAmtFourLacs" ng-click="isRiskboxToolTip = false;getPortFolio();" gtmdir-config="" gtmdir-text="I want to save tax" gtmdir-key="GpsPreloginPortfolioButton" disabled="disabled">
+                        Show Me My Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="smart-portfolios mg-t50">
+    <div class="top-brdr-block blocks">
+        <div class="container-fluid">
+            <h2 class="heading">Why Guided Portfolios?</h2>
+            <div id="portfolioSlider" class="carousel slide  portfolio-slider" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#portfolioSlider" data-slide-to="0" class=""></li>
+                    <li data-target="#portfolioSlider" data-slide-to="1" class=""></li>
+                    <li data-target="#portfolioSlider" data-slide-to="2" class="active"></li>
+                    <li data-target="#portfolioSlider" data-slide-to="3" class=""></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item reason-tracking">
+                        <div class="carousel-caption">
+                            <h3>Because you have dreams</h3>
+                            <h4>And a tailor-made portfolio can bring them to life</h4>
+                        </div>
+                        <img src="assets/images/port-slider1.jpg" alt="Chania">
+                    </div>
+                    <div class="item reason-tracking">
+                        <div class="carousel-caption">
+                            <h3>Because the markets take time to master</h3>
+                            <h4>And our army of mutual fund experts are already pros</h4>
+                        </div>
+                        <img src="assets/images/port-slider2.jpg" alt="Chania">
+                    </div>
+                    <div class="item reason-tracking active">
+                        <div class="carousel-caption">
+                            <h3>Because your time is precious</h3>
+                            <h4>And you can create a portfolio before your coffee gets cold</h4>
+                        </div>
+                        <img src="assets/images/port-slider3.jpg" alt="Chania">
+                    </div>
+                    <div class="item reason-tracking">
+                        <div class="carousel-caption">
+                            <h3>Because everyone needs a little guidance to manage their portfolio</h3>
+                            <h4>And you will always have our support. 24 hours a day. 7 Days a week.</h4>
+                        </div><br>
+                        <img src="assets/images/port-slider4.jpg" alt="Chania">
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" data-target="#portfolioSlider" role="button" data-slide="prev" ng-click="getImage()" gtmdir-config="" gtmdir-text="left" gtmdir-label="{}" gtmdir-key="GpsPreloginWhySmartPortfolios">
+                    <span class="ic icon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" data-target="#portfolioSlider" role="button" data-slide="next" ng-click="getImage()" gtmdir-config="" gtmdir-text="right" gtmdir-label="{}" gtmdir-key="GpsPreloginWhySmartPortfolios">
+                    <span class="ic icon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="portfolio-hints">
+                <div class="port-interface port-hint">
+                    <span>Simplified Interface</span>
+                    <small>
+                        To make monitoring your investments a breeze
+                        <i class="arrow-icon arrow-left visible-xs visible-sm"><img src="assets/images/Simplified-top.png"></i>
+                    </small>
+                    <figure class="visible-sm visible-xs">
+                        <img src="assets/images/Simplified.png">
+                    </figure>
+                </div>
+                <div class="port-content port-hint">
+                    <span>Jargon-free Content</span>
+                    <small>
+                        So confusing terms don't stop you from earning
+                        <i class="arrow-icon visible-xs visible-sm"><img src="assets/images/Simplifiedbottom.png"></i>
+                    </small>
+                    <figure class="visible-sm visible-xs">
+                        <img src="assets/images/Jargon-free.png">
+                    </figure>
+                </div>
+                <div class="port-security port-hint">
+                    <span>Highly Secure</span>
+                    <small>
+                        Because we value your privacy as much as you do
+                        <i class="arrow-icon visible-xs visible-sm"><img src="assets/images/Simplifiedbottom.png"></i>
+                    </small>
+                    <figure class="visible-sm visible-xs">
+                        <img src="assets/images/Bank-grade.png">
+                    </figure>
+                </div>
+                <figure class="hidden-sm hidden-xs">
+                    <img src="assets/images/port-hints.jpg">
+                </figure>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="how-works mg-t50">
+    <div class="top-brdr-block blocks">
+        <div class="container-fluid">
+            <h2 class="heading">How Guided Portfolios Work</h2>
+            <p class="sub-title">
+                Many of us want to invest in mutual funds, but don’t know where to invest. With Guided Portfolios our mutual fund advisors, <br>suggest you a mutual fund portfolio to invest in and also help you manage it. Here’s how it works:
+            </p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon-head">
+                        <i class="ic ic-question"></i>
+                    </div>
+                    <div class="inner">
+                        <h4><span class="no">1</span> We ask you a few questions to give you the most suitable advice</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-head">
+                        <i class="ic ic-dashboard"></i>
+                    </div>
+                    <div class="inner">
+                        <h4><span class="no">2</span> We analyse how much risk you’re ready to take</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-head">
+                        <i class="ic ic-basket"></i>
+                    </div>
+                    <div class="inner">
+                        <h4><span class="no">3</span>Our experts pick a basket of mutual funds to help you achieve your goals.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="some-question mg-t50">
+    <div class="top-brdr-block blocks">
+        <div class="container-fluid">
+            <h2 class="heading">Still have some questions?</h2>
+            <div class="row call-actions">
+                <!--<div class="col-sm-5 no-padding text-right m-text-left c-text-center">
+                    <i class="ic ic-call"></i><span>Talk to our Experts on <strong data-ng-bind="gbaContactNo"></strong></span>
+                </div>
+                <div class="col-sm-2 or no-padding"><small>OR</small></div>-->
+                <div class="col-sm-16 no-padding text-center c-text-center">
+                    <i class="ic ic-question"></i>
+                    <span>
+                        <a href="/faqs/8/70" gtmdir-config="" gtmdir-key="GpsPreloginFAQ" target="_blank">
+                            <strong>Read these FAQ's </strong>
+                        </a> before getting started
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<script type="text/javascript" class="ng-scope">
+  $('.fancybox-effects')
+  .attr('rel', 'media-gallery')
+  .fancybox({
+  openEffect: 'elastic',
+  closeEffect: 'elastic',
+  prevEffect: 'none',
+  nextEffect: 'none',
+  width: "100%",
+  margin: [0, 50, 0, 50],
+  arrows: false,
+  helpers: {
+    media: {},
+    buttons: {}
+  }
+  });
+  </script>
+</div>

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { GpsComponent } from './components/gps/gps.component';
 
 
 
@@ -15,7 +16,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AppComponent,
     HomeComponent,
     PageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GpsComponent
   ],
   imports: [
     BrowserModule,
