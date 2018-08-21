@@ -9,6 +9,7 @@ import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GpsComponent } from './components/gps/gps.component';
 import { EquityComponent } from './components/equity/equity.component';
+import { MutualfundComponent } from './components/mutualfund/mutualfund.component';
 
 
 
@@ -19,7 +20,8 @@ import { EquityComponent } from './components/equity/equity.component';
     PageComponent,
     PageNotFoundComponent,
     GpsComponent,
-    EquityComponent
+    EquityComponent,
+    MutualfundComponent
   ],
   imports: [
     BrowserModule,
