@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GpsComponent } from './components/gps/gps.component';
+import { EquityComponent } from './components/equity/equity.component';
 
 
 
@@ -17,7 +18,8 @@ import { GpsComponent } from './components/gps/gps.component';
     HomeComponent,
     PageComponent,
     PageNotFoundComponent,
-    GpsComponent
+    GpsComponent,
+    EquityComponent
   ],
   imports: [
     BrowserModule,
