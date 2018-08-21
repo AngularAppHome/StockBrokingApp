@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GpsComponent } from './components/gps/gps.component';
+import { EquityComponent } from './components/equity/equity.component';
 import { MutualfundComponent } from './components/mutualfund/mutualfund.component';
 
 export const ROUTES: Routes = [
@@ -13,6 +14,7 @@ export const ROUTES: Routes = [
     {path: 'home', component: HomeComponent, data: {title: 'Home'}},
     {path: 'page', component: PageComponent, data: {title: 'Page'}},
     {path: 'gps', component: GpsComponent, data: {title: 'gps'}},
+    {path: 'equity', component: EquityComponent, data: {title: 'equity'}},
     {path: 'mutualfund', component: MutualfundComponent, data: {title: 'Mutual Fund'}},
     {path: '**', component: HomeComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' }

@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PageComponent } from './components/page/page.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { GpsComponent } from './components/gps/gps.component';
+import { EquityComponent } from './components/equity/equity.component';
 import { MutualfundComponent } from './components/mutualfund/mutualfund.component';
 
 
@@ -19,6 +20,7 @@ import { MutualfundComponent } from './components/mutualfund/mutualfund.componen
     PageComponent,
     PageNotFoundComponent,
     GpsComponent,
+    EquityComponent,
     MutualfundComponent
   ],
   imports: [
