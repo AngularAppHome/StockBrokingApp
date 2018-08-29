@@ -1,0 +1,171 @@
+<div class="main-view">
+                <!-- uiView:  --><div class="learner ng-scope">
+    <section class="lheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="lr-offset">
+                        <ol class="breadcrumb hidden-xs">
+                            <li><a ui-sref="home" href="/">Home</a></li>
+                            <li class="active">Investology</li>
+                        </ol>
+                        <h1>Investology</h1>
+                        <p>Whether you are a beginner or an experienced trader, Investology will help you to learn all about stock market, investment and trading. It covers all the topics such as Mutual Funds, IPO, Technical Analysis and much more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ngIf: learnerData.HmCfg.ShowStartFrom && learnerData.ArtDet && learnerData.ArtDet.length > 0 -->
+    <!-- ngIf: learnerData.HmCfg.SecSub && learnerData.HmCfg.SecSub.length > 0 --><section class="card-section cat-section ng-scope" ng-if="learnerData.HmCfg.SecSub &amp;&amp; learnerData.HmCfg.SecSub.length > 0" style="">
+        <div class="container">
+            <div class="row">
+                <div class="lr-offset">
+                    <div class="col-xs-12">
+                        <h2><span>Choose what to learn</span></h2>
+                    </div>
+                    <!-- ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/introduction-to-investing-c6eaf4" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Introduction to Investing" href="/investology/introduction-to-investing-c6eaf4" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~8f8a99d1-39de-4dee-a4a2-55f7d56cbdb0.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Introduction to Investing" class="ng-binding">Introduction to Investing</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">39 mins</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">8 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.6</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/learn-to-stock-markets-for-beginners-51c006" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Introduction to Stock Markets" href="/investology/learn-to-stock-markets-for-beginners-51c006" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~d2f314a1-7dc4-471f-b581-49bc25509362.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Introduction to Stock Markets" class="ng-binding">Introduction to Stock Markets</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">1h 23m</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">16 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.5</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/introduction-to-primary-market-ipo-79a025" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Introduction to Primary Market" href="/investology/introduction-to-primary-market-ipo-79a025" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~f2e0c8a9-b5e1-4845-920c-91467dbe4909.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Introduction to Primary Market" class="ng-binding">Introduction to Primary Market</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">1h 25m</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">17 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.6</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/introduction-to-mutual-funds-f7d345" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Introduction to Mutual Funds" href="/investology/introduction-to-mutual-funds-f7d345" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~21a088e7-cbef-452b-b8ec-1d6a28236416.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Introduction to Mutual Funds" class="ng-binding">Introduction to Mutual Funds</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">1h 10m</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">14 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.6</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/fundamental-analysis-218cf3" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Fundamental Analysis" href="/investology/fundamental-analysis-218cf3" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~5cad44a7-8fb7-47d4-9882-103b0792d24d.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Fundamental Analysis" class="ng-binding">Fundamental Analysis</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">1h 6m</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">10 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.6</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index --><!-- ngIf: secsub.ArticleCt != '0' --><div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-repeat="secsub in learnerData.HmCfg.SecSub track by $index" data-ng-if="secsub.ArticleCt != '0'">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl +secsub.LstImg + ')'}" ng-href="/investology/technical-analysis-2c8d50" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Choose what to learn" gtmdir-label="Technical Analysis" href="/investology/technical-analysis-2c8d50" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Section~9ffef850-a966-4635-8273-152d56a1a1ef.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h4 ng-bind="secsub.Ttl" title="Technical Analysis" class="ng-binding">Technical Analysis</h4>
+                                <div class="sec-time" ng-class="{'completed': secsub.perComp == 100, 'ongoing': (secsub.perComp > 0 &amp;&amp; secsub.perComp < 100)}"><!-- ngIf: secsub.perComp > 0 --><span class="comp-tick"></span></div>
+                                <div class="block-details">
+                                    <span class="time ng-binding" ng-bind="secsub.TmTkn | lrntime">58 mins</span>
+                                    <span class="art-count ng-binding" ng-bind="(secsub.ArticleCt == '0' || secsub.ArticleCt == '1')  ? (secsub.ArticleCt + ' Article') : (secsub.ArticleCt + ' Articles')">11 Articles</span>
+                                    <span class="rat-count ng-binding" ng-bind="secsub.Rating">4.5</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: secsub.sts -->
+                        </a>
+                    </div><!-- end ngIf: secsub.ArticleCt != '0' --><!-- end ngRepeat: secsub in learnerData.HmCfg.SecSub track by $index -->
+                </div>
+            </div>
+        </div>
+    </section><!-- end ngIf: learnerData.HmCfg.SecSub && learnerData.HmCfg.SecSub.length > 0 -->
+    <!-- ngIf: learnerData.HmCfg.ShowTopViewed && learnerData.HmCfg.ArtSub && learnerData.HmCfg.ArtSub.length > 0 --><section class="card-section mini-card ng-scope" ng-if="learnerData.HmCfg.ShowTopViewed &amp;&amp; learnerData.HmCfg.ArtSub &amp;&amp; learnerData.HmCfg.ArtSub.length > 0" style="">
+        <div class="container">
+            <div class="row">
+                <div class="lr-offset">
+                    <div class="col-xs-12">
+                        <h3><span>Read our top viewed articles</span></h3>
+                    </div>
+                    <!-- ngRepeat: artsub in learnerData.HmCfg.ArtSub track by $index --><div class="col-xs-6 col-sm-6 col-md-4 ng-scope" ng-repeat="artsub in learnerData.HmCfg.ArtSub track by $index">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl  + artsub.LstImg + ')'}" ng-href="/investology/fundamental-analysis-218cf3/annual-report-of-a-company-d4e12a" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Read our top viewed articles" gtmdir-label="Annual Report of a Company" href="/investology/fundamental-analysis-218cf3/annual-report-of-a-company-d4e12a" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Article~57ce0186-42b2-4cd8-a9de-98e90bba20ac.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h5 ng-bind="artsub.Ttl" title="Annual Report of a Company" class="ng-binding">Annual Report of a Company</h5>
+                                <div class="block-details">
+                                    <span class="views ng-binding" ng-bind="artsub.ViewCt">5339</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: artsub.sts -->
+                        </a>
+                    </div><!-- end ngRepeat: artsub in learnerData.HmCfg.ArtSub track by $index --><div class="col-xs-6 col-sm-6 col-md-4 ng-scope" ng-repeat="artsub in learnerData.HmCfg.ArtSub track by $index">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl  + artsub.LstImg + ')'}" ng-href="/investology/technical-analysis-2c8d50/what-is-technical-analysis-in-stock-market-670e0f" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Read our top viewed articles" gtmdir-label="What is Technical Analysis in Stock Market?" href="/investology/technical-analysis-2c8d50/what-is-technical-analysis-in-stock-market-670e0f" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Article~8b5ef9d1-968b-456c-8348-ce217954007e.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h5 ng-bind="artsub.Ttl" title="What is Technical Analysis in Stock Market?" class="ng-binding">What is Technical Analysis in Stock Market?</h5>
+                                <div class="block-details">
+                                    <span class="views ng-binding" ng-bind="artsub.ViewCt">4861</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: artsub.sts -->
+                        </a>
+                    </div><!-- end ngRepeat: artsub in learnerData.HmCfg.ArtSub track by $index --><div class="col-xs-6 col-sm-6 col-md-4 ng-scope" ng-repeat="artsub in learnerData.HmCfg.ArtSub track by $index">
+                        <a class="card-block" ng-style="{'background-image':'url(' + imageUrl  + artsub.LstImg + ')'}" ng-href="/investology/fundamental-analysis-218cf3/how-to-read-the-balance-sheet-of-a-company-9ff64c" gtmdir-config="" gtmdir-event="investology home menu click" gtmdir-key="learnerHome" gtmdir-text="Read our top viewed articles" gtmdir-label="How to read the balance sheet of a company?" href="/investology/fundamental-analysis-218cf3/how-to-read-the-balance-sheet-of-a-company-9ff64c" style="background-image: url(&quot;https://www.edelweiss.in/ewwebimages/WebImages/Learner/Article~3a2d326e-b25a-4428-9aac-64de3f11038e.jpg&quot;);">
+                            <div class="overlay">
+                            </div>
+                            <div class="text-block">
+                                <h5 ng-bind="artsub.Ttl" title="How to read the balance sheet of a company?" class="ng-binding">How to read the balance sheet of a company?</h5>
+                                <div class="block-details">
+                                    <span class="views ng-binding" ng-bind="artsub.ViewCt">4818</span>
+                                </div>
+                            </div>
+                            <!-- ngIf: artsub.sts -->
+                        </a>
+                    </div><!-- end ngRepeat: artsub in learnerData.HmCfg.ArtSub track by $index -->
+                </div>
+            </div>
+        </div>
+    </section><!-- end ngIf: learnerData.HmCfg.ShowTopViewed && learnerData.HmCfg.ArtSub && learnerData.HmCfg.ArtSub.length > 0 -->
+</div>
+            </div>

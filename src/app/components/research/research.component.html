@@ -1,0 +1,247 @@
+<div class="main-view">
+                <!-- uiView:  --><!--  \ content container / -->
+    <div class="container">
+        <div class="lr-offset">
+            <!--  \ Breadcrumb container / -->
+            <ol class="breadcrumb hidden-xs static-content">
+                <li><a ui-sref="home" href="/">Home</a></li>
+                <li class="active">Read Research</li>
+            </ol>
+            <!--  \ Breadcrumb container / -->
+            <!--  \ Research Search Box / -->
+            <section class="researchFilter mg-x-t50">
+                <div class="top-brdr-block pd-t40 pd-b40">
+                    <h1 class="hidden-xs text-center h1-head">Search for a Research Report </h1>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <div class="research-topfilter dropdown researcharea-topfilter" ng-click="animateScroll($event)">
+                                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Search for a research report e.g. TATACOM, Pharmaceuticals, Oil Crisis" data-ng-model="searchString" data-ng-change="getSearchResults(searchString)" data-toggle="dropdown" inputfocus="">
+                                <a href="javascript:void(0)" class="search-icon" type="submit" gtmdir-config="" gtmdir-label="" gtmdir-key="reportsearch"><i class="icon icon-25 icon-search"></i></a>
+                                <ul class="dropdown2 dropdown-menu list-unstyled ng-hide" data-ng-show="reports &amp;&amp; reports.length>0">
+                                    <div class="dropdown-header">Recent Reports on <!-- ngIf: searchString --></div>
+                                    <!-- ngRepeat: report in reports track by $index -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  \ Research Search Box / -->
+            <!--  \ Research Report Box / -->
+            <!-- ngIf: featuredArticles.length>0 --><section class="researchReport mg-t40 ng-scope" data-ng-if="featuredArticles.length>0" style="">
+                <div class="top-brdr-block">
+                    <div class="banner">
+                        <div class="graphic">
+                            <img class="fullmedia ng-isolate-scope" ed-src="Research/~9289ea82-ad2d-4ad0-a157-158cb61cfb50.jpg" alt="Market Analytics- Feature Image.jpg" src="https://www.edelweiss.in/ewwebimages/WebImages/Research/~9289ea82-ad2d-4ad0-a157-158cb61cfb50.jpg">
+                        </div>
+                        <div class="content text-center">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <h4 data-ng-bind="featuredArticles[0].SubCategoryName" class="ng-binding">Sector Report</h4>
+                                    <h2 data-ng-bind="featuredArticles[0].ArticleTitle" class="ng-binding">Market Analytics - Pharma Sector</h2>
+                                    <a class="btn load-more" ng-href="/research/sector-specific-reports-2/Market-Analytics---Pharma-Sector-fcaac8" gtmdir-config="" gtmdir-label="Market Analytics - Pharma Sector" gtmdir-key="readreport" href="/research/sector-specific-reports-2/Market-Analytics---Pharma-Sector-fcaac8"><i class="fa fa-note" ng-class="(featuredArticles[0].ContentModeID == 1) ? 'fa-note' : 'fa-play'"></i> <!-- ngIf: featuredArticles[0].ContentModeID != 1 --><!-- ngIf: featuredArticles[0].ContentModeID == 1 --><span data-ng-if="featuredArticles[0].ContentModeID == 1" class="ng-scope">READ REPORT</span><!-- end ngIf: featuredArticles[0].ContentModeID == 1 --></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hightlight-reports">
+                        <!-- ngRepeat: featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index --><div class="block ng-scope" equal-height="hightlightlock" data-ng-repeat="featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index" style="height: 156px;">
+                            <div class="inner">
+                                <h3><a ng-href="/research/stock-specific-reports-1/Deepak-Nitrite-Ltd--Q1FY19-Result-Update-af5405" data-ng-bind="featuredArticles.ArticleTitle" gtmdir-config="" gtmdir-label="Deepak Nitrite Ltd | Q1FY19 Result Update" gtmdir-key="readreport" class="ng-binding" href="/research/stock-specific-reports-1/Deepak-Nitrite-Ltd--Q1FY19-Result-Update-af5405">Deepak Nitrite Ltd | Q1FY19 Result Update</a></h3>
+                                <div class="publish-slugs">
+                                    <span class="type"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span>
+                                    <span><a ui-sref="research-listing({subCategoryParam: [{ID: featuredArticles.SubCategoryID - 0,IsEnabled: true,Name: featuredArticles.SubCategoryName}]})" data-ng-bind="featuredArticles.SubCategoryName" gtmdir-config="" gtmdir-label="Long Term - Quarterly Update" gtmdir-key="readreport" disablelink="" class="ng-binding" href="/research/articles">Long Term - Quarterly Update</a></span>
+                                </div>
+                            </div>
+                        </div><!-- end ngRepeat: featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index --><div class="block ng-scope" equal-height="hightlightlock" data-ng-repeat="featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index" style="height: 156px;">
+                            <div class="inner">
+                                <h3><a ng-href="/research/stock-specific-reports-1/JMC-Projects-India-Ltd---Q1FY19-Result-Update-a75908" data-ng-bind="featuredArticles.ArticleTitle" gtmdir-config="" gtmdir-label="JMC Projects (India) Ltd  | Q1FY19 Result Update" gtmdir-key="readreport" class="ng-binding" href="/research/stock-specific-reports-1/JMC-Projects-India-Ltd---Q1FY19-Result-Update-a75908">JMC Projects (India) Ltd  | Q1FY19 Result Update</a></h3>
+                                <div class="publish-slugs">
+                                    <span class="type"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span>
+                                    <span><a ui-sref="research-listing({subCategoryParam: [{ID: featuredArticles.SubCategoryID - 0,IsEnabled: true,Name: featuredArticles.SubCategoryName}]})" data-ng-bind="featuredArticles.SubCategoryName" gtmdir-config="" gtmdir-label="Long Term - Quarterly Update" gtmdir-key="readreport" disablelink="" class="ng-binding" href="/research/articles">Long Term - Quarterly Update</a></span>
+                                </div>
+                            </div>
+                        </div><!-- end ngRepeat: featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index --><div class="block ng-scope" equal-height="hightlightlock" data-ng-repeat="featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index" style="height: 156px;">
+                            <div class="inner">
+                                <h3><a ng-href="/research/stock-specific-reports-1/MODEL-TRADING-PORTFOLIO--Balkrishna-Industries-Ltd-f8d9d1" data-ng-bind="featuredArticles.ArticleTitle" gtmdir-config="" gtmdir-label="MODEL TRADING PORTFOLIO | Balkrishna Industries Ltd" gtmdir-key="readreport" class="ng-binding" href="/research/stock-specific-reports-1/MODEL-TRADING-PORTFOLIO--Balkrishna-Industries-Ltd-f8d9d1">MODEL TRADING PORTFOLIO | Balkrishna Industries Ltd</a></h3>
+                                <div class="publish-slugs">
+                                    <span class="type"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span>
+                                    <span><a ui-sref="research-listing({subCategoryParam: [{ID: featuredArticles.SubCategoryID - 0,IsEnabled: true,Name: featuredArticles.SubCategoryName}]})" data-ng-bind="featuredArticles.SubCategoryName" gtmdir-config="" gtmdir-label="Long Term - Quarterly Update" gtmdir-key="readreport" disablelink="" class="ng-binding" href="/research/articles">Long Term - Quarterly Update</a></span>
+                                </div>
+                            </div>
+                        </div><!-- end ngRepeat: featuredArticles in featuredArticles.slice(1,featuredArticles.length) track by $index -->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </section><!-- end ngIf: featuredArticles.length>0 -->
+            <!--  \ Research Report Box / -->
+            <!--  \ Research Pick a Category Box / -->
+            <!-- ngIf: categoryArticles.length>0 --><section class="researchPicCategory ng-scope" data-ng-if="categoryArticles.length>0" style="">
+                <h2 class="text-center">Pick a Category</h2>
+                <div class="reports">
+                    <!-- ngRepeat: categoryData in categoryArticles | filter: { CategoryID: '!4' } -->
+                    <div class="block top-brdr-block ng-scope" data-ng-repeat="categoryData in categoryArticles | filter: { CategoryID: '!4' }" track="" by="" $index="" style="height: 401px;">
+                        <div class="inner">
+                            <div class="title" style="height: 240px;">
+                                <h3>
+                                    <a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Stock Specific Reports" gtmdir-key="pickcategory" class="ng-binding" href="/research/articles">Stock Specific Reports</a>
+                                    <span class="visible-xs-inline-block arrow"></span>
+                                    <!-- ngIf: categoryData.CategoryReportCount > 0 --><div class="notification-popup ng-scope" data-ng-if="categoryData.CategoryReportCount > 0">
+                                        <span><a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="number ng-binding" disablelink="" href="/research/articles">10+</a></span>
+                                        <div class="text text10" data-ng-class="{'text10' : categoryData.CategoryReportCount>9}"><span data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="ng-binding">10+</span> new report<!-- ngIf: categoryData.CategoryReportCount>1 --><span data-ng-if="categoryData.CategoryReportCount>1" class="ng-scope">s</span><!-- end ngIf: categoryData.CategoryReportCount>1 --> this month</div>
+                                    </div><!-- end ngIf: categoryData.CategoryReportCount > 0 -->
+                                </h3>
+                                <p data-ng-bind="categoryData.CategoryDescription" class="ng-binding">We sometimes visit companies and write about them after in-depth research.</p>
+                            </div>
+                            <div class="link" data-ng-show="categoryData.ArticleUrl" style="height: 86px;"><a ng-href="/research/stock-specific-reports-1/Deepak-Nitrite-Ltd--Q1FY19-Result-Update-af5405" href="/research/stock-specific-reports-1/Deepak-Nitrite-Ltd--Q1FY19-Result-Update-af5405"><!-- ngIf: categoryData.ArticleID!=0 --><span class="type ng-scope" data-ng-if="categoryData.ArticleID!=0"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span><!-- end ngIf: categoryData.ArticleID!=0 --><div data-ng-bind="categoryData.ArticleTitle + ' >'" class="ng-binding">Deepak Nitrite Ltd | Q1FY19 Result Update &gt;</div></a></div>
+                        </div>
+                    </div><!-- end ngRepeat: categoryData in categoryArticles | filter: { CategoryID: '!4' } -->
+                    <div class="block top-brdr-block ng-scope" data-ng-repeat="categoryData in categoryArticles | filter: { CategoryID: '!4' }" track="" by="" $index="" style="height: 401px;">
+                        <div class="inner">
+                            <div class="title" style="height: 240px;">
+                                <h3>
+                                    <a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Sector Specific Reports" gtmdir-key="pickcategory" class="ng-binding" href="/research/articles">Sector Specific Reports</a>
+                                    <span class="visible-xs-inline-block arrow"></span>
+                                    <!-- ngIf: categoryData.CategoryReportCount > 0 --><div class="notification-popup ng-scope" data-ng-if="categoryData.CategoryReportCount > 0">
+                                        <span><a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="number ng-binding" disablelink="" href="/research/articles">4</a></span>
+                                        <div class="text" data-ng-class="{'text10' : categoryData.CategoryReportCount>9}"><span data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="ng-binding">4</span> new report<!-- ngIf: categoryData.CategoryReportCount>1 --><span data-ng-if="categoryData.CategoryReportCount>1" class="ng-scope">s</span><!-- end ngIf: categoryData.CategoryReportCount>1 --> this month</div>
+                                    </div><!-- end ngIf: categoryData.CategoryReportCount > 0 -->
+                                </h3>
+                                <p data-ng-bind="categoryData.CategoryDescription" class="ng-binding">We research and analyse various sectors within the stock markets e.g. IT, Pharma, FMCG etc.</p>
+                            </div>
+                            <div class="link" data-ng-show="categoryData.ArticleUrl" style="height: 86px;"><a ng-href="/research/sector-specific-reports-2/Market-Analytics---Pharma-Sector-fcaac8" href="/research/sector-specific-reports-2/Market-Analytics---Pharma-Sector-fcaac8"><!-- ngIf: categoryData.ArticleID!=0 --><span class="type ng-scope" data-ng-if="categoryData.ArticleID!=0"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span><!-- end ngIf: categoryData.ArticleID!=0 --><div data-ng-bind="categoryData.ArticleTitle + ' >'" class="ng-binding">Market Analytics - Pharma Sector &gt;</div></a></div>
+                        </div>
+                    </div><!-- end ngRepeat: categoryData in categoryArticles | filter: { CategoryID: '!4' } -->
+                    <div class="block top-brdr-block ng-scope" data-ng-repeat="categoryData in categoryArticles | filter: { CategoryID: '!4' }" track="" by="" $index="" style="height: 401px;">
+                        <div class="inner">
+                            <div class="title" style="height: 240px;">
+                                <h3>
+                                    <a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Markets &amp; Economy Reports" gtmdir-key="pickcategory" class="ng-binding" href="/research/articles">Markets &amp; Economy Reports</a>
+                                    <span class="visible-xs-inline-block arrow"></span>
+                                    <!-- ngIf: categoryData.CategoryReportCount > 0 --><div class="notification-popup ng-scope" data-ng-if="categoryData.CategoryReportCount > 0">
+                                        <span><a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="number ng-binding" disablelink="" href="/research/articles">3</a></span>
+                                        <div class="text" data-ng-class="{'text10' : categoryData.CategoryReportCount>9}"><span data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="ng-binding">3</span> new report<!-- ngIf: categoryData.CategoryReportCount>1 --><span data-ng-if="categoryData.CategoryReportCount>1" class="ng-scope">s</span><!-- end ngIf: categoryData.CategoryReportCount>1 --> this month</div>
+                                    </div><!-- end ngIf: categoryData.CategoryReportCount > 0 -->
+                                </h3>
+                                <p data-ng-bind="categoryData.CategoryDescription" class="ng-binding">We research and analyse key events and its impact on the markets.</p>
+                            </div>
+                            <div class="link" data-ng-show="categoryData.ArticleUrl" style="height: 86px;"><a ng-href="/research/markets-economy-reports-3/Economic-Spotlight---Trade-Deficit-Widens-Under-Export-Stress-5146c3" href="/research/markets-economy-reports-3/Economic-Spotlight---Trade-Deficit-Widens-Under-Export-Stress-5146c3"><!-- ngIf: categoryData.ArticleID!=0 --><span class="type ng-scope" data-ng-if="categoryData.ArticleID!=0"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span><!-- end ngIf: categoryData.ArticleID!=0 --><div data-ng-bind="categoryData.ArticleTitle + ' >'" class="ng-binding">Economic Spotlight - Trade Deficit Widens Under Export Stress &gt;</div></a></div>
+                        </div>
+                    </div><!-- end ngRepeat: categoryData in categoryArticles | filter: { CategoryID: '!4' } -->
+                    <div class="block top-brdr-block ng-scope" data-ng-repeat="categoryData in categoryArticles | filter: { CategoryID: '!4' }" track="" by="" $index="" style="height: 401px;">
+                        <div class="inner">
+                            <div class="title" style="height: 240px;">
+                                <h3>
+                                    <a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Short Term Reports" gtmdir-key="pickcategory" class="ng-binding" href="/research/articles">Short Term Reports</a>
+                                    <span class="visible-xs-inline-block arrow"></span>
+                                    <!-- ngIf: categoryData.CategoryReportCount > 0 --><div class="notification-popup ng-scope" data-ng-if="categoryData.CategoryReportCount > 0">
+                                        <span><a ui-sref="research-listing({subCategoryParam: categoryData.SubCategories})" data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="number ng-binding" disablelink="" href="/research/articles">10+</a></span>
+                                        <div class="text text10" data-ng-class="{'text10' : categoryData.CategoryReportCount>9}"><span data-ng-bind="categoryData.CategoryReportCount>9 ? '10+' : categoryData.CategoryReportCount" class="ng-binding">10+</span> new report<!-- ngIf: categoryData.CategoryReportCount>1 --><span data-ng-if="categoryData.CategoryReportCount>1" class="ng-scope">s</span><!-- end ngIf: categoryData.CategoryReportCount>1 --> this month</div>
+                                    </div><!-- end ngIf: categoryData.CategoryReportCount > 0 -->
+                                </h3>
+                                <p data-ng-bind="categoryData.CategoryDescription" class="ng-binding">We provide you with daily updates on different aspects pertaining to the stock markets.</p>
+                            </div>
+                            <div class="link" data-ng-show="categoryData.ArticleUrl" style="height: 86px;"><a ng-href="/research/short-term-reports-12/Edel-Derivative-Insights---28th-Aug-2018-d30bc9" href="/research/short-term-reports-12/Edel-Derivative-Insights---28th-Aug-2018-d30bc9"><!-- ngIf: categoryData.ArticleID!=0 --><span class="type ng-scope" data-ng-if="categoryData.ArticleID!=0"><i class="icon icon-25 icon-detail-note" ng-class="contentClassName(1)"></i></span><!-- end ngIf: categoryData.ArticleID!=0 --><div data-ng-bind="categoryData.ArticleTitle + ' >'" class="ng-binding">Edel Derivative Insights - 28th Aug 2018 &gt;</div></a></div>
+                        </div>
+                    </div><!-- end ngRepeat: categoryData in categoryArticles | filter: { CategoryID: '!4' } -->
+                    <div class="clearfix"></div>
+                </div>
+            </section><!-- end ngIf: categoryArticles.length>0 -->
+            <!--  \ Research Pick a Category Box / -->
+            <!--  \ Research Browsing History Box / -->
+            <!-- ngIf: browsingArticles.length>0 -->
+            <!--  \ Research Browsing History Box / -->
+            <!--  \ Research Watch Reports Box / -->
+            <!-- uiView: research-video --><div ui-view="research-video" class="ng-scope"><!-- ngIf: videoArticles.length>0 --><section class="watchReports mg-t50 mg-x-t0 ng-scope" ng-class="{'equity-home-video': $state.includes('oyo')}" data-ng-if="videoArticles.length>0" style="">
+    <!-- ngIf: 'research' | isState --><h2 class="text-center visible-xs ng-scope" data-ng-if="'research' | isState">Watch Reports</h2><!-- end ngIf: 'research' | isState -->
+    <!-- ngIf: 'oyo-equity' | isState -->
+    <!-- ngIf: 'oyo/mutualFund' | isState -->
+    <!-- ngIf: ('oyo-equity' | isState) || ('oyo/mutualFund' | isState) -->
+    <div class="top-brdr-block">
+        <div class="watchReportsCntr">
+            <!-- ngIf: 'research' | isState --><h2 class="text-center hidden-xs ng-scope" data-ng-if="'research' | isState">Watch Market Research Report</h2><!-- end ngIf: 'research' | isState -->
+            <div ng-class="('oyo-equity' | isState) ||('oyo/mutualFund' | isState) ? 'block-header':'col-sm-12'" class="col-sm-12">
+                <!-- ngIf: 'oyo-equity' | isState -->
+                <!-- ngIf: 'oyo/mutualFund' | isState -->
+                <!-- ngIf: ('oyo-equity' | isState) || ('oyo/mutualFund' | isState) -->
+            </div>
+            <div class="col-md-8 mainVideo hidden-xs">
+                <div class="video">
+                    <div class="thumb">
+                        <iframe width="100%" height="416" ng-src="https://www.youtube.com/embed/TPwbLcUlYk0" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/TPwbLcUlYk0"></iframe>
+                    </div>
+                </div>
+                <div class=" text ">
+                    <h3><a ng-href="/research/stock-specific-reports-1/Mayur-Uniquoters-Ltd---Long-Term-Recommendation-94fcee" data-ng-bind="videoArticles[0].ArticleTitle" class="ng-binding" href="/research/stock-specific-reports-1/Mayur-Uniquoters-Ltd---Long-Term-Recommendation-94fcee">Mayur Uniquoters Ltd. - Long Term Recommendation</a></h3>
+                    <div class="publish-slugs ">
+                        <span class="type ">
+                            <!-- ngIf: !(('oyo-equity' | isState) || ('oyo/mutualFund' | isState)) --><i class="icon icon-25 ng-scope icon-play" data-ng-if="!(('oyo-equity' | isState) || ('oyo/mutualFund' | isState))" ng-class="contentClassName(2)"></i><!-- end ngIf: !(('oyo-equity' | isState) || ('oyo/mutualFund' | isState)) -->
+                            <!-- ngIf: ('oyo-equity' | isState) || ('oyo/mutualFund' | isState) -->
+
+                        </span>
+                        <!-- ngIf: 'research' | isState --><span data-ng-if="'research' | isState" class="ng-scope"><a ui-sref="research-listing({subCategoryParam: [{ID: videoArticles[0].SubCategoryID - 0,IsEnabled: true,Name: videoArticles[0].SubCategoryName}]})" data-ng-bind="videoArticles[0].SubCategoryName " disablelink="" class="ng-binding" href="/research/articles">Long Term - Coverage Stocks</a></span><!-- end ngIf: 'research' | isState -->
+                        <span class="date  ng-binding" data-ng-bind="videoArticles[0].PublishDateFormate ">16th August 2018</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 relatedVideo ">
+                <ul class="video-list list-unstyled ">
+                    <!-- ngIf: ('oyo-equity' | isState) || ('oyo/mutualFund' | isState) -->
+                    <!-- ngRepeat: videoArticles in videoArticles.slice(1,videoArticles.length) track by $index --><li class="item clearfix ng-scope" data-ng-repeat="videoArticles in videoArticles.slice(1,videoArticles.length) track by $index">
+                        <div class="thumb ">
+                            <img class="img-responsive " ng-src="https://img.youtube.com/vi/Xm_dpB6SFY8/sddefault.jpg" alt="videoArticles.Title" src="https://img.youtube.com/vi/Xm_dpB6SFY8/sddefault.jpg">
+                            <a ng-href="/research/sector-specific-reports-2/Sector-Perspective-b5ca40" class="thumb-play" href="/research/sector-specific-reports-2/Sector-Perspective-b5ca40"><i class="icon icon-50 icon-video-play "></i></a>
+                        </div>
+                        <div class="thumb-text">
+                            <div class="bookmark"><span class="type"><i class="icon icon-25 icon-play"></i></span><a ui-sref="research-listing({subCategoryParam: [{ID: videoArticles.SubCategoryID - 0,IsEnabled: true,Name: videoArticles.SubCategoryName}]})" href="/research/articles"><span data-ng-bind="videoArticles.SubCategoryName" disablelink="" class="ng-binding">Sector Report</span></a></div>
+                            <h3><a class="multilinedText ng-binding" ng-href="/research/sector-specific-reports-2/Sector-Perspective-b5ca40" data-ng-bind="videoArticles.ArticleTitle" href="/research/sector-specific-reports-2/Sector-Perspective-b5ca40">Sector Perspective</a></h3>
+                            <div class="date ng-binding" data-ng-bind="videoArticles.PublishDateFormate">17th January 2018</div>
+                        </div>
+                    </li><!-- end ngRepeat: videoArticles in videoArticles.slice(1,videoArticles.length) track by $index --><li class="item clearfix ng-scope" data-ng-repeat="videoArticles in videoArticles.slice(1,videoArticles.length) track by $index">
+                        <div class="thumb ">
+                            <img class="img-responsive " ng-src="https://img.youtube.com/vi/r1EZsMBm6Kg/sddefault.jpg" alt="videoArticles.Title" src="https://img.youtube.com/vi/r1EZsMBm6Kg/sddefault.jpg">
+                            <a ng-href="/research/markets-economy-reports-3/ChartWatchers-November-2016-c94ee7" class="thumb-play" href="/research/markets-economy-reports-3/ChartWatchers-November-2016-c94ee7"><i class="icon icon-50 icon-video-play "></i></a>
+                        </div>
+                        <div class="thumb-text">
+                            <div class="bookmark"><span class="type"><i class="icon icon-25 icon-play"></i></span><a ui-sref="research-listing({subCategoryParam: [{ID: videoArticles.SubCategoryID - 0,IsEnabled: true,Name: videoArticles.SubCategoryName}]})" href="/research/articles"><span data-ng-bind="videoArticles.SubCategoryName" disablelink="" class="ng-binding">Markets and Economy</span></a></div>
+                            <h3><a class="multilinedText ng-binding" ng-href="/research/markets-economy-reports-3/ChartWatchers-November-2016-c94ee7" data-ng-bind="videoArticles.ArticleTitle" href="/research/markets-economy-reports-3/ChartWatchers-November-2016-c94ee7">ChartWatchers: November 2016</a></h3>
+                            <div class="date ng-binding" data-ng-bind="videoArticles.PublishDateFormate">25th November 2016</div>
+                        </div>
+                    </li><!-- end ngRepeat: videoArticles in videoArticles.slice(1,videoArticles.length) track by $index -->
+                </ul>
+                <!-- ngIf: 'research' | isState --><a class="browse-all ng-scope" ui-sref="research-listing({contentModeParam: [{ID: videoArticles[0].ContentModeID,Name: 'Video'}]})" data-ng-if="'research' | isState" disablelink="" href="/research/articles">Browse All Video Reports</a><!-- end ngIf: 'research' | isState -->
+                <!-- ngIf: !(('oyo-equity' | isState) || ('oyo/mutualFund' | isState) || ('research' | isState)) -->
+            </div>
+            <div class="clearfix "></div>
+        </div>
+    </div>
+</section><!-- end ngIf: videoArticles.length>0 -->
+</div>
+            <!--  \ Research Watch Reports Box / -->
+            <!--  \ Research Team Box / -->
+            <section class="ourresearchTeam text-center ">
+                <h2><a ui-sref="allEquityRecommendations">We Cover 214 Companies Across 24 Sectors &gt;</a></h2>
+                <a ui-sref="research-team" class="btn btn-primary load-more " gtmdir-config="" gtmdir-key="meetourreasearchteam" href="/research/research-team">MEET OUR RESEARCH TEAM</a>
+                <div class="ourTeam ">
+                    <img class="img-respensive image-center " src="assets/images/ourTeam.jpg " alt=" ">
+                </div>
+            </section>
+            <!--  \ Research Team Box / -->
+        </div>
+    </div>
+<!--  \ content container / -->
+
+<!-- Microdata Schema For Research Page -->
+<script type="application/ld+json" class="ng-scope">
+{"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+  [{"@type": "ListItem",
+"position": 1,
+"item":{"@id": " https://www.edelweiss.in",
+"name": "Edelweiss"
+}},{"@type": "ListItem",
+"position": 2,
+"item":{"@id": "https://www.edelweiss.in/research",
+"name": "Stock Market Research"
+}}]}</script> </div>
