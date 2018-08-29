@@ -1,0 +1,598 @@
+<div class="main-view">
+                <!-- uiView:  -->
+    <section class="b-head">
+        <div class="header-block">
+            <ol class="breadcrumb static-content hidden-sm hidden-xs">
+                <li><a ui-sref="home" href="/">Home</a></li>
+                <li><a ui-sref="oyo/mutualFund" href="/oyo/mutualfund">Self investing</a></li>
+                <li class="active">Primary Market</li>
+            </ol>
+
+        <ul class="index-redirect hidden-xs hidden-sm" fixbar="" style="display:none">
+            <li class="active" du-scrollspy="ipo"><a href="#ipo">Initial Public <br> Offering - IPO</a></li>
+            <!--<li du-scrollspy="fpo"><a href="#fpo">Following Public<br>Offer - FPO</a></li>
+            <li du-scrollspy="ofs"><a href="#ofs">Offers for<br>Sale - OFS</a></li>
+            <li du-scrollspy="nfo"><a href="#nfo">New Fund<br>Offering - NFO</a></li>
+            <li du-scrollspy="ncd"><a href="#ncd">Non Convertible<br>Debentures - NCD</a></li>
+            <li du-scrollspy="tfb"><a href="#tfb">Tax Free<br>Bonds</a></li>-->
+        </ul>
+
+        <div class="pageHeader pd-t0" data-ng-class="{'pd-t0':isDesktop}"><h1 class="heading">Primary Market</h1></div>
+
+        <div class="mob-tab hide">
+            <ul class="index-redirect" ng-class="{'nav nav-tabs':isMobile}">
+                <li class="active"><a data-toggle="tab" href="#ipo"><label>IPO</label></a></li>
+                <!--<li><a data-toggle="tab" href="#fpo"><label>FPO</label></a></li>
+                <li><a data-toggle="tab" href="#ofs"><label>OFS</label></a></li>
+                <li><a data-toggle="tab" href="#nfo"><label>NFO</label></a></li>
+                <li><a data-toggle="tab" href="#ncd"><label>NCD</label></a></li>
+                <li><a data-toggle="tab" href="#tfb"><label>TFB</label></a></li>-->
+            </ul>
+            <div class="right-shadow visible-xs visible-sm"></div>
+        </div>
+        </div>
+    </section>
+
+    <!-- desktop -->
+    <!-- ngIf: Banner1!=null --><section class="b-related-news hidden-xs hidden-sm ng-scope" ng-if="Banner1!=null">
+        <div class="text-center mg-t20">
+            <!--<i class="hudco-logo"></i>
+            <div class="comp-info ib">
+                <label class="heading">Hudco IPO to hit market on May 28, 2017.</label>
+                <label class="sub-title">
+                    Government to raise over Rs 1,200 crore<br>
+                    <label>Price band of Rs 56-60 per equity share. The issue will close on May 11.</label>
+                </label>
+            </div>
+            <input type="button" class="ed-btn active" value="See More Details" />-->
+            <!-- ngIf: Banner1.ImageLink!=null -->
+        </div>
+    </section><!-- end ngIf: Banner1!=null -->
+
+    <section class="b-data-tbls" ng-class="{'tab-content':isMobile}">
+        <div id="ipo" class="ipo top-brdr-block mg-b30" ng-class="{'tab-pane fade active in':isMobile}">
+            <div class="sb-head text-center pd-b0 b-b0" ng-class="{'pd-b0 b-b0':isDesktop,'pd-b0':isMobile}">
+                <h2 class="heading">Initial Public Offering - IPO</h2>
+                <label class="info-title">Easily track any IPO details below</label>
+                <!-- ngIf: isDesktop --><div class="ratio-figure tbl-tab font-16 text-center mg-t10 mg-b0 ng-scope" ng-if="isDesktop">
+                    <a ng-class="{'active inactiveLink':ismineline}" href="" ng-click="callIPOData(true)" gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="Mainline IPO" gtmdir-key="iponewissues" class="" style="">Mainline IPO</a>
+                    <span> | </span>
+                    <a ng-class="{'active inactiveLink':ismineline===false}" href="" ng-click="callIPOData(false)" gtmdir-config="" gtmdir-event="tab" gtmdir-text="tab" gtmdir-label="SME IPO" gtmdir-key="iponewissues" class="active inactiveLink" style="">SME IPO</a>
+                    <!-- ngIf: tabsshow===0 --><a gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="click" gtmdir-label="see all in detail" gtmdir-key="iponewissues" ng-if="tabsshow===0" ui-sref="ipo-overview" class="link-to-detail ng-scope" href="/new-issues/ipo-listing">See all in detail <i class="fa fa-angle-right"></i></a><!-- end ngIf: tabsshow===0 -->
+                     <!-- ngIf: tabsshow>0 -->
+                  </div><!-- end ngIf: isDesktop -->
+                <!-- horizontal line -->
+                <div class="text-center"><i class="hr-line"></i></div>
+                <div class="visible-xs visible-sm apply-4-ipo">
+                    <a ui-sref="ipo-howtoapply" class="link-to-apply" href="/how-to-apply-ipo"><i class="ed-icon apply-icon"></i>KNOW HOW TO APPLY<i class="fa fa-angle-right"></i></a>
+                </div>
+                <div class="text-center"><i class="hr-line"></i></div>
+                <!-- ngIf: !isDesktop -->
+            </div>
+
+            <!-- ngIf: IPOData.IPOOngoing.length || IPOData.IPOUpcoming.length || IPOData.IPOAboutList.length || IPOData.IPOListed.length --><div class="dd-menu visible-sm visible-xs ng-scope" data-scrollfromhere="true" ng-if="IPOData.IPOOngoing.length || IPOData.IPOUpcoming.length || IPOData.IPOAboutList.length || IPOData.IPOListed.length" fixbar="" style="">
+                <div class="ib selected-value">
+                    <!-- ngIf: isMobile && (count || selected) -->
+                    <!-- ngIf: isMobile && (!selected) -->
+                </div>
+                <!-- ngIf: isMobile -->
+                <ul class="nav nav-tabs mob">
+                    <li ng-class="{'active':(tabsshow===0)}" class="active"><a gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |ONGOING" gtmdir-key="iponewissues" data-toggle="tab" ng-click="checkClass($event);" href="#onGngIpo">ONGOING IPO</a><!-- ngIf: IPOData.IPOOngoing.length>0 --><span ng-if="IPOData.IPOOngoing.length>0" class="ng-binding ng-scope">- 3</span><!-- end ngIf: IPOData.IPOOngoing.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===1)}"><a gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |UPCOMING" gtmdir-key="iponewissues" data-toggle="tab" class="spnnumber" ng-click="checkClass($event);" href="#upCmgIpo">UPCOMING IPO</a><!-- ngIf: IPOData.IPOUpcoming.length>0 --><span ng-if="IPOData.IPOUpcoming.length>0" class="ng-binding ng-scope">-  2</span><!-- end ngIf: IPOData.IPOUpcoming.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===2)}"><a gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |ABOUT TO BE LISTED" gtmdir-key="iponewissues" data-toggle="tab" class="spnnumber" ng-click="checkClass($event);" href="#abtListedIpo">ABOUT TO BE LISTED </a><!-- ngIf: IPOData.IPOAboutList.length>0 --><span ng-if="IPOData.IPOAboutList.length>0" class="ng-binding ng-scope">- 3</span><!-- end ngIf: IPOData.IPOAboutList.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===3)}"><a gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |RECENTLY LISTED" gtmdir-key="iponewissues" data-toggle="tab" class="spnnumber" ng-click="checkClass($event);" href="#recentListedIpo">RECENTLY LISTED IPO</a><!-- ngIf: RecnList.length>0 --><span ng-if="RecnList.length>0" class="ng-binding ng-scope">-  5 </span><!-- end ngIf: RecnList.length>0 --></li>
+                </ul>
+            </div><!-- end ngIf: IPOData.IPOOngoing.length || IPOData.IPOUpcoming.length || IPOData.IPOAboutList.length || IPOData.IPOListed.length -->
+            <div class="tbl">
+                <ul class="nav nav-tabs pd-t20" ng-class="{'pd-t20':isDesktop}">
+                    <li ng-class="{'active':(tabsshow===0)}" ng-click="tabsshow=0" class="active"><a data-toggle="tab" href="#onGngIpo" gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |ONGOING" gtmdir-key="iponewissues">ONGOING IPO</a><!-- ngIf: IPOData.IPOOngoing.length>0 --><span ng-if="IPOData.IPOOngoing.length>0" class="badge ng-binding ng-scope" style="">3</span><!-- end ngIf: IPOData.IPOOngoing.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===1)}" ng-click="tabsshow=1"><a data-toggle="tab" href="#upCmgIpo" gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |UPCOMING" gtmdir-key="iponewissues">UPCOMING IPO</a><!-- ngIf: IPOData.IPOUpcoming.length>0 --><span ng-if="IPOData.IPOUpcoming.length>0" class="badge ng-binding ng-scope" style="">  2</span><!-- end ngIf: IPOData.IPOUpcoming.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===2)}" ng-click="tabsshow=2"><a data-toggle="tab" href="#abtListedIpo" gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |ABOUT TO BE LISTED" gtmdir-key="iponewissues">ABOUT TO BE LISTED</a><!-- ngIf: IPOData.IPOAboutList.length>0 --><span ng-if="IPOData.IPOAboutList.length>0" class="badge ng-binding ng-scope" style=""> 3</span><!-- end ngIf: IPOData.IPOAboutList.length>0 --></li>
+                    <li ng-class="{'active':(tabsshow===3)}" ng-click="tabsshow=3"><a data-toggle="tab" href="#recentListedIpo" gtmdir-config="" gtmdir-event="ipo tab" gtmdir-text="tab" gtmdir-label="SME IPO |RECENTLY LISTED" gtmdir-key="iponewissues">RECENTLY LISTED IPO</a><!-- ngIf: RecnList.length>0 --><span class="badge ng-binding ng-scope" ng-if="RecnList.length>0" style="">5</span><!-- end ngIf: RecnList.length>0 --></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="onGngIpo" class="tab-pane fade active in" ng-class="{'active in':(tabsshow===0)}">
+                        <!-- ngIf: IPOData.IPOOngoing.length!=0 --><div class="table ng-scope" ng-if="IPOData.IPOOngoing.length!=0">
+                            <div class="info-filter visible-sm visible-xs">
+                                <label class="ng-binding">3 ongoing IPOs</label>
+                                <!--<span class="filter-badge"><i class="ed-icon filter-icon"></i><span class="badge"></span></span>-->
+                            </div>
+                            <div class="thead">
+                                <div class="trw">
+                                    <label><span>Company</span></label>
+                                    <label><span>Price Band <span>(Rs.)</span></span></label>
+                                    <label><span>Open Date</span></label>
+                                    <label><span>Close Date</span></label>
+                                    <label><span>No. of times subscribed</span></label>
+                                </div>
+                            </div>
+                            <!-- ngIf: IPOData.IPOOngoing.length>0 --><div class="tbody ng-scope" ng-if="IPOData.IPOOngoing.length>0" style="">
+                                <!-- ngRepeat: ipo in IPOData.IPOOngoing | orderBy:'OPENDATE' --><div class="trw ng-scope" ng-repeat="ipo in IPOData.IPOOngoing | orderBy:'OPENDATE'">
+                                    <label><a gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |ONGOING |Aaron Industries Ltd" gtmdir-key="iponewissues" ng-click="callSpecificPage(ipo)" class="ng-binding">Aaron Industries Ltd IPO</a> </label>
+
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <!-- ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 --><span ng-if="ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00" class="ng-binding ng-scope">38</span><!-- end ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 -->
+                                        <!-- ngIf: ipo.ISSUEPRICE==null || ipo.ISSUEPRICE==0.00 -->
+                                    </label>
+                                    <label>
+                                        <span>Open Date</span>
+                                        <!--<span data-ng-class="{'highlight':ipo.OPENDATE==today}"><span ng-bind="ipo.OPENDATE==today?'Today':'{{ipo.OPENDATE | date:'MMM dd'}}'"></span></span>-->
+                                        <!--<span>{{ipo.OPENDATE| date:'MMM dd'}}</span>-->
+                                        <!--</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.OPENDATE==today --><!-- ngIf: ipo.OPENDATE==tomorrow -->
+                                            <!-- ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today --><span ng-if="ipo.OPENDATE!=tomorrow &amp;&amp; ipo.OPENDATE!=today" class="ng-binding ng-scope">Aug 20</span><!-- end ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today -->
+                                        </span>
+
+                                    </label>
+                                    <label>
+                                        <span>Close Date</span>
+                                        <!--<span>{{ipo.CLOSDATE| date:'MMM dd'}}</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.CLOSDATE==today --><!-- ngIf: ipo.CLOSDATE==tomorrow -->
+                                            <!-- ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today --><span ng-if="ipo.CLOSDATE!=tomorrow &amp;&amp; ipo.CLOSDATE!=today" class="ng-binding ng-scope">Aug 24</span><!-- end ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today -->
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span>No. of times subscribed</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isDesktop --><span ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.TOTTIME>0 &amp;&amp; isDesktop" class="ng-scope">
+                                            <a uib-tooltip-template="'subscribeInfo.html'" tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body="false" tooltip-trigger="mouseenter" tooltip-class="tooltip-ipo tt-subscribe-info" ng-mouseover="toolTip = ipo" class="ng-binding">0.35</a>
+                                            <!-- ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null && ipo.TOTTIME>0 --><span class="time ng-binding ng-scope" ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.UPDTIME!=null &amp;&amp; ipo.TOTTIME>0">as of 21 Aug, 05:00 pm</span><!-- end ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null && ipo.TOTTIME>0 -->
+                                        </span><!-- end ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isDesktop -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isMobile -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME<=0 -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOOngoing | orderBy:'OPENDATE' --><div class="trw ng-scope" ng-repeat="ipo in IPOData.IPOOngoing | orderBy:'OPENDATE'">
+                                    <label><a gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |ONGOING |Dangee Dums Ltd" gtmdir-key="iponewissues" ng-click="callSpecificPage(ipo)" class="ng-binding">Dangee Dums Ltd IPO</a> </label>
+
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <!-- ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 --><span ng-if="ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00" class="ng-binding ng-scope">74</span><!-- end ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 -->
+                                        <!-- ngIf: ipo.ISSUEPRICE==null || ipo.ISSUEPRICE==0.00 -->
+                                    </label>
+                                    <label>
+                                        <span>Open Date</span>
+                                        <!--<span data-ng-class="{'highlight':ipo.OPENDATE==today}"><span ng-bind="ipo.OPENDATE==today?'Today':'{{ipo.OPENDATE | date:'MMM dd'}}'"></span></span>-->
+                                        <!--<span>{{ipo.OPENDATE| date:'MMM dd'}}</span>-->
+                                        <!--</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.OPENDATE==today --><!-- ngIf: ipo.OPENDATE==tomorrow -->
+                                            <!-- ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today --><span ng-if="ipo.OPENDATE!=tomorrow &amp;&amp; ipo.OPENDATE!=today" class="ng-binding ng-scope">Aug 20</span><!-- end ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today -->
+                                        </span>
+
+                                    </label>
+                                    <label>
+                                        <span>Close Date</span>
+                                        <!--<span>{{ipo.CLOSDATE| date:'MMM dd'}}</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.CLOSDATE==today --><!-- ngIf: ipo.CLOSDATE==tomorrow -->
+                                            <!-- ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today --><span ng-if="ipo.CLOSDATE!=tomorrow &amp;&amp; ipo.CLOSDATE!=today" class="ng-binding ng-scope">Aug 24</span><!-- end ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today -->
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span>No. of times subscribed</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isDesktop --><span ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.TOTTIME>0 &amp;&amp; isDesktop" class="ng-scope">
+                                            <a uib-tooltip-template="'subscribeInfo.html'" tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body="false" tooltip-trigger="mouseenter" tooltip-class="tooltip-ipo tt-subscribe-info" ng-mouseover="toolTip = ipo" class="ng-binding">3.15</a>
+                                            <!-- ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null && ipo.TOTTIME>0 --><span class="time ng-binding ng-scope" ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.UPDTIME!=null &amp;&amp; ipo.TOTTIME>0">as of 21 Aug, 05:00 pm</span><!-- end ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null && ipo.TOTTIME>0 -->
+                                        </span><!-- end ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isDesktop -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isMobile -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME<=0 -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOOngoing | orderBy:'OPENDATE' --><div class="trw ng-scope" ng-repeat="ipo in IPOData.IPOOngoing | orderBy:'OPENDATE'">
+                                    <label><a gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |ONGOING |Add-Shop Promotions Ltd" gtmdir-key="iponewissues" ng-click="callSpecificPage(ipo)" class="ng-binding">Add-Shop Promotions Ltd IPO</a> </label>
+
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <!-- ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 --><span ng-if="ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00" class="ng-binding ng-scope">26</span><!-- end ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 -->
+                                        <!-- ngIf: ipo.ISSUEPRICE==null || ipo.ISSUEPRICE==0.00 -->
+                                    </label>
+                                    <label>
+                                        <span>Open Date</span>
+                                        <!--<span data-ng-class="{'highlight':ipo.OPENDATE==today}"><span ng-bind="ipo.OPENDATE==today?'Today':'{{ipo.OPENDATE | date:'MMM dd'}}'"></span></span>-->
+                                        <!--<span>{{ipo.OPENDATE| date:'MMM dd'}}</span>-->
+                                        <!--</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.OPENDATE==today --><!-- ngIf: ipo.OPENDATE==tomorrow -->
+                                            <!-- ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today --><span ng-if="ipo.OPENDATE!=tomorrow &amp;&amp; ipo.OPENDATE!=today" class="ng-binding ng-scope">Aug 21</span><!-- end ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today -->
+                                        </span>
+
+                                    </label>
+                                    <label>
+                                        <span>Close Date</span>
+                                        <!--<span>{{ipo.CLOSDATE| date:'MMM dd'}}</span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.CLOSDATE==today --><!-- ngIf: ipo.CLOSDATE==tomorrow -->
+                                            <!-- ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today --><span ng-if="ipo.CLOSDATE!=tomorrow &amp;&amp; ipo.CLOSDATE!=today" class="ng-binding ng-scope">Aug 30</span><!-- end ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today -->
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span>No. of times subscribed</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isDesktop -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME>0 && isMobile -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME<=0 --><span ng-if="ipo.TOTTIME==null || ipo.TOTTIME<=0" class="ng-scope">Awaited</span><!-- end ngIf: ipo.TOTTIME==null || ipo.TOTTIME<=0 -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOOngoing | orderBy:'OPENDATE' -->
+                            </div><!-- end ngIf: IPOData.IPOOngoing.length>0 -->
+                        </div><!-- end ngIf: IPOData.IPOOngoing.length!=0 -->
+                        <!-- ngIf: IPOData.IPOOngoing.length<=0 -->
+                        <div class="btn-block text-center">
+                            <a target="_blank" ui-sref="ipo-howtoapply" class="ed-btn active" data-ng-class="{'inactive' :(IPOData.IPOOngoing.length==0)}" gtmdir-config="" gtmdir-event="apply" gtmdir-text="click" gtmdir-label="SME IPO |ONGOING |How to Apply" gtmdir-key="iponewissues" href="/how-to-apply-ipo">How to Apply</a>
+                        </div>
+                    </div>
+                    <div id="upCmgIpo" class="tab-pane fade" ng-class="{'active in':(tabsshow===1)}">
+                        <!-- ngIf: IPOData.IPOUpcoming.length!=0 --><div class="table ng-scope" ng-if="IPOData.IPOUpcoming.length!=0">
+                            <div class="info-filter visible-sm visible-xs">
+                                <label class="ng-binding">2 upcoming IPOs</label>
+                                <!--<span class="filter-badge"><i class="ed-icon filter-icon active"></i><span class="badge">5</span></span>-->
+                            </div>
+                            <div class="thead">
+                                <div class="trw">
+                                    <label><span>Company</span></label>
+                                    <label><span>Price Band <span>(Rs.)</span></span></label>
+                                    <label><span>Open Date</span></label>
+                                    <label><span>Close Date</span></label>
+                                    <!--<label><span>No of times subscribed</span></label>-->
+                                </div>
+                            </div>
+                            <!-- ngIf: IPOData.IPOUpcoming.length>0 --><div class="tbody ng-scope" ng-if="IPOData.IPOUpcoming.length>0" style="">
+                                <!-- ngRepeat: ipo in IPOData.IPOUpcoming | limitTo: upcount | orderBy:'OPENDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in IPOData.IPOUpcoming | limitTo: upcount | orderBy:'OPENDATE' track by $index">
+                                    <label>
+                                        <!--<a ng-if="ipo.LISTDATE===null" href="javascript:void(0);">{{ipo.Name}}</a>-->
+                                        <a ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |UPCOMING |Supreme Engineering Ltd" gtmdir-key="iponewissues" class="ng-binding">Supreme Engineering Ltd IPO</a>
+                                    </label>
+
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <!-- ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 --><span ng-if="ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00" class="ng-binding ng-scope">27 - 32</span><!-- end ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 -->
+                                        <!-- ngIf: ipo.ISSUEPRICE==null || ipo.ISSUEPRICE==0.00 -->
+                                    </label>
+                                    <label>
+                                        <span>Open Date</span>
+                                        <!--<span ng-bind="ipo.OPENDATE !=null?'{{ipo.OPENDATE |date:'MMM dd'}}':'Not Available'"></span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.OPENDATE==today --><!-- ngIf: ipo.OPENDATE==tomorrow -->
+                                            <!-- ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today --><span ng-if="ipo.OPENDATE!=tomorrow &amp;&amp; ipo.OPENDATE!=today" class="ng-binding ng-scope">Aug 24</span><!-- end ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today -->
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span>Close Date</span>
+                                        <!--<span>{{ipo.CLOSDATE |date:'MMM dd'}}</span>-->
+                                        <!--<span ng-bind="ipo.CLOSDATE !=null?'{{ipo.CLOSDATE |date:'MMM dd'}}':'Not Available'"></span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.CLOSDATE==today --><!-- ngIf: ipo.CLOSDATE==tomorrow -->
+                                            <!-- ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today --><span ng-if="ipo.CLOSDATE!=tomorrow &amp;&amp; ipo.CLOSDATE!=today" class="ng-binding ng-scope">Aug 29</span><!-- end ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today -->
+                                        </span>
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOUpcoming | limitTo: upcount | orderBy:'OPENDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in IPOData.IPOUpcoming | limitTo: upcount | orderBy:'OPENDATE' track by $index">
+                                    <label>
+                                        <!--<a ng-if="ipo.LISTDATE===null" href="javascript:void(0);">{{ipo.Name}}</a>-->
+                                        <a ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |UPCOMING |Marshall Machines Ltd" gtmdir-key="iponewissues" class="ng-binding">Marshall Machines Ltd IPO</a>
+                                    </label>
+
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <!-- ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 --><span ng-if="ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00" class="ng-binding ng-scope">42</span><!-- end ngIf: ipo.ISSUEPRICE!=null || ipo.ISSUEPRICE!=0.00 -->
+                                        <!-- ngIf: ipo.ISSUEPRICE==null || ipo.ISSUEPRICE==0.00 -->
+                                    </label>
+                                    <label>
+                                        <span>Open Date</span>
+                                        <!--<span ng-bind="ipo.OPENDATE !=null?'{{ipo.OPENDATE |date:'MMM dd'}}':'Not Available'"></span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.OPENDATE==today --><!-- ngIf: ipo.OPENDATE==tomorrow -->
+                                            <!-- ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today --><span ng-if="ipo.OPENDATE!=tomorrow &amp;&amp; ipo.OPENDATE!=today" class="ng-binding ng-scope">Aug 28</span><!-- end ngIf: ipo.OPENDATE!=tomorrow && ipo.OPENDATE!=today -->
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span>Close Date</span>
+                                        <!--<span>{{ipo.CLOSDATE |date:'MMM dd'}}</span>-->
+                                        <!--<span ng-bind="ipo.CLOSDATE !=null?'{{ipo.CLOSDATE |date:'MMM dd'}}':'Not Available'"></span>-->
+                                        <span>
+                                            <!-- ngIf: ipo.CLOSDATE==today --><!-- ngIf: ipo.CLOSDATE==tomorrow -->
+                                            <!-- ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today --><span ng-if="ipo.CLOSDATE!=tomorrow &amp;&amp; ipo.CLOSDATE!=today" class="ng-binding ng-scope">Aug 30</span><!-- end ngIf: ipo.CLOSDATE!=tomorrow && ipo.CLOSDATE!=today -->
+                                        </span>
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOUpcoming | limitTo: upcount | orderBy:'OPENDATE' track by $index -->
+
+                            </div><!-- end ngIf: IPOData.IPOUpcoming.length>0 -->
+                        </div><!-- end ngIf: IPOData.IPOUpcoming.length!=0 -->
+                        <!-- ngIf: IPOData.IPOUpcoming.length<=0 -->
+                        <div class="btn-block text-center">
+                            <!-- ngIf: IPOData.IPOUpcoming.length>5 && showloadmore && isDesktop -->
+                            <a class="ed-btn active" target="_blank" ui-sref="ipo-howtoapply" data-ng-class="{'inactive' :(IPOData.IPOUpcoming.length==0)}" gtmdir-config="" gtmdir-event="apply" gtmdir-text="click" gtmdir-label="SME IPO |UPCOMING |How to Apply" gtmdir-key="iponewissues" href="/how-to-apply-ipo">How to Apply</a>
+                        </div>
+                        <!--<div class="btn-block text-center">
+                            <a ng-click="ShowallUpcmg()" ng-if="IPOData.IPOUpcoming.length>5 && showloadmore" class="link-to-detail mg-b30">See all upcoming issues <i class="fa fa-angle-right"></i></a>
+                            <div class="pd-b10">
+                                <a class="ed-btn active" ui-sref="ipo-howtoapply" data-ng-class="{'inactive' :(IPOData.IPOUpcoming.length==0)}">How to Apply</a>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div id="abtListedIpo" class="tab-pane fade" ng-class="{'active in':(tabsshow===2)}">
+                        <!-- ngIf: IPOData.IPOAboutList.length!=0 --><div class="table ng-scope" ng-if="IPOData.IPOAboutList.length!=0">
+                            <div class="info-filter visible-sm visible-xs">
+                                <label class="ng-binding">3 about to be listed IPOs</label>
+                                <!--<span class="filter-badge"><i class="ed-icon filter-icon"></i><span class="badge"></span></span>-->
+                            </div>
+                            <div class="thead">
+                                <div class="trw">
+                                    <label><span>Company</span></label>
+                                    <label><span>List Date(Estd)</span></label>
+                                    <label><span>Subscription</span></label>
+                                    <label><span>Price Band <span>(Rs.)</span></span></label>
+                                    <label><span>Allotment Status</span></label>
+
+                                </div>
+                            </div>
+                            <!-- ngIf: IPOData.IPOAboutList.length>0 --><div class="tbody ng-scope" ng-if="IPOData.IPOAboutList.length>0" style="">
+                                <!-- ngRepeat: ipo in IPOData.IPOAboutList| orderBy:'LISTDATE' --><div class="trw ng-scope" data-ng-repeat="ipo in IPOData.IPOAboutList| orderBy:'LISTDATE'">
+                                    <label>
+                                        <a ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |About tobe listed |Salebhai Internet Ltd" gtmdir-key="iponewissues" class="ng-binding">Salebhai Internet Ltd IPO</a>
+                                        <!--<a ng-if="ipo.isAdmin===false">{{ipo.Name}}</a>-->
+                                    </label>
+                                    <!--<label> </label>-->
+
+
+                                    <label>
+                                        <span>List Date</span>
+                                        <span class="ng-binding">Aug 13</span>
+                                    </label>
+                                    <label>
+                                        <span>subscription</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 --><span ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.TOTTIME >0" class="ng-binding ng-scope">0.24 times</span><!-- end ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME <=0 -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null -->
+                                    </label>
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <span class="ng-binding">105</span><!-- ngIf: ipo.ISSUEPRI2>0 -->
+                                    </label>
+                                    <label>
+                                        <span>Allotment status</span>
+                                        <!--<span>{{ipo.StatusLink}}</span>-->
+                                        <!-- ngIf: ipo.StatusLink!=null -->
+                                        <!-- ngIf: ipo.StatusLink===null --><a ng-if="ipo.StatusLink===null" class="ed-btn active ng-scope" uib-tooltip-template="'checkallotment.html'" tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body="true" tooltip-class="tooltip-ipo  tooltip-allot" tooltip-is-open="check.ckOpen" tooltip-trigger="outsideClick" ng-class="{'open':check.ckOpen===true}" ng-mouseover="toolTip = ipo" gtmdir-config="" gtmdir-event="check" gtmdir-text="about to be listed" gtmdir-label="SME IPO |Check |Salebhai Internet Ltd" gtmdir-key="iponewissues">
+                                            Check
+                                        </a><!-- end ngIf: ipo.StatusLink===null -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOAboutList| orderBy:'LISTDATE' --><div class="trw ng-scope" data-ng-repeat="ipo in IPOData.IPOAboutList| orderBy:'LISTDATE'">
+                                    <label>
+                                        <a ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |About tobe listed |Sungold Media &amp; Entertainment Ltd" gtmdir-key="iponewissues" class="ng-binding">Sungold Media &amp; Entertainment Ltd IPO</a>
+                                        <!--<a ng-if="ipo.isAdmin===false">{{ipo.Name}}</a>-->
+                                    </label>
+                                    <!--<label> </label>-->
+
+
+                                    <label>
+                                        <span>List Date</span>
+                                        <span class="ng-binding">Aug 27</span>
+                                    </label>
+                                    <label>
+                                        <span>subscription</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 --><span ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.TOTTIME >0" class="ng-binding ng-scope">1.91 times</span><!-- end ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME <=0 -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null -->
+                                    </label>
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <span class="ng-binding">10</span><!-- ngIf: ipo.ISSUEPRI2>0 -->
+                                    </label>
+                                    <label>
+                                        <span>Allotment status</span>
+                                        <!--<span>{{ipo.StatusLink}}</span>-->
+                                        <!-- ngIf: ipo.StatusLink!=null -->
+                                        <!-- ngIf: ipo.StatusLink===null --><a ng-if="ipo.StatusLink===null" class="ed-btn active ng-scope" uib-tooltip-template="'checkallotment.html'" tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body="true" tooltip-class="tooltip-ipo  tooltip-allot" tooltip-is-open="check.ckOpen" tooltip-trigger="outsideClick" ng-class="{'open':check.ckOpen===true}" ng-mouseover="toolTip = ipo" gtmdir-config="" gtmdir-event="check" gtmdir-text="about to be listed" gtmdir-label="SME IPO |Check |Sungold Media &amp; Entertainment Ltd" gtmdir-key="iponewissues">
+                                            Check
+                                        </a><!-- end ngIf: ipo.StatusLink===null -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOAboutList| orderBy:'LISTDATE' --><div class="trw ng-scope" data-ng-repeat="ipo in IPOData.IPOAboutList| orderBy:'LISTDATE'">
+                                    <label>
+                                        <a ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |About tobe listed |Powerful Technologies Ltd" gtmdir-key="iponewissues" class="ng-binding">Powerful Technologies Ltd IPO</a>
+                                        <!--<a ng-if="ipo.isAdmin===false">{{ipo.Name}}</a>-->
+                                    </label>
+                                    <!--<label> </label>-->
+
+
+                                    <label>
+                                        <span>List Date</span>
+                                        <span class="ng-binding">Aug 29</span>
+                                    </label>
+                                    <label>
+                                        <span>subscription</span>
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 --><span ng-if="ipo.TOTTIME!=null &amp;&amp; ipo.TOTTIME >0" class="ng-binding ng-scope">1.24 times</span><!-- end ngIf: ipo.TOTTIME!=null && ipo.TOTTIME >0 -->
+                                        <!-- ngIf: ipo.TOTTIME==null || ipo.TOTTIME <=0 -->
+                                        <!-- ngIf: ipo.TOTTIME!=null && ipo.UPDTIME!=null -->
+                                    </label>
+                                    <label>
+                                        <span>Price Band <span>(Rs.)</span></span>
+                                        <span class="ng-binding">51</span><!-- ngIf: ipo.ISSUEPRI2>0 -->
+                                    </label>
+                                    <label>
+                                        <span>Allotment status</span>
+                                        <!--<span>{{ipo.StatusLink}}</span>-->
+                                        <!-- ngIf: ipo.StatusLink!=null -->
+                                        <!-- ngIf: ipo.StatusLink===null --><a ng-if="ipo.StatusLink===null" class="ed-btn active ng-scope" uib-tooltip-template="'checkallotment.html'" tooltip-animation="false" tooltip-placement="auto bottom" tooltip-append-to-body="true" tooltip-class="tooltip-ipo  tooltip-allot" tooltip-is-open="check.ckOpen" tooltip-trigger="outsideClick" ng-class="{'open':check.ckOpen===true}" ng-mouseover="toolTip = ipo" gtmdir-config="" gtmdir-event="check" gtmdir-text="about to be listed" gtmdir-label="SME IPO |Check |Powerful Technologies Ltd" gtmdir-key="iponewissues">
+                                            Check
+                                        </a><!-- end ngIf: ipo.StatusLink===null -->
+                                    </label>
+                                </div><!-- end ngRepeat: ipo in IPOData.IPOAboutList| orderBy:'LISTDATE' -->
+                            </div><!-- end ngIf: IPOData.IPOAboutList.length>0 -->
+                        </div><!-- end ngIf: IPOData.IPOAboutList.length!=0 -->
+                        <!-- ngIf: IPOData.IPOAboutList.length<=0 -->
+                        <!--<div class="btn-block text-center">
+                            <input type="button" class="ed-btn active" value="How to Apply" data-ng-class="{'inactive' :(IPOData.IPOOngoing.length==0)}" />
+                        </div>-->
+                    </div>
+                    <div id="recentListedIpo" class="tab-pane fade" ng-class="{'active in':(tabsshow===3)}">
+                        <div class="table">
+                            <div class="info-filter visible-sm visible-xs">
+                                <label><!-- ngIf: RecnList.length>0 --><span ng-if="RecnList.length>0" class="ng-binding ng-scope" style="">5</span><!-- end ngIf: RecnList.length>0 --> recently listed IPOs</label>
+                                <span class="filter-badge"><button class="ed-icon filter-icon collapsed" data-target="#filterBlock" data-toggle="collapse"></button><span class="badge"></span></span>
+                                <div class="collapse filterby" id="filterBlock">
+                                    <div class="triangle-arrow"></div>
+                                    <button class="ed-icon i-close lg" data-target="#filterBlock" data-toggle="collapse"></button>
+                                    <div class="blk blk1">
+                                        <label class="lbl">Listing Date Range</label>
+                                        <div class="inp-lbl ib from angular-calender">
+                                            <i ng-click="dtOpen1()" class="ed-icon calendar sm"></i><span class="text">From:</span><input type="text" id="yrFrm" ng-click="dtOpen1()" class="form-control ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required ng-valid-date" placeholder="DD/MM/YYYY" datepicker-options="dateOptions1" datepicker-class="ib" ng-change="changeDate(1)" uib-datepicker-popup="dd/MM/yyyy" required="required" ng-model="fromDate" is-open="isFromOpen" ng-required="true" close-text="Close" show-button-bar="false" popup-placement="auto bottom" ng-readonly="true" readonly="readonly"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-empty ng-valid">
+  <!-- ngIf: isOpen -->
+</div>
+                                        </div>
+                                        <div class="inp-lbl ib to angular-calender">
+                                            <i ng-click="dtOpen2()" class="ed-icon calendar sm"></i><span class="text">To:</span><input type="text" id="yrTo" ng-click="dtOpen2()" class="form-control ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-required ng-valid-date" placeholder="DD/MM/YYYY" uib-datepicker-popup="dd/MM/yyyy" datepicker-options="dateOptions2" datepicker-class="ib" ng-change="changeDate(2)" required="required" ng-model="toDate" is-open="istoOpen" ng-required="true" close-text="Close" show-button-bar="false" popup-placement="auto bottom" ng-readonly="true" readonly="readonly"><div uib-datepicker-popup-wrap="" ng-model="date" ng-change="dateSelection(date)" template-url="uib/template/datepickerPopup/popup.html" class="ng-empty ng-valid">
+  <!-- ngIf: isOpen -->
+</div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-blk text-center">
+                                        <input type="button" ng-class="{'disabled':fromDate =='' || toDate==''}" class="ed-btn active disabled" value="Apply Filter" ng-click="callSearch()">
+                                        <input type="button" class="ed-btn plain disabled" ng-class="{'disabled':fromDate =='' &amp;&amp; toDate==''}" value="Reset" ng-click="Callreset()">
+                                    </div>
+                                </div>
+                                <!-- ngIf: monthtxt===0 -->
+                            </div>
+                            <div class="thead">
+                                <div class="trw">
+                                    <label><span>Company</span></label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span></label>
+                                    <label><span>Listed On</span></label>
+                                    <label><span><span>Issue Price <span>(Rs.)</span></span></span></label>
+                                    <label><span>Change % After Listing</span></label>
+                                </div>
+                            </div>
+                            <!-- ngIf: IPOData.IPOListed.length>0 --><div class="tbody ng-scope" ng-if="IPOData.IPOListed.length>0" style="">
+                                <!-- ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index  ">
+                                    <label>
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl==null -->
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl!=null -->
+                                        <!-- ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 --><a ng-if="ipo.displayUptoDate!=null || ipo.isShow===1" ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |Recently listed |Deep Polymers Ltd" gtmdir-key="iponewissues" class="ng-binding ng-scope">Deep Polymers Ltd IPO</a><!-- end ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 -->
+                                    </label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span><!-- ngIf: ipo.LTP!=null --><!-- ngIf: ipo.LTP==null --><span ng-if="ipo.LTP==null" class="ng-scope">Not Available</span><!-- end ngIf: ipo.LTP==null --></label>
+                                    <!-- ngIf: !isDesktop -->
+                                    <!-- ngIf: isDesktop --><label ng-if="isDesktop" class="ng-scope"><span>Listed On</span><span class="ng-binding">Aug 23</span></label><!-- end ngIf: isDesktop -->
+                                    <label><span>Issue Price (Rs.)</span><span><span class="ng-binding">40</span></span></label>
+                                    <!--<label><span>Change % After Listing</span><span class="plus">{{ipo.chngpriceper}}%</span></label>-->
+                                    <label ng-show="ipo.chngpriceper!=0 &amp;&amp; ipo.chngpriceper!=null" class="ng-hide"><span>Change % After Listing</span><span data-ng-class="ipo.chngpriceper>0 ?'plus':'minus'" class="ng-binding minus">%</span></label>
+                                    <!-- ngIf: ipo.chngpriceper==0 && ipo.chngpriceper!=null -->
+                                    <!-- ngIf: ipo.chngpriceper===null --><label ng-if="ipo.chngpriceper===null" class="ng-scope"><span>Change % After Listing</span><span></span>Not Available</label><!-- end ngIf: ipo.chngpriceper===null -->
+                                </div><!-- end ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index  ">
+                                    <label>
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl==null -->
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl!=null -->
+                                        <!-- ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 --><a ng-if="ipo.displayUptoDate!=null || ipo.isShow===1" ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |Recently listed |Saketh Exim Ltd" gtmdir-key="iponewissues" class="ng-binding ng-scope">Saketh Exim Ltd IPO</a><!-- end ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 -->
+                                    </label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span><!-- ngIf: ipo.LTP!=null --><span ng-if="ipo.LTP!=null" class="ng-binding ng-scope">69.55</span><!-- end ngIf: ipo.LTP!=null --><!-- ngIf: ipo.LTP==null --></label>
+                                    <!-- ngIf: !isDesktop -->
+                                    <!-- ngIf: isDesktop --><label ng-if="isDesktop" class="ng-scope"><span>Listed On</span><span class="ng-binding">Aug 13</span></label><!-- end ngIf: isDesktop -->
+                                    <label><span>Issue Price (Rs.)</span><span><span class="ng-binding">69</span></span></label>
+                                    <!--<label><span>Change % After Listing</span><span class="plus">{{ipo.chngpriceper}}%</span></label>-->
+                                    <label ng-show="ipo.chngpriceper!=0 &amp;&amp; ipo.chngpriceper!=null" class=""><span>Change % After Listing</span><span data-ng-class="ipo.chngpriceper>0 ?'plus':'minus'" class="ng-binding plus">0.80%</span></label>
+                                    <!-- ngIf: ipo.chngpriceper==0 && ipo.chngpriceper!=null -->
+                                    <!-- ngIf: ipo.chngpriceper===null -->
+                                </div><!-- end ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index  ">
+                                    <label>
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl==null -->
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl!=null -->
+                                        <!-- ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 --><a ng-if="ipo.displayUptoDate!=null || ipo.isShow===1" ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |Recently listed |Ushanti Colour Chem Ltd" gtmdir-key="iponewissues" class="ng-binding ng-scope">Ushanti Colour Chem Ltd IPO</a><!-- end ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 -->
+                                    </label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span><!-- ngIf: ipo.LTP!=null --><span ng-if="ipo.LTP!=null" class="ng-binding ng-scope">68.9</span><!-- end ngIf: ipo.LTP!=null --><!-- ngIf: ipo.LTP==null --></label>
+                                    <!-- ngIf: !isDesktop -->
+                                    <!-- ngIf: isDesktop --><label ng-if="isDesktop" class="ng-scope"><span>Listed On</span><span class="ng-binding">Aug 02</span></label><!-- end ngIf: isDesktop -->
+                                    <label><span>Issue Price (Rs.)</span><span><span class="ng-binding">60</span></span></label>
+                                    <!--<label><span>Change % After Listing</span><span class="plus">{{ipo.chngpriceper}}%</span></label>-->
+                                    <label ng-show="ipo.chngpriceper!=0 &amp;&amp; ipo.chngpriceper!=null" class=""><span>Change % After Listing</span><span data-ng-class="ipo.chngpriceper>0 ?'plus':'minus'" class="ng-binding plus">14.83%</span></label>
+                                    <!-- ngIf: ipo.chngpriceper==0 && ipo.chngpriceper!=null -->
+                                    <!-- ngIf: ipo.chngpriceper===null -->
+                                </div><!-- end ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index  ">
+                                    <label>
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl==null -->
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl!=null -->
+                                        <!-- ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 --><a ng-if="ipo.displayUptoDate!=null || ipo.isShow===1" ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |Recently listed |Ganesh Films India Ltd" gtmdir-key="iponewissues" class="ng-binding ng-scope">Ganesh Films India Ltd IPO</a><!-- end ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 -->
+                                    </label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span><!-- ngIf: ipo.LTP!=null --><span ng-if="ipo.LTP!=null" class="ng-binding ng-scope">82.85</span><!-- end ngIf: ipo.LTP!=null --><!-- ngIf: ipo.LTP==null --></label>
+                                    <!-- ngIf: !isDesktop -->
+                                    <!-- ngIf: isDesktop --><label ng-if="isDesktop" class="ng-scope"><span>Listed On</span><span class="ng-binding">Jul 31</span></label><!-- end ngIf: isDesktop -->
+                                    <label><span>Issue Price (Rs.)</span><span><span class="ng-binding">80</span></span></label>
+                                    <!--<label><span>Change % After Listing</span><span class="plus">{{ipo.chngpriceper}}%</span></label>-->
+                                    <label ng-show="ipo.chngpriceper!=0 &amp;&amp; ipo.chngpriceper!=null" class=""><span>Change % After Listing</span><span data-ng-class="ipo.chngpriceper>0 ?'plus':'minus'" class="ng-binding plus">3.56%</span></label>
+                                    <!-- ngIf: ipo.chngpriceper==0 && ipo.chngpriceper!=null -->
+                                    <!-- ngIf: ipo.chngpriceper===null -->
+                                </div><!-- end ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index --><div class="trw ng-scope" ng-repeat="ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index  ">
+                                    <label>
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl==null -->
+                                        <!-- ngIf: ipo.displayUptoDate==null && ipo.isShow===0 && ipo.quotesUrl!=null -->
+                                        <!-- ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 --><a ng-if="ipo.displayUptoDate!=null || ipo.isShow===1" ng-click="callSpecificPage(ipo)" gtmdir-config="" gtmdir-event="company click" gtmdir-text="company click" gtmdir-label="SME IPO |Recently listed |Supershakti Metaliks Ltd" gtmdir-key="iponewissues" class="ng-binding ng-scope">Supershakti Metaliks Ltd IPO</a><!-- end ngIf: ipo.displayUptoDate!=null || ipo.isShow===1 -->
+                                    </label>
+                                    <label><span>Last Trading Price <span>(Rs.)</span></span><!-- ngIf: ipo.LTP!=null --><span ng-if="ipo.LTP!=null" class="ng-binding ng-scope">405</span><!-- end ngIf: ipo.LTP!=null --><!-- ngIf: ipo.LTP==null --></label>
+                                    <!-- ngIf: !isDesktop -->
+                                    <!-- ngIf: isDesktop --><label ng-if="isDesktop" class="ng-scope"><span>Listed On</span><span class="ng-binding">Jul 30</span></label><!-- end ngIf: isDesktop -->
+                                    <label><span>Issue Price (Rs.)</span><span><span class="ng-binding">375</span></span></label>
+                                    <!--<label><span>Change % After Listing</span><span class="plus">{{ipo.chngpriceper}}%</span></label>-->
+                                    <label ng-show="ipo.chngpriceper!=0 &amp;&amp; ipo.chngpriceper!=null" class=""><span>Change % After Listing</span><span data-ng-class="ipo.chngpriceper>0 ?'plus':'minus'" class="ng-binding plus">8.00%</span></label>
+                                    <!-- ngIf: ipo.chngpriceper==0 && ipo.chngpriceper!=null -->
+                                    <!-- ngIf: ipo.chngpriceper===null -->
+                                </div><!-- end ngRepeat: ipo in RecnList | limitTo: recentListcount || orderBy:'-LISTDATE' track by $index -->
+                            </div><!-- end ngIf: IPOData.IPOListed.length>0 -->
+                        </div>
+                        <div class="btn-block spec-blk text-center">
+                            <a ui-sref="ipo-recently-visted" class="link-to-detail sm" gtmdir-config="" gtmdir-event="reccentlylistedclick" gtmdir-text="click" gtmdir-label="SME IPO |see all recently listed ipo" gtmdir-key="iponewissues" href="/new-issues/ipo-listing/ipo-recently-listed">See all recently listed IPOs <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ngIf: Showtabs -->
+        <!-- ngIf: Showtabs -->
+        <!-- ngIf: Showtabs -->
+        <!-- ngIf: Showtabs -->
+        <!-- ngIf: Showtabs -->
+        <!--<div class="mg-b30"></div>-->
+    </section>
+<script type="text/ng-template" id="subscribeInfo.html" class="ng-scope">
+    <div ng-if="IPOData.IPOOngoing.length>0">
+        <!--<div class="inner-cont" ng-if="!isDesktop" ng-repeat="ipo in IPOData.IPOOngoing">
+            <a data-toggle="collapse" class="ed-icon i-close" ng-click="subscribeInfo.ttOpen = !subscribeInfo.ttOpen"></a>
+            <label ng-if="ipo.QIB_TIME !=null">QIB  - <span>{{ipo.QIB_TIME| number:2}}</span></label>
+            <span ng-if="ipo.QIB_TIME !=null">Qualified Institutional Buyer</span>
+            <label ng-if="ipo.NII_TIME !=null">NII  -  <span>{{ipo.NII_TIME | number:2}}</span></label>
+            <span ng-if="ipo.NII_TIME !=null">Non Institutional Investors</span>
+            <label ng-if="ipo.RII_TIME !=null">RETAIL  -  <span>{{ipo.RII_TIME | number:2}}</span></label>
+            <span ng-if="ipo.RII_TIME !=null">Individual Investor</span>
+        </div>-->
+        <div class="inner-cont" ng-if="!isDesktop">
+            <a data-toggle="collapse" class="ed-icon i-close" ng-click="subscribeInfo.ttOpen = !subscribeInfo.ttOpen"></a>
+            <label ng-if="ipo.QIB_TIME !=null">QIB  - <span>{{toolTip.QIB_TIME| number:2}}</span></label>
+            <span ng-if="ipo.QIB_TIME !=null">Qualified Institutional Buyer</span>
+            <label ng-if="ipo.NII_TIME !=null">NII  -  <span>{{toolTip.NII_TIME | number:2}}</span></label>
+            <span ng-if="ipo.NII_TIME !=null">Non Institutional Investors</span>
+            <label ng-if="ipo.RII_TIME !=null">RETAIL  -  <span>{{toolTip.RII_TIME | number:2}}</span></label>
+            <span ng-if="ipo.RII_TIME !=null">Individual Investor</span>
+        </div>
+        <!--<div class="inner-cont" ng-if="isDesktop" ng-repeat="ipo in IPOData.IPOOngoing">
+            <label ng-if="ipo.QIB_TIME !=null">QIB</label><span>{{ipo.QIB_TIME| number:2}}</span>
+            <label ng-if="ipo.NII_TIME !=null">NII</label><span>{{ipo.NII_TIME | number:2}}</span>
+            <label class="pd-b0" ng-if="ipo.RII_TIME !=null">RETAIL</label><span>{{ipo.RII_TIME| number:2}}</span>
+        </div>-->
+        <div class="inner-cont" ng-if="isDesktop">
+            <label ng-if="ipo.QIB_TIME !=null">QIB</label><span>{{toolTip.QIB_TIME| number:2}}</span>
+            <label ng-if="ipo.NII_TIME !=null">NII</label><span>{{toolTip.NII_TIME | number:2}}</span>
+            <label class="pd-b0" ng-if="ipo.RII_TIME !=null">RETAIL</label><span>{{toolTip.RII_TIME| number:2}}</span>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="checkallotment.html" class="ng-scope">
+    <div>
+        <a data-toggle="collapse" class="ed-icon i-close" ng-click="check.ckOpen = !check.ckOpen"></a>
+        <div class="ipo-modal">
+            <label class="mg-x-b10">
+                Please check your allotment in below links.
+            </label>
+            <a ng-if="toolTip.subscriptionUrlData!=null" style="text-transform:uppercase" gtmdir-config gtmdir-event="check" gtmdir-text="about to be listed" gtmdir-label="status| {{toolTip.subscriptionUrlData.Name}}" gtmdir-key="iponewissues" class="allot-link" ng-href="{{toolTip.subscriptionUrlData.URL}}" target="_blank">{{toolTip.subscriptionUrlData.Name}}</a>
+            <a gtmdir-config gtmdir-event="check" gtmdir-text="about to be listed" gtmdir-label="status| bse india" gtmdir-key="iponewissues" class="allot-link" href="http://www.bseindia.com/investors/appli_check.aspx" target="_blank"> BSE INDIA</a>
+
+        </div>
+    </div>
+</script>
+            </div>

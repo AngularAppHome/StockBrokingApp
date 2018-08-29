@@ -1,0 +1,389 @@
+<div class="main-view">
+                <!-- uiView:  --><!--  \ content container / -->
+    <!--  \ Top Links container / -->
+    <!-- uiView: topbar --><div ui-view="topbar" class="ng-scope"><section class="topmenuArea static-content ng-scope">
+    <div class="container">
+        <div class="lr-offset">
+            <ul class="list-unstyled list-inline text-center">
+                <li du-scrollspy="todays-perspective" offset="120" ng-class="{active : activeMenu === 1}"><a ng-href="#todays-perspective" du-smooth-scroll="" offset="120" ng-click="scrollToBlock('todays-perspective')" gtmdir-config="" gtmdir-label="Todays Perspective" gtmdir-key="insightstabs" href="#todays-perspective">Today's Perspective</a></li>
+                <li du-scrollspy="chart-of-the-day" offset="120"><a ng-href="#chart-of-the-day" du-smooth-scroll="" offset="120" ng-click="scrollToBlock('chart-of-the-day')" gtmdir-config="" gtmdir-label="Chart of the Day" gtmdir-key="insightstabs" href="#chart-of-the-day">Chart of the Day</a></li>
+                <li du-scrollspy="inside-the-mind-of" offset="120" ng-class="{active : activeMenu === 3}"><a ng-href="#inside-the-mind-of" du-smooth-scroll="" offset="120" ng-click="scrollToBlock('inside-the-mind-of')" gtmdir-config="" gtmdir-label="Inside the Mind of" gtmdir-key="insightstabs" href="#inside-the-mind-of">Inside the Mind of</a></li>
+                <li du-scrollspy="get-better-at-investing-and-trading" offset="120" ng-class="{active : activeMenu === 4}"><a ng-href="#get-better-at-investing-and-trading" du-smooth-scroll="" offset="120" ng-click="scrollToBlock('get-better-at-investing-and-trading')" gtmdir-config="" gtmdir-label="Get Better at Investing &amp; Trading" gtmdir-key="insightstabs" href="#get-better-at-investing-and-trading">Get Better at Investing &amp; Trading</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+</div>
+    <!--  \ Top Links container / -->
+    <div class="container">
+        <div class="lr-offset">
+            <!--  \ Breadcrumb container / -->
+            <ol class="breadcrumb static-content">
+                <li><a ui-sref="home" href="/">Home</a></li>
+                <li class="active">Gain Knowledge</li>
+            </ol>
+            <!--  \ Breadcrumb container / -->
+            <!--  \ Todays Perspective container / -->
+            <!-- ngIf: articleType1.length>0 --><section class="todayPerspective blocks mg-b40 ng-scope" id="todays-perspective" data-ng-if="articleType1.length>0" style="">
+                <div class="top-brdr-block pd-t50 pd-x-t30">
+                    <h1 class=" text-center h1-head">Today's Perspective</h1>
+                    <div class="text-center title-slugline "><span>Our point of view and tips on what's currently happening in the stock markets  financial world</span> </div>
+                    <div class="col-md-6 "> <img class="image-center image-responsive  ng-isolate-scope" data-ed-src="Insights/~dfd74416-e894-4616-8798-98260af3d8f1.jpg" alt=" " src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~dfd74416-e894-4616-8798-98260af3d8f1.jpg"> </div>
+                    <div class="col-md-6 ">
+                        <h3><a ng-href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84" data-ng-bind="::articleType1[0].ArticleTitle " gtmdir-config="" gtmdir-label="Market Analytics - Green Shoots In The Pharma Sector" gtmdir-key="todaysarticle" class="ng-binding" href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84">Market Analytics - Green Shoots In The Pharma Sector</a></h3>
+                        <div class="publish-slugs "> <span class="date ng-binding" data-ng-bind="::articleType1[0].PublishDate">21st August 2018</span> <!-- ngIf: ::articleType1[0].AuthorsList[0].AuthorName --><span class="author ng-scope" data-ng-if="::articleType1[0].AuthorsList[0].AuthorName">By <a ui-sref="articles({authorParam: [{AuthorID: articleType1[0].AuthorsList[0].AuthorID, AuthorName: (articleType1[0].AuthorsList[0].AuthorName)}]})" data-ng-bind="::articleType1[0].AuthorsList[0].AuthorName" disablelink="" class="ng-binding" href="/insight/articles">Edelweiss Trading Team</a></span><!-- end ngIf: ::articleType1[0].AuthorsList[0].AuthorName --> <!-- ngIf: articleType1[0].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType1[0].CommentWidget"><a ng-href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84#commentbox" href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                            </span><!-- end ngIf: articleType1[0].CommentWidget --> <!-- ngIf: articleType1[0].ShareWidget --><span class="share ng-scope" data-ng-if="articleType1[0].ShareWidget"><a ng-href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84#socialshare" class="ng-binding" href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType1[0].ShareCount" class="ng-binding">74</span></a>
+                            </span><!-- end ngIf: articleType1[0].ShareWidget -->
+                        </div>
+                        <div class="hidden-xs ">
+                            <p data-ng-bind="::articleType1[0].Summary" class="ng-binding">The Pharma sector has long remained an under-performer, but recently the sector has witnessed some triggers suggesting a trend reversal.</p> <a class="read-more-link" ng-href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84" gtmdir-config="" gtmdir-label="Market Analytics - Green Shoots In The Pharma Sector" gtmdir-key="todaysarticle" href="/insight/today-s-perspective-1/Market-Analytics---Green-Shoots-In-The-Pharma-Sector-7b2c84">Read full article <i class="glyphicon glyphicon-menu-right "></i></a> </div>
+                        <div class="text-center pd-b30 pd-t10 visible-xs "> <a class="load-more btn btn-primary " ui-sref="articleType({articleTypeID: articleType1[0].ArticleTypeID,articleTypeName: (articleType1[0].TypeName | urlsplitter)})" href="/insight/todays-perspective-1">MORE</a> </div>
+                    </div>
+                    <div class="clearfix "></div>
+                    <!-- ngIf: articleType1.length>1 --><div class="prospective-bottom hidden-xs ng-scope" data-ng-if="articleType1.length>1">
+                        <!-- ngRepeat: articleType1 in articleType1.slice(1,articleType1.length) track by $index --><div class="col-md-5 rel-post ng-scope" data-ng-repeat="articleType1 in articleType1.slice(1,articleType1.length) track by $index">
+                            <h4><a ng-href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8" data-ng-bind="::articleType1.ArticleTitle" gtmdir-config="" gtmdir-label="5 Step Guide To Tackle Medical Crisis" gtmdir-key="todaysarticle" class="ng-binding" href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8">5 Step Guide To Tackle Medical Crisis</a></h4>
+                            <div class="publish-slugs "> <span class="date  ng-binding" data-ng-bind="::articleType1.PublishDate">20th August 2018</span> <!-- ngIf: articleType1.AuthorsList[0].AuthorName --><span class="author ng-scope" data-ng-if="articleType1.AuthorsList[0].AuthorName">By <a ui-sref="articles({authorParam: [{AuthorID: articleType1.AuthorsList[0].AuthorID, AuthorName: (articleType1.AuthorsList[0].AuthorName)}]})" data-ng-bind="::articleType1.AuthorsList[0].AuthorName" disablelink="" class="ng-binding" href="/insight/articles">Edelweiss</a></span><!-- end ngIf: articleType1.AuthorsList[0].AuthorName --> <!-- ngIf: articleType1.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType1.CommentWidget"><a ng-href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8#commentbox" href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                </span><!-- end ngIf: articleType1.CommentWidget --> <!-- ngIf: articleType1.ShareWidget --><span class="share ng-scope" data-ng-if="articleType1.ShareWidget"><a ng-href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8#socialshare" class="ng-binding" href="/insight/today-s-perspective-1/5-Step-Guide-To-Tackle-Medical-Crisis-537dc8#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType1.ShareCount" class="ng-binding">57</span></a>
+                                </span><!-- end ngIf: articleType1.ShareWidget -->
+                            </div>
+                        </div><!-- end ngRepeat: articleType1 in articleType1.slice(1,articleType1.length) track by $index --><div class="col-md-5 rel-post ng-scope" data-ng-repeat="articleType1 in articleType1.slice(1,articleType1.length) track by $index">
+                            <h4><a ng-href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a" data-ng-bind="::articleType1.ArticleTitle" gtmdir-config="" gtmdir-label="Money Mindset - III: What Influences Your Money Decisions?" gtmdir-key="todaysarticle" class="ng-binding" href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a">Money Mindset - III: What Influences Your Money Decisions?</a></h4>
+                            <div class="publish-slugs "> <span class="date  ng-binding" data-ng-bind="::articleType1.PublishDate">17th August 2018</span> <!-- ngIf: articleType1.AuthorsList[0].AuthorName --><span class="author ng-scope" data-ng-if="articleType1.AuthorsList[0].AuthorName">By <a ui-sref="articles({authorParam: [{AuthorID: articleType1.AuthorsList[0].AuthorID, AuthorName: (articleType1.AuthorsList[0].AuthorName)}]})" data-ng-bind="::articleType1.AuthorsList[0].AuthorName" disablelink="" class="ng-binding" href="/insight/articles">Edelweiss</a></span><!-- end ngIf: articleType1.AuthorsList[0].AuthorName --> <!-- ngIf: articleType1.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType1.CommentWidget"><a ng-href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a#commentbox" href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                </span><!-- end ngIf: articleType1.CommentWidget --> <!-- ngIf: articleType1.ShareWidget --><span class="share ng-scope" data-ng-if="articleType1.ShareWidget"><a ng-href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a#socialshare" class="ng-binding" href="/insight/today-s-perspective-1/Money-Mindset---III-What-Influences-Your-Money-Decisions-0c5f3a#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType1.ShareCount" class="ng-binding">83</span></a>
+                                </span><!-- end ngIf: articleType1.ShareWidget -->
+                            </div>
+                        </div><!-- end ngRepeat: articleType1 in articleType1.slice(1,articleType1.length) track by $index -->
+                        <div class="more-post "> <a ui-sref="articleType({articleTypeID: articleType1[0].ArticleTypeID,articleTypeName: (articleType1[0].TypeName | urlsplitter)})" href="/insight/todays-perspective-1">More <i class="glyphicon glyphicon-menu-right "></i></a> </div>
+                        <div class="clearfix "></div>
+                    </div><!-- end ngIf: articleType1.length>1 -->
+                </div>
+            </section><!-- end ngIf: articleType1.length>0 -->
+            <!--  \ Todays Perspective container / -->
+            <!--  \ yourOpinion container / -->
+            <!-- ngIf: poll && visibility.IsPollVisible -->
+            <!--  \ yourOpinion container / -->
+            <!--  \ Chart of the day container / -->
+            <!-- ngIf: articleType2.length>0 --><section class="dayChartArea ng-scope" id="chart-of-the-day" data-ng-if="articleType2.length>0" style="">
+                <div class="top-brdr-block pd-t50 pd-x-t30">
+                    <h2 class="text-center">Chart of The Day</h2>
+                    <div class="text-center title-slugline"><span>Most interesting charts with insights</span></div>
+                    <div style="position:relative;">
+                        <div id="slider" class="slider" style="position: relative; height: 338px; overflow: hidden; display: block !important;" sudo-slider="">
+                            <ul class="slidesContainer" style="display: block; position: relative; margin: 0px; transform: translate(0px, 0px); width: 9e+06px; height: 100%;">
+                                <!-- ngRepeat: articleType2 in articleType2 track by $index --><li class="slide ng-scope" ng-repeat="articleType2 in articleType2 track by $index" ng-init="$last ? checkDataBinding() : angular.noop()" data-slide="1" style="position: relative; float: left; list-style: none; display: block; margin: 0px; width: 1105px;">
+                                    <div class="col-md-6">
+                                        <a id="cImage0" data-fancybox-href="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~ec5f0562-25c1-46f7-9969-3d3627373aaa.jpg" class="fancybox" ng-click="openFancyBox()" title=""> <img class="image-center image-responsive ng-isolate-scope" ed-src="Insights/~ec5f0562-25c1-46f7-9969-3d3627373aaa.jpg" alt="" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~ec5f0562-25c1-46f7-9969-3d3627373aaa.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="pd-x-t20"><a ng-href="/insight/chart-of-the-day-2/Credit-Flow-To-MSME-Sector-Improves-f3061c" data-ng-bind="::articleType2.ArticleTitle " gtmdir-config="" gtmdir-label="Credit Flow To MSME Sector Improves" gtmdir-key="chartofthedayarticle" class="ng-binding" href="/insight/chart-of-the-day-2/Credit-Flow-To-MSME-Sector-Improves-f3061c">Credit Flow To MSME Sector Improves</a></h3>
+                                        <div class="publish-slugs"> <span class="date ng-binding" data-ng-bind="::articleType2.PublishDate">21st August 2018</span><!-- ngIf: articleType2.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType2.CommentWidget"><a ng-href="/insight/chart-of-the-day-2/Credit-Flow-To-MSME-Sector-Improves-f3061c#commentbox" href="/insight/chart-of-the-day-2/Credit-Flow-To-MSME-Sector-Improves-f3061c#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                            </span><!-- end ngIf: articleType2.CommentWidget --> <span class="share"><a><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType2.ShareCount" class="ng-binding">10</span></a>
+                                            </span> <span socialsharewidget="/insight/chart-of-the-day-2/Credit-Flow-To-MSME-Sector-Improves-f3061c" mtitle="Credit Flow To MSME Sector Improves" mdesc="" class="ng-isolate-scope">
+    <div class="socialshare" id="socialshare" data-ng-class="{'socialshare-fix-bottom' : (fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)}">
+        <ul class="list-unstyled list-inline social-links">
+            <!-- ngIf: showWhatsApp -->
+            <li>
+                <a href="javascript:void(0)" ng-click="fbShare()" gtmdir-config="" gtmdir-label="share:Facebook" gtmdir-key="socialshare" class="share-fb"></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="twtShare()" gtmdir-config="" gtmdir-label="share:twitter" gtmdir-key="socialshare" class="share-twit"></a>
+            </li>
+            <!-- ngIf: !(fixBottom && showWhatsApp && $root.mobileView) --><li data-ng-if="!(fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)" class="ng-scope">
+                <a href="javascript:void(0)" ng-click="gplusShare()" gtmdir-config="" gtmdir-label="share:googleplus" gtmdir-key="socialshare" class="share-gplus"></a>
+            </li><!-- end ngIf: !(fixBottom && showWhatsApp && $root.mobileView) -->
+            <li>
+                <a href="javascript:void(0)" ng-click="linkedinShare()" gtmdir-config="" gtmdir-label="share:linked in" gtmdir-key="socialshare" class="share-linkedin"></a>
+            </li>
+        </ul>
+    </div>
+</span> </div>
+                                        <div class="PlanListInfo ng-binding" data-ng-bind-html="::articleType2.ChartContent"><p>The credit flow to the Micro, Small and Medium Enterprises (MSME) sector seems to have finally started recovering after taking a big hit during demonetisation, as per a study by RBI. Credit to micro and small enterprises&nbsp; grew by 0.71% Y-o-Y, while credit to Medium enterprises grew 2.69% Y-o-Y in June-18.</p>
+<p><strong>Insight: </strong>The MSME sector employs about 111 million people, and accounts for around 30% of India's GDP. They are major component of India's exports with a 40% share. Slowdown in credit to the sector along with issues related to GST implementation were a major source of weakness in the sector. As seen through IIP as well, the sector has been declining for 17 straight months.</p></div>
+                                    </div>
+                                </li><!-- end ngRepeat: articleType2 in articleType2 track by $index --><li class="slide ng-scope" ng-repeat="articleType2 in articleType2 track by $index" ng-init="$last ? checkDataBinding() : angular.noop()" data-slide="2" style="position: relative; float: left; list-style: none; display: block; margin: 0px; width: 1105px;">
+                                    <div class="col-md-6">
+                                        <a id="cImage1" data-fancybox-href="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~c0f8f0e6-aa89-456d-b4a7-2eda73a70e42.jpg" class="fancybox" ng-click="openFancyBox()" title=""> <img class="image-center image-responsive ng-isolate-scope" ed-src="Insights/~c0f8f0e6-aa89-456d-b4a7-2eda73a70e42.jpg" alt="" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~c0f8f0e6-aa89-456d-b4a7-2eda73a70e42.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="pd-x-t20"><a ng-href="/insight/chart-of-the-day-2/Rainfall-Distribution-Continues-To-Be-A-Risk-c65e50" data-ng-bind="::articleType2.ArticleTitle " gtmdir-config="" gtmdir-label="Rainfall Distribution Continues To Be A Risk" gtmdir-key="chartofthedayarticle" class="ng-binding" href="/insight/chart-of-the-day-2/Rainfall-Distribution-Continues-To-Be-A-Risk-c65e50">Rainfall Distribution Continues To Be A Risk</a></h3>
+                                        <div class="publish-slugs"> <span class="date ng-binding" data-ng-bind="::articleType2.PublishDate">20th August 2018</span><!-- ngIf: articleType2.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType2.CommentWidget"><a ng-href="/insight/chart-of-the-day-2/Rainfall-Distribution-Continues-To-Be-A-Risk-c65e50#commentbox" href="/insight/chart-of-the-day-2/Rainfall-Distribution-Continues-To-Be-A-Risk-c65e50#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                            </span><!-- end ngIf: articleType2.CommentWidget --> <span class="share"><a><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType2.ShareCount" class="ng-binding">26</span></a>
+                                            </span> <span socialsharewidget="/insight/chart-of-the-day-2/Rainfall-Distribution-Continues-To-Be-A-Risk-c65e50" mtitle="Rainfall Distribution Continues To Be A Risk" mdesc="" class="ng-isolate-scope">
+    <div class="socialshare" id="socialshare" data-ng-class="{'socialshare-fix-bottom' : (fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)}">
+        <ul class="list-unstyled list-inline social-links">
+            <!-- ngIf: showWhatsApp -->
+            <li>
+                <a href="javascript:void(0)" ng-click="fbShare()" gtmdir-config="" gtmdir-label="share:Facebook" gtmdir-key="socialshare" class="share-fb"></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="twtShare()" gtmdir-config="" gtmdir-label="share:twitter" gtmdir-key="socialshare" class="share-twit"></a>
+            </li>
+            <!-- ngIf: !(fixBottom && showWhatsApp && $root.mobileView) --><li data-ng-if="!(fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)" class="ng-scope">
+                <a href="javascript:void(0)" ng-click="gplusShare()" gtmdir-config="" gtmdir-label="share:googleplus" gtmdir-key="socialshare" class="share-gplus"></a>
+            </li><!-- end ngIf: !(fixBottom && showWhatsApp && $root.mobileView) -->
+            <li>
+                <a href="javascript:void(0)" ng-click="linkedinShare()" gtmdir-config="" gtmdir-label="share:linked in" gtmdir-key="socialshare" class="share-linkedin"></a>
+            </li>
+        </ul>
+    </div>
+</span> </div>
+                                        <div class="PlanListInfo ng-binding" data-ng-bind-html="::articleType2.ChartContent"><p>As of the week ended Aug-15, 2018, South-west monsoon was 5.8% below its normal level. Given that the IMD defines normal rains as between 96% and 104% of a long period average - we are currently having a below-normal rainfall.</p>
+<p><strong>Insight: </strong>24 of the 36 sub-divisions have received below-normal rainfall. While regions like Kerala have been devasted with 255.4% excess rainfall, many interior regions like Rayalseema and Marathwada are rain-starved. The uneven spatial distribution of rainfall poses a concern for the rural economy as well as inflation going ahead.</p></div>
+                                    </div>
+                                </li><!-- end ngRepeat: articleType2 in articleType2 track by $index --><li class="slide ng-scope" ng-repeat="articleType2 in articleType2 track by $index" ng-init="$last ? checkDataBinding() : angular.noop()" data-slide="3" style="position: relative; float: left; list-style: none; display: block; margin: 0px; width: 1105px;">
+                                    <div class="col-md-6">
+                                        <a id="cImage2" data-fancybox-href="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~33d22a5e-0c6a-4fe4-a620-a8d1df9ceb45.jpg" class="fancybox" ng-click="openFancyBox()" title=""> <img class="image-center image-responsive ng-isolate-scope" ed-src="Insights/~33d22a5e-0c6a-4fe4-a620-a8d1df9ceb45.jpg" alt="" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~33d22a5e-0c6a-4fe4-a620-a8d1df9ceb45.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="pd-x-t20"><a ng-href="/insight/chart-of-the-day-2/Commercial-Vehicles-Sales-Remain-Healthy-c915bc" data-ng-bind="::articleType2.ArticleTitle " gtmdir-config="" gtmdir-label="Commercial Vehicles Sales Remain Healthy" gtmdir-key="chartofthedayarticle" class="ng-binding" href="/insight/chart-of-the-day-2/Commercial-Vehicles-Sales-Remain-Healthy-c915bc">Commercial Vehicles Sales Remain Healthy</a></h3>
+                                        <div class="publish-slugs"> <span class="date ng-binding" data-ng-bind="::articleType2.PublishDate">17th August 2018</span><!-- ngIf: articleType2.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType2.CommentWidget"><a ng-href="/insight/chart-of-the-day-2/Commercial-Vehicles-Sales-Remain-Healthy-c915bc#commentbox" href="/insight/chart-of-the-day-2/Commercial-Vehicles-Sales-Remain-Healthy-c915bc#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                            </span><!-- end ngIf: articleType2.CommentWidget --> <span class="share"><a><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType2.ShareCount" class="ng-binding">21</span></a>
+                                            </span> <span socialsharewidget="/insight/chart-of-the-day-2/Commercial-Vehicles-Sales-Remain-Healthy-c915bc" mtitle="Commercial Vehicles Sales Remain Healthy" mdesc="" class="ng-isolate-scope">
+    <div class="socialshare" id="socialshare" data-ng-class="{'socialshare-fix-bottom' : (fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)}">
+        <ul class="list-unstyled list-inline social-links">
+            <!-- ngIf: showWhatsApp -->
+            <li>
+                <a href="javascript:void(0)" ng-click="fbShare()" gtmdir-config="" gtmdir-label="share:Facebook" gtmdir-key="socialshare" class="share-fb"></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="twtShare()" gtmdir-config="" gtmdir-label="share:twitter" gtmdir-key="socialshare" class="share-twit"></a>
+            </li>
+            <!-- ngIf: !(fixBottom && showWhatsApp && $root.mobileView) --><li data-ng-if="!(fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)" class="ng-scope">
+                <a href="javascript:void(0)" ng-click="gplusShare()" gtmdir-config="" gtmdir-label="share:googleplus" gtmdir-key="socialshare" class="share-gplus"></a>
+            </li><!-- end ngIf: !(fixBottom && showWhatsApp && $root.mobileView) -->
+            <li>
+                <a href="javascript:void(0)" ng-click="linkedinShare()" gtmdir-config="" gtmdir-label="share:linked in" gtmdir-key="socialshare" class="share-linkedin"></a>
+            </li>
+        </ul>
+    </div>
+</span> </div>
+                                        <div class="PlanListInfo ng-binding" data-ng-bind-html="::articleType2.ChartContent"><p>Commercial vehicles segment continued to post healthy sales numbers, with total domestic sales growing by 29.7% Y-o-Y in July. M&amp;HCV sales grew by 24.5% Y-o-Y and LCV sales grew by 32.9% Y-o-Y.</p>
+<p><strong>Insight: </strong>Although the growth has moderated as compared to last month, the high double digit growth is still maintained in both M&amp;HCV and LCV. Growth came on the back of strong demand from infrastructure and construction sectors, rural demand recovery and rising shipments from e-commerce industry. This comes despite the new axle load norms, the impact of which might be more visible in the coming months.</p></div>
+                                    </div>
+                                </li><!-- end ngRepeat: articleType2 in articleType2 track by $index --><li class="slide ng-scope" ng-repeat="articleType2 in articleType2 track by $index" ng-init="$last ? checkDataBinding() : angular.noop()" data-slide="4" style="position: relative; float: left; list-style: none; display: block; margin: 0px; width: 1105px;">
+                                    <div class="col-md-6">
+                                        <a id="cImage3" data-fancybox-href="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~a33e2085-953a-4a61-8ed2-4999546bf564.jpg" class="fancybox" ng-click="openFancyBox()" title=""> <img class="image-center image-responsive ng-isolate-scope" ed-src="Insights/~a33e2085-953a-4a61-8ed2-4999546bf564.jpg" alt="" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~a33e2085-953a-4a61-8ed2-4999546bf564.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="pd-x-t20"><a ng-href="/insight/chart-of-the-day-2/Trade-Deficit-Widens-To-A-5-Year-High-7e1174" data-ng-bind="::articleType2.ArticleTitle " gtmdir-config="" gtmdir-label="Trade Deficit Widens To A 5-Year High" gtmdir-key="chartofthedayarticle" class="ng-binding" href="/insight/chart-of-the-day-2/Trade-Deficit-Widens-To-A-5-Year-High-7e1174">Trade Deficit Widens To A 5-Year High</a></h3>
+                                        <div class="publish-slugs"> <span class="date ng-binding" data-ng-bind="::articleType2.PublishDate">16th August 2018</span><!-- ngIf: articleType2.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType2.CommentWidget"><a ng-href="/insight/chart-of-the-day-2/Trade-Deficit-Widens-To-A-5-Year-High-7e1174#commentbox" href="/insight/chart-of-the-day-2/Trade-Deficit-Widens-To-A-5-Year-High-7e1174#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                            </span><!-- end ngIf: articleType2.CommentWidget --> <span class="share"><a><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType2.ShareCount" class="ng-binding">22</span></a>
+                                            </span> <span socialsharewidget="/insight/chart-of-the-day-2/Trade-Deficit-Widens-To-A-5-Year-High-7e1174" mtitle="Trade Deficit Widens To A 5-Year High" mdesc="" class="ng-isolate-scope">
+    <div class="socialshare" id="socialshare" data-ng-class="{'socialshare-fix-bottom' : (fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)}">
+        <ul class="list-unstyled list-inline social-links">
+            <!-- ngIf: showWhatsApp -->
+            <li>
+                <a href="javascript:void(0)" ng-click="fbShare()" gtmdir-config="" gtmdir-label="share:Facebook" gtmdir-key="socialshare" class="share-fb"></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="twtShare()" gtmdir-config="" gtmdir-label="share:twitter" gtmdir-key="socialshare" class="share-twit"></a>
+            </li>
+            <!-- ngIf: !(fixBottom && showWhatsApp && $root.mobileView) --><li data-ng-if="!(fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)" class="ng-scope">
+                <a href="javascript:void(0)" ng-click="gplusShare()" gtmdir-config="" gtmdir-label="share:googleplus" gtmdir-key="socialshare" class="share-gplus"></a>
+            </li><!-- end ngIf: !(fixBottom && showWhatsApp && $root.mobileView) -->
+            <li>
+                <a href="javascript:void(0)" ng-click="linkedinShare()" gtmdir-config="" gtmdir-label="share:linked in" gtmdir-key="socialshare" class="share-linkedin"></a>
+            </li>
+        </ul>
+    </div>
+</span> </div>
+                                        <div class="PlanListInfo ng-binding" data-ng-bind-html="::articleType2.ChartContent"><p>Trade deficit in July widened to a 5-year high of USD 18 Billion from USD 17.1 Billion in June. Exports were USD 25.8 Billion and imports were USD 43.8 Billion.</p>
+<p><strong>Insight:</strong> The export growth was weak on the back of tepid growth in petroleum products as well as as moderated growth in non-POL exports despite a low base. Threatened global trade flows amidst the looming trade tensions, might be one factor for a weak performance.&nbsp; As for imports, robust growth in electronics goods imports was seen. Going forward, global geopolitics especially as regards to oil, might impact the imports.</p></div>
+                                    </div>
+                                </li><!-- end ngRepeat: articleType2 in articleType2 track by $index --><li class="slide ng-scope" ng-repeat="articleType2 in articleType2 track by $index" ng-init="$last ? checkDataBinding() : angular.noop()" data-slide="5" style="position: relative; float: left; list-style: none; display: block; margin: 0px; width: 1105px;">
+                                    <div class="col-md-6">
+                                        <a id="cImage4" data-fancybox-href="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~b640e533-42bc-428d-8308-b55208f6a54d.jpg" class="fancybox" ng-click="openFancyBox()" title=""> <img class="image-center image-responsive ng-isolate-scope" ed-src="Insights/~b640e533-42bc-428d-8308-b55208f6a54d.jpg" alt="" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~b640e533-42bc-428d-8308-b55208f6a54d.jpg"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3 class="pd-x-t20"><a ng-href="/insight/chart-of-the-day-2/Food-Inflation-Softens-Sharply-b45e9d" data-ng-bind="::articleType2.ArticleTitle " gtmdir-config="" gtmdir-label="Food Inflation Softens Sharply" gtmdir-key="chartofthedayarticle" class="ng-binding" href="/insight/chart-of-the-day-2/Food-Inflation-Softens-Sharply-b45e9d">Food Inflation Softens Sharply</a></h3>
+                                        <div class="publish-slugs"> <span class="date ng-binding" data-ng-bind="::articleType2.PublishDate">14th August 2018</span><!-- ngIf: articleType2.CommentWidget --><span class="comment ng-scope" data-ng-if="articleType2.CommentWidget"><a ng-href="/insight/chart-of-the-day-2/Food-Inflation-Softens-Sharply-b45e9d#commentbox" href="/insight/chart-of-the-day-2/Food-Inflation-Softens-Sharply-b45e9d#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                            </span><!-- end ngIf: articleType2.CommentWidget --> <span class="share"><a><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType2.ShareCount" class="ng-binding">15</span></a>
+                                            </span> <span socialsharewidget="/insight/chart-of-the-day-2/Food-Inflation-Softens-Sharply-b45e9d" mtitle="Food Inflation Softens Sharply" mdesc="" class="ng-isolate-scope">
+    <div class="socialshare" id="socialshare" data-ng-class="{'socialshare-fix-bottom' : (fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)}">
+        <ul class="list-unstyled list-inline social-links">
+            <!-- ngIf: showWhatsApp -->
+            <li>
+                <a href="javascript:void(0)" ng-click="fbShare()" gtmdir-config="" gtmdir-label="share:Facebook" gtmdir-key="socialshare" class="share-fb"></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" ng-click="twtShare()" gtmdir-config="" gtmdir-label="share:twitter" gtmdir-key="socialshare" class="share-twit"></a>
+            </li>
+            <!-- ngIf: !(fixBottom && showWhatsApp && $root.mobileView) --><li data-ng-if="!(fixBottom &amp;&amp; showWhatsApp &amp;&amp; $root.mobileView)" class="ng-scope">
+                <a href="javascript:void(0)" ng-click="gplusShare()" gtmdir-config="" gtmdir-label="share:googleplus" gtmdir-key="socialshare" class="share-gplus"></a>
+            </li><!-- end ngIf: !(fixBottom && showWhatsApp && $root.mobileView) -->
+            <li>
+                <a href="javascript:void(0)" ng-click="linkedinShare()" gtmdir-config="" gtmdir-label="share:linked in" gtmdir-key="socialshare" class="share-linkedin"></a>
+            </li>
+        </ul>
+    </div>
+</span> </div>
+                                        <div class="PlanListInfo ng-binding" data-ng-bind-html="::articleType2.ChartContent"><p>Slowing food inflation was a major factor behind moderation in headline inflation in July. Food inflation came in at 1.4% Y-o-Y in July as against 2.9% Y-o-Y in June.</p>
+<p><strong>Insight:</strong> Food Inflation moderated on the back of deflation in vegetable prices and stable cereal prices. Vegetables prices saw a deflation of 2.2% Y-o-Y in July, mainly on the back of a rising base. Cereal prices have stayed in 2-3% range for the last 8 months, still not reflecting the hike in MSP prices. Going ahead MSP price hike and weak spatial distribution of rainfall might be an upside risk.</p></div>
+                                    </div>
+                                </li><!-- end ngRepeat: articleType2 in articleType2 track by $index -->
+                            </ul>
+                        </div><span class="controls"><a href="#" class="prevBtn" style="opacity: 0;"> previous </a><a href="#" class="nextBtn" style="visibility: visible; opacity: 1;"> next </a><ol class="numericControls"><li data-target="1" class="current"><a href="#"><span>1</span></a></li><li data-target="2"><a href="#"><span>2</span></a></li><li data-target="3"><a href="#"><span>3</span></a></li><li data-target="4"><a href="#"><span>4</span></a></li><li data-target="5"><a href="#"><span>5</span></a></li></ol></span>
+                        <!-- ngIf: sliderLoaded --><div class="descrip-text ng-scope" ng-if="sliderLoaded">
+                            <p id="anistate" class="anistate" style="display: none; "></p> <span id="slidenumber">1</span> of <span data-ng-bind="::articleType2.length" class="ng-binding">5</span> </div><!-- end ngIf: sliderLoaded -->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </section><!-- end ngIf: articleType2.length>0 -->
+            <!--  \ Chart of the day container / -->
+            <!--  \ Chart of the day container / -->
+            <!-- ngIf: articleType3.length>0 --><section class="expertInfoArea blocks ng-scope" id="inside-the-mind-of" data-ng-if="articleType3.length>0" style="">
+                <div class="pd-t50 pd-x-t50 ">
+                    <h2 class="text-center ">Inside The Mind Of</h2>
+                    <div class="text-center title-slugline "><span>Financial experts speak their mind when it comes to share markets, investing and money</span> </div>
+                    <div class="expertFull pd-t10">
+                        <div class="col-md-8 left "> <img class="img-responsive pull-left  ng-isolate-scope" data-ed-src="Insights/~1148b94b-466e-4d5e-a3bc-40aa6a236baf.png" alt=" " src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~1148b94b-466e-4d5e-a3bc-40aa6a236baf.png">
+                            <h3 data-ng-bind="articleType3[0].Name" class="ng-binding">Rahul Jain</h3>
+                            <!-- ngIf: articleType3[0].Designation --><p class="author-designation ng-binding ng-scope" data-ng-bind="articleType3[0].Designation" data-ng-if="articleType3[0].Designation">Head - Personal Wealth Advisory</p><!-- end ngIf: articleType3[0].Designation -->
+                            <!-- ngIf: articleType3[0].Philosophy --><div class="info-text  ng-scope" data-ng-if="articleType3[0].Philosophy"><span class="start-quote "></span><span data-ng-bind="articleType3[0].Philosophy" class="ng-binding">I believe that asset allocation should be diversified in a way that matches the right risk &amp; growth level for every individual.</span><span class="end-quote "></span></div><!-- end ngIf: articleType3[0].Philosophy -->
+                        </div>
+                        <!-- ngIf: articleType3[0].Articles.length>0 --><div class="col-md-4 right bottom-brdr-block  ng-scope" data-ng-if="articleType3[0].Articles.length>0">
+                            <h4><a ng-href="/insight/inside-the-mind-of-3/Rise-Of-The-Digital-Era-108cee" data-ng-bind="articleType3[0].Articles[0].ArticleTitle" gtmdir-config="" gtmdir-label="Rise Of The Digital Era" gtmdir-key="Insidemindof" class="ng-binding" href="/insight/inside-the-mind-of-3/Rise-Of-The-Digital-Era-108cee">Rise Of The Digital Era</a></h4>
+                            <div class="publish-slugs "> <span class="date ng-binding" data-ng-bind="articleType3[0].Articles[0].NoOfDays">Published 22 days ago</span> </div>
+                            <p data-ng-bind="articleType3[0].Articles[0].Summary" class="ng-binding">Since the inception of the digital era, accessing anything and everything has become easier compared to the good old days of manual intervention. Digitisation has touched upon various aspects of life!</p> <a class="read-more-link " ui-sref="insideAuthor({itemID: articleType3[0].AuthorID, itemName: (articleType3[0].Name | urlsplitter) })" gtmdir-config="" gtmdir-key="Insidemindofseeall" href="/insight/author/rahul-jain-25">See all articles <i class="glyphicon glyphicon-menu-right "></i></a> </div><!-- end ngIf: articleType3[0].Articles.length>0 -->
+                    </div>
+                    <div class="clearfix "></div>
+                    <!-- ngIf: articleType3.length>1 --><div class="expertsmall  ng-scope" data-ng-if="articleType3.length>1">
+                        <!-- ngRepeat: articleType3 in articleType3.slice(1,articleType3.length) track by $index --><div class="col-md-4 expert-block ng-scope" data-ng-repeat="articleType3 in articleType3.slice(1,articleType3.length) track by $index"> <img class="img-responsive pull-left  ng-isolate-scope" data-ed-src="Insights/15541086-6983-41bc-8376-4eb4145d6194.jpg" alt=" " src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/15541086-6983-41bc-8376-4eb4145d6194.jpg">
+                            <h3 data-ng-bind="articleType3.Name" class="ng-binding">Sahil Kapoor</h3>
+                            <!-- ngIf: articleType3.Designation --><p class="author-designation ng-binding ng-scope" data-ng-bind="articleType3.Designation" data-ng-if="articleType3.Designation">Chief Market Strategist</p><!-- end ngIf: articleType3.Designation -->
+                            <div class="info-text "><!-- ngIf: articleType3.Philosophy --><span class="start-quote ng-scope" data-ng-if="articleType3.Philosophy"></span><!-- end ngIf: articleType3.Philosophy --><span data-ng-bind="articleType3.Philosophy" class="ng-binding">My trading philosophy entails tracking major macroeconomics data and using a relative strength comparative approach to taper down to what is to be bought or sold.</span><span class="end-quote "></span></div>
+                            <!-- ngIf: articleType3.Articles.length>0 --><div class="article-box bottom-brdr-block  ng-scope" data-ng-if="articleType3.Articles.length>0" style="height: 173px;">
+                                <h4><a ng-href="/insight/inside-the-mind-of-3/Brace-For-An-Action-Packed-Week-11b2b2" data-ng-bind="articleType3.Articles[0].ArticleTitle" gtmdir-config="" gtmdir-label="" gtmdir-key="Insidemindof" class="ng-binding" href="/insight/inside-the-mind-of-3/Brace-For-An-Action-Packed-Week-11b2b2">Brace For An Action Packed Week</a></h4>
+                                <div class="publish-slugs "> <span class="date  ng-binding" data-ng-bind="articleType3.Articles[0].NoOfDays">Published 2 months ago</span> </div> <a class="read-more-link" ui-sref="insideAuthor({ itemID: articleType3.AuthorID, itemName: (articleType3.Name | urlsplitter)})" gtmdir-config="" gtmdir-key="Insidemindofseeall" href="/insight/author/sahil-kapoor-15">See all articles <i class="glyphicon glyphicon-menu-right "></i></a> </div><!-- end ngIf: articleType3.Articles.length>0 -->
+                        </div><!-- end ngRepeat: articleType3 in articleType3.slice(1,articleType3.length) track by $index --><div class="col-md-4 expert-block ng-scope" data-ng-repeat="articleType3 in articleType3.slice(1,articleType3.length) track by $index"> <img class="img-responsive pull-left  ng-isolate-scope" data-ed-src="Insights/3d0cfd05-43ea-4bc7-a089-b95128788c55.jpg" alt=" " src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/3d0cfd05-43ea-4bc7-a089-b95128788c55.jpg">
+                            <h3 data-ng-bind="articleType3.Name" class="ng-binding">Vikas Khemani</h3>
+                            <!-- ngIf: articleType3.Designation --><p class="author-designation ng-binding ng-scope" data-ng-bind="articleType3.Designation" data-ng-if="articleType3.Designation">President &amp; CEO, Edelweiss Securities Limited</p><!-- end ngIf: articleType3.Designation -->
+                            <div class="info-text "><!-- ngIf: articleType3.Philosophy --><span class="start-quote ng-scope" data-ng-if="articleType3.Philosophy"></span><!-- end ngIf: articleType3.Philosophy --><span data-ng-bind="articleType3.Philosophy" class="ng-binding">The foundation of stock picking is to thoroughly understand the present economic and industry scenario and make the right pick—keeping your pre-defined goals in mind.</span><span class="end-quote "></span></div>
+                            <!-- ngIf: articleType3.Articles.length>0 --><div class="article-box bottom-brdr-block  ng-scope" data-ng-if="articleType3.Articles.length>0" style="height: 173px;">
+                                <h4><a ng-href="/insight/inside-the-mind-of-3/How-Your-Mental-Biases-Can-Stop-You-From-Becoming-Rich-d89006" data-ng-bind="articleType3.Articles[0].ArticleTitle" gtmdir-config="" gtmdir-label="" gtmdir-key="Insidemindof" class="ng-binding" href="/insight/inside-the-mind-of-3/How-Your-Mental-Biases-Can-Stop-You-From-Becoming-Rich-d89006">How Your Mental Biases Can Stop You From Becoming Rich</a></h4>
+                                <div class="publish-slugs "> <span class="date  ng-binding" data-ng-bind="articleType3.Articles[0].NoOfDays">Published 3 months ago</span> </div> <a class="read-more-link" ui-sref="insideAuthor({ itemID: articleType3.AuthorID, itemName: (articleType3.Name | urlsplitter)})" gtmdir-config="" gtmdir-key="Insidemindofseeall" href="/insight/author/vikas-khemani-16">See all articles <i class="glyphicon glyphicon-menu-right "></i></a> </div><!-- end ngIf: articleType3.Articles.length>0 -->
+                        </div><!-- end ngRepeat: articleType3 in articleType3.slice(1,articleType3.length) track by $index --><div class="col-md-4 expert-block ng-scope" data-ng-repeat="articleType3 in articleType3.slice(1,articleType3.length) track by $index"> <img class="img-responsive pull-left  ng-isolate-scope" data-ed-src="Insights/9b5fbedf-66bc-422f-8216-9f98c6851ead.png" alt=" " src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/9b5fbedf-66bc-422f-8216-9f98c6851ead.png">
+                            <h3 data-ng-bind="articleType3.Name" class="ng-binding">Rashesh Shah</h3>
+                            <!-- ngIf: articleType3.Designation --><p class="author-designation ng-binding ng-scope" data-ng-bind="articleType3.Designation" data-ng-if="articleType3.Designation">Chairman and CEO, Edelweiss Group</p><!-- end ngIf: articleType3.Designation -->
+                            <div class="info-text "><!-- ngIf: articleType3.Philosophy --><span class="start-quote ng-scope" data-ng-if="articleType3.Philosophy"></span><!-- end ngIf: articleType3.Philosophy --><span data-ng-bind="articleType3.Philosophy" class="ng-binding">A catalog of selected thoughts and excerpts on the capital markets and economy.</span><span class="end-quote "></span></div>
+                            <!-- ngIf: articleType3.Articles.length>0 --><div class="article-box bottom-brdr-block  ng-scope" data-ng-if="articleType3.Articles.length>0" style="height: 173px;">
+                                <h4><a ng-href="/insight/inside-the-mind-of-3/IBC-Will-Deliver-But-It-Needs-Time-0f81ad" data-ng-bind="articleType3.Articles[0].ArticleTitle" gtmdir-config="" gtmdir-label="" gtmdir-key="Insidemindof" class="ng-binding" href="/insight/inside-the-mind-of-3/IBC-Will-Deliver-But-It-Needs-Time-0f81ad">IBC Will Deliver But It Needs Time</a></h4>
+                                <div class="publish-slugs "> <span class="date  ng-binding" data-ng-bind="articleType3.Articles[0].NoOfDays">Published 3 months ago</span> </div> <a class="read-more-link" ui-sref="insideAuthor({ itemID: articleType3.AuthorID, itemName: (articleType3.Name | urlsplitter)})" gtmdir-config="" gtmdir-key="Insidemindofseeall" href="/insight/author/rashesh-shah-21">See all articles <i class="glyphicon glyphicon-menu-right "></i></a> </div><!-- end ngIf: articleType3.Articles.length>0 -->
+                        </div><!-- end ngRepeat: articleType3 in articleType3.slice(1,articleType3.length) track by $index -->
+                    </div><!-- end ngIf: articleType3.length>1 -->
+                    <div class="clearfix "></div>
+                    <div class="text-center pd-b20 pd-t20 "> <a ui-sref="articleType({articleTypeID: articleType3[0].Articles[0].ArticleTypeID,articleTypeName: (articleType3[0].Articles[0].TypeName | urlsplitter)})" class="load-more mg-t20 btn btn-primary " gtmdir-config="" gtmdir-key="Insidemindofviewall" href="/insight/inside-the-mind-of-3">VIEW ALL EXPERTS</a> </div>
+                </div>
+            </section><!-- end ngIf: articleType3.length>0 -->
+            <!--  \ Chart of the day container / -->
+            <!--  \ Todays Perspective container / -->
+            <!-- ngIf: articleType4.length>0 --><section class="todayPerspective mg-t30 ng-scope" id="get-better-at-investing-and-trading" data-ng-if="articleType4.length>0" style="">
+                <div class="top-brdr-block pd-t80 pd-x-t40">
+                    <h2 class="text-center">Get Better At Investing &amp; Trading</h2>
+                    <div class="text-center title-slugline"> <span>No matter how much you know, there’s always something new to learn. Here you can get free tips and knowledge<br>related to stock market and investments.</span> </div>
+                    <div class="light-bg knowledgebox">
+                        <div class="row">
+                            <div class="col-md-6 text-right text-sm-left">
+                                <!-- ngIf: articleType4[0] --><div class="imageblock even ng-scope" ng-if="articleType4[0]"> <img data-ed-src="Insights/~7d4e3085-5cc7-4d78-a48c-46e5b4e2ed41.jpg" alt="" class="picture ng-isolate-scope" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~7d4e3085-5cc7-4d78-a48c-46e5b4e2ed41.jpg">
+                                    <h3><a ng-href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9" data-ng-bind="::articleType4[0].ArticleTitle" gtmdir-config="" gtmdir-label="Motivate Yourself To Save Money" gtmdir-key="getbetterlinks" class="ng-binding" href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9">Motivate Yourself To Save Money</a></h3>
+                                    <div class="publish-slugs"> <span ng-class="contentClassName(2)" data-ng-bind="::articleType4[0].NoOfDays" class="ng-binding published">Published 8 days ago</span> <!-- ngIf: articleType4[0].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType4[0].CommentWidget"><a ng-href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9#commentbox" href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                        </span><!-- end ngIf: articleType4[0].CommentWidget --> <!-- ngIf: articleType4[0].ShareWidget --><span class="share ng-scope" data-ng-if="articleType4[0].ShareWidget"><a ng-href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9#socialshare" class="ng-binding" href="/insight/get-better-at-investing-trading-4/Motivate-Yourself-To-Save-Money-6199f9#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType4.ShareCount" class="ng-binding"></span></a>
+                                        </span><!-- end ngIf: articleType4[0].ShareWidget -->
+                                    </div>
+                                </div><!-- end ngIf: articleType4[0] -->
+                            </div>
+                            <!-- ngIf: articleType4[1] --><div class="col-md-6 text-left text-sm-left ng-scope" ng-if="articleType4[1]">
+                                <div class="textblock">
+                                    <h3><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed" data-ng-bind="::articleType4[1].ArticleTitle" gtmdir-config="" gtmdir-label="Motivate Yourself To Save Money" gtmdir-key="getbetterlinks" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed">What Is ROCE?</a></h3>
+                                    <div class="publish-slugs"> <span ng-class="contentClassName(2)" data-ng-bind="::articleType4[1].NoOfDays" class="ng-binding published">Published 13 days ago</span> <!-- ngIf: articleType4[1].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType4[1].CommentWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed#commentbox" href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                        </span><!-- end ngIf: articleType4[1].CommentWidget --> <!-- ngIf: articleType4[1].ShareWidget --><span class="share ng-scope" data-ng-if="articleType4[1].ShareWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed#socialshare" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-ROCE-380bed#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType4[1].ShareCount" class="ng-binding">120</span></a>
+                                        </span><!-- end ngIf: articleType4[1].ShareWidget -->
+                                    </div>
+                                </div>
+                            </div><!-- end ngIf: articleType4[1] -->
+                            <!-- ngIf: articleType4[2] --><div class="col-md-12 text-center text-sm-left ng-scope" ng-if="articleType4[2]">
+                                <div class="textblock middletext">
+                                    <h3><a ng-href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63" data-ng-bind="::articleType4[2].ArticleTitle" gtmdir-config="" gtmdir-label="Motivate Yourself To Save Money" gtmdir-key="getbetterlinks" class="ng-binding" href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63">Perspective On Nifty - Factors Supporting The Rally</a></h3>
+                                    <div class="publish-slugs"> <span ng-class="contentClassName(2)" data-ng-bind="::articleType4[2].NoOfDays" class="ng-binding published">Published 15 days ago</span> <!-- ngIf: articleType4[2].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType4[2].CommentWidget"><a ng-href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63#commentbox" href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                        </span><!-- end ngIf: articleType4[2].CommentWidget --> <!-- ngIf: articleType4[2].ShareWidget --><span class="share ng-scope" data-ng-if="articleType4[2].ShareWidget"><a ng-href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63#socialshare" class="ng-binding" href="/insight/get-better-at-investing-trading-4/Perspective-On-Nifty---Factors-Supporting-The-Rally-496a63#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType4[2].ShareCount" class="ng-binding">139</span></a>
+                                        </span><!-- end ngIf: articleType4[2].ShareWidget -->
+                                    </div>
+                                </div>
+                            </div><!-- end ngIf: articleType4[2] -->
+                            <!-- ngIf: articleType4[3] --><div class="col-md-6 text-right text-sm-left ng-scope" ng-if="articleType4[3]">
+                                <div class="textblock">
+                                    <h3><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186" data-ng-bind="::articleType4[3].ArticleTitle" gtmdir-config="" gtmdir-label="Motivate Yourself To Save Money" gtmdir-key="getbetterlinks" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186">What Is EBITDA?</a></h3>
+                                    <div class="publish-slugs"> <span ng-class="contentClassName(2)" data-ng-bind="::articleType4[3].NoOfDays" class="ng-binding published">Published 20 days ago</span> <!-- ngIf: articleType4[3].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType4[3].CommentWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186#commentbox" href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                        </span><!-- end ngIf: articleType4[3].CommentWidget --> <!-- ngIf: articleType4[3].ShareWidget --><span class="share ng-scope" data-ng-if="articleType4[3].ShareWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186#socialshare" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-EBITDA-3ce186#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType4[3].ShareCount" class="ng-binding">218</span></a>
+                                        </span><!-- end ngIf: articleType4[3].ShareWidget -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div><!-- end ngIf: articleType4[3] -->
+                            <!-- ngIf: articleType4[4] --><div class="col-md-6 text-left text-sm-left ng-scope" ng-if="articleType4[4]">
+                                <div class="imageblock odd last-child"> <img data-ed-src="Insights/~28b3f90a-72c6-48b9-a2b9-79ef0f6bd29d.jpg" alt="" class="picture ng-isolate-scope" src="https://www.edelweiss.in/ewwebimages/WebImages/Insights/~28b3f90a-72c6-48b9-a2b9-79ef0f6bd29d.jpg">
+                                    <h3><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d" data-ng-bind="::articleType4[4].ArticleTitle" gtmdir-config="" gtmdir-label="Motivate Yourself To Save Money" gtmdir-key="getbetterlinks" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d">What Is NAV In Mutual Funds?</a></h3>
+                                    <div class="publish-slugs"> <span ng-class="contentClassName(2)" data-ng-bind="::articleType4[4].NoOfDays" class="ng-binding published">Published 22 days ago</span> <!-- ngIf: articleType4[4].CommentWidget --><span class="comment ng-scope" data-ng-if="articleType4[4].CommentWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d#commentbox" href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d#commentbox"><i class="icon icon-30 icon-comment"></i><span class="disqus-comment-count"></span></a>
+                                        </span><!-- end ngIf: articleType4[4].CommentWidget --> <!-- ngIf: articleType4[4].ShareWidget --><span class="share ng-scope" data-ng-if="articleType4[4].ShareWidget"><a ng-href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d#socialshare" class="ng-binding" href="/insight/get-better-at-investing-trading-4/What-Is-NAV-In-Mutual-Funds-d0246d#socialshare"><i class="icon icon-30 icon-share"></i><span data-ng-bind="articleType4[4].ShareCount" class="ng-binding">255</span></a>
+                                        </span><!-- end ngIf: articleType4[4].ShareWidget -->
+                                    </div>
+                                </div>
+                            </div><!-- end ngIf: articleType4[4] -->
+                        </div>
+                        <div class="text-center mg-t20 mg-b40 hidden-xs"> <a ui-sref="articleType({articleTypeID: articleType4[0].ArticleTypeID,articleTypeName: (articleType4[0].TypeName | urlsplitter)})" class="load-more mg-t20 btn btn-primary text-uppercase" gtmdir-config="" gtmdir-key="getbetterviewall" href="/insight/get-better-at-investing-and-trading-4">View All Articles</a> </div>
+                    </div>
+                </div>
+            </section><!-- end ngIf: articleType4.length>0 -->
+            <!--  \ Todays Perspective container / -->
+            <!-- ngIf: categories.length>0  && visibility.IsCategoryVisible --><div class="topicbox mg-t30 text-center ng-scope" data-ng-if="categories.length>0  &amp;&amp; visibility.IsCategoryVisible" style="">
+                <h6>Trending Topics</h6>
+                <div class="tags ">
+                    <ul>
+                        <!-- ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Edelweiss" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">Edelweiss</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Mutual Fund" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">Mutual Fund</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Demonetization" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">Demonetization</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="#Budget2017" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">#Budget2017</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="In Spotlight" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">In Spotlight</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="Commodity" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">Commodity</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID --><li ng-repeat="category in categories | limitTo:listing.tagLimit as categoryList track by category.ID" class="ng-scope">
+                            <!-- ngIf: category.CategoryName --><a ui-sref="articles({categoryParam: [{CategoryID: category.ID, CategoryName: category.CategoryName}]})" ng-bind="category.CategoryName" data-ng-if="category.CategoryName" disablelink="" gtmdir-config="" gtmdir-label="#BuildingIndia" gtmdir-key="tradingtopic" class="ng-binding ng-scope" href="/insight/articles">#BuildingIndia</a><!-- end ngIf: category.CategoryName -->
+                        </li><!-- end ngRepeat: category in categories | limitTo:listing.tagLimit as categoryList track by category.ID -->
+                    </ul>
+                </div> <!-- ngIf: (categories.length > categoryList.length) --><a href="javascript:void(0)" class="load-more mg-t20 btn btn-primary  ng-scope" ng-click="listing.tagLimit = category.length" data-ng-if="(categories.length > categoryList.length)" gtmdir-config="" gtmdir-key="tradingviewall">VIEW ALL TOPICS</a><!-- end ngIf: (categories.length > categoryList.length) -->
+                <!-- uiView: sw-widget --><div ui-view="sw-widget" class="ng-scope"><!-- ngIf: submitted && visibility.IsSubscriptionVisible -->
+<!-- ngIf: submitted -->
+</div>
+            </div><!-- end ngIf: categories.length>0  && visibility.IsCategoryVisible -->
+        </div>
+    </div>
+<!-- Microdata Schema For Insight Page -->
+<script type="application/ld+json" class="ng-scope">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+            "@id": " https://www.edelweiss.in",
+            "name": "Edelweiss"
+        }
+    }, {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+            "@id": "https://www.edelweiss.in/insight",
+            "name": "Market Insights"
+        }
+    }]
+}
+</script>
+            </div>

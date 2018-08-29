@@ -36,13 +36,16 @@
                                   <div class="container">
                                       <div class="SpaceLeft">
                                           <ul class="list-unstyled OwnInvestmenu">
-                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | mutualFunds" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoMutualFund' }"><a ui-sref="oyo/mutualFund" href="/oyo/mutualfund">Mutual Funds</a></li>
-                                              <li><a routerLink="/equity" routerLinkActive="active" >Equity</a></li>
-                                              <!--<li gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoEquity' }"><a ui-sref="oyo-equity" href="/equity">Equity</a></li>-->
+                                              <!--<li gtmdir-config="" gtmdir-text="SELF INVESTING | mutualFunds" gtmdir-url="oyo/mutualFund" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoMutualFund' }"><a ui-sref="oyo/mutualFund" href="/oyo/mutualfund">Mutual Funds</a></li>-->
                                               <li><a routerLink="/mutualfund" routerLinkActive="active" >Mutual Funds</a></li>
-                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoEquity' }"><a ui-sref="oyo-equity" href="/oyo/equity">Equity</a></li>
-                                              <li gtmdir-config="" gtmdir-text="SELF INVESTING | Primary Market" gtmdir-url="oyo/new-issues" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyonewissues' }"><a ui-sref="oyo-newissues" href="/new-issues">Primary Market</a></li>
-                                              <li>
+                                              <li><a routerLink="/equity" routerLinkActive="active" >Equity</a></li>                                       
+                                               <li><a routerLink="/new-issues" routerLinkActive="active">Primary Market</a></li>
+                                              <!--<li gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoEquity' }"><a ui-sref="oyo-equity" href="/equity">Equity</a></li>-->
+                                              
+                                             
+                                              <!--<li gtmdir-config="" gtmdir-text="SELF INVESTING | Equity" gtmdir-url="oyo/equity" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyoEquity' }"><a ui-sref="oyo-equity" href="/oyo/equity">Equity</a></li>-->
+                                              <!--<li gtmdir-config="" gtmdir-text="SELF INVESTING | Primary Market" gtmdir-url="oyo/new-issues" gtmdir-key="Menuitems" ng-class="{ 'active' : active=='oyonewissues' }"><a ui-sref="oyo-newissues" href="/new-issues">Primary Market</a></li>
+                                              --><li>
                                                   <div class="ActiveTradermenu">
                                                       <i class="icon-b icon-30 icon-tv"></i>
                                                       <a ui-sref="active-trader" gtmdir-config="" gtmdir-text="SELF INVESTING | Active Trader" gtmdir-url="active-trader" gtmdir-key="ActiveTraderclick" href="/active-trader"><span>Active Trader?</span> Trade, view advanced charts &amp; receive short term ideas on our advanced platform <i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -272,7 +275,7 @@
                       <div class="MobCol-1 BODERTop mg-b0 mg-t15">
                           <div class="SHowSubMenu">
                               <ul class="list-unstyled">
-                                  <li ng-class="{ 'active' : active=='market' }"><a ui-sref="market" href="/market" gtmdir-config="" gtmdir-text="Watch Markets" gtmdir-url="market" gtmdir-key="Menuitems" onclick="closeMenu();">Watch Markets</a></li>
+                                  <li ng-class="{ 'active' : active=='market' }"><a routerLink="/market" routerLinkActive="active" >Equity</a></li>
 
                               </ul>
                           </div>

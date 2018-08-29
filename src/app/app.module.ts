@@ -10,6 +10,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { GpsComponent } from './components/gps/gps.component';
 import { EquityComponent } from './components/equity/equity.component';
 import { MutualfundComponent } from './components/mutualfund/mutualfund.component';
+import { NewIssuesComponent } from './components/new-issues/new-issues.component';
+import { MarketComponent } from './components/market/market.component';
+import { ResearchComponent } from './components/research/research.component';
+import { InsightComponent } from './components/insight/insight.component';
+import { InvestologyComponent } from './components/investology/investology.component';
 
 
 
@@ -21,7 +26,12 @@ import { MutualfundComponent } from './components/mutualfund/mutualfund.componen
     PageNotFoundComponent,
     GpsComponent,
     EquityComponent,
-    MutualfundComponent
+    MutualfundComponent,
+    NewIssuesComponent,
+    MarketComponent,
+    ResearchComponent,
+    InsightComponent,
+    InvestologyComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { GpsComponent } from './components/gps/gps.component';
 import { EquityComponent } from './components/equity/equity.component';
 import { MutualfundComponent } from './components/mutualfund/mutualfund.component';
+import { NewIssuesComponent } from "src/app/components/new-issues/new-issues.component";
+import { MarketComponent } from "src/app/components/market/market.component";
+import { ResearchComponent } from "src/app/components/research/research.component";
+import { InsightComponent } from "src/app/components/insight/insight.component";
+import { InvestologyComponent } from "src/app/components/investology/investology.component";
 
 export const ROUTES: Routes = [
     // routes from pages
@@ -16,8 +21,13 @@ export const ROUTES: Routes = [
     {path: 'gps', component: GpsComponent, data: {title: 'gps'}},
     {path: 'equity', component: EquityComponent, data: {title: 'equity'}},
     {path: 'mutualfund', component: MutualfundComponent, data: {title: 'Mutual Fund'}},
+    {path: 'new-issues',component:NewIssuesComponent,data: {title:'new-issues'}},
+    {path: 'market',component:MarketComponent,data:{title:'market'}},
+    {path: 'research',component:ResearchComponent,data:{title:'research'}},
+    {path: 'insight',component:InsightComponent,data:{title:'insight'}},
+    {path: 'investology',component:InvestologyComponent,data:{title:'investology'}},
     {path: '**', component: HomeComponent},
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    {path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 
