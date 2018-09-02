@@ -60,14 +60,14 @@
   </div>-->
   <div class="start-investing">
     <div class="top-brdr-block blocks top-padding-brdr-block" id="myInvest" ng-class="{'top-padding-brdr-block' : isCartAvailable}">
-        <div class="notification-msg notification-warning" ng-show="isCartAvailable">
+        <!-- <div class="notification-msg notification-warning" ng-show="isCartAvailable">
             <p><span>We have saved the portfolio that you last viewed. <a href="" ng-click="redirectToGPSCart()" gtmdir-config="" gtmdir-key="GpsCartView">Click here</a> to view it again.</span></p>
             <a class="close-notification" href="javascript:void(0)" ng-click="removeGPSCart()" gtmdir-config="" gtmdir-key="GpsCartClose"></a>                        
-        </div>
-        <h1 class="heading top-padding-heading" ng-class="{'top-padding-heading' : isCartAvailable}">Start Your Financial Journey</h1>
+        </div> -->
+        <!-- <h1 class="heading top-padding-heading" ng-class="{'top-padding-heading' : isCartAvailable}">Start Your Financial Journey</h1> -->
         <div class="tabs">
             <ul class="tab-heading tab-heading-style" style="text-align:center;">                            
-                <li ng-click="prelogin.selectedTab = 'someMoney';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'someMoney'}" gtmdir-config="" gtmdir-label="i have some money" gtmdir-key="GpsPreloginTab" class="active">
+                <!-- <li ng-click="prelogin.selectedTab = 'someMoney';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'someMoney'}" gtmdir-config="" gtmdir-label="i have some money" gtmdir-key="GpsPreloginTab" class="active">
                     <a href=""><i class="ic icon-rupee"></i><h2>I have some money<small>and want to invest it</small></h2></a>
                 </li>
                 <li ng-click="prelogin.selectedTab = 'financialTarget';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'financialTarget'}" gtmdir-config="" gtmdir-label="i have financial target" gtmdir-key="GpsPreloginTab">
@@ -75,38 +75,38 @@
                 </li>
                 <li ng-click="prelogin.selectedTab = 'taxSaving';hideRiskBox();resetdisclaimer();" ng-class="{'active':prelogin.selectedTab === 'taxSaving'}" gtmdir-config="" gtmdir-label="I want to save tax" gtmdir-key="GpsPreloginTab">
                     <a href=""><i class="ic icon-tax"></i><h2>I want to save tax<small> but don't know how </small></h2></a>
-                </li>
+                </li> -->
             </ul>
             <div class="tab-content">
                 <div class="some-money tab-inner" ng-show="prelogin.selectedTab === 'someMoney'" id="someMoney">
                     <div ng-show="stage === 1 " class="">
                         <div class="mg-b10 field-area">
-                            I want to invest Rs.
-                            <input type="text" style="display: inline-block" currency-input="" ng-model="haveSomeMoney.amt" placeholder="enter amount" maxlength="7" ng-blur="validateHaveSomeMoneyAmt()" class="only-amount amount-field ng-pristine ng-untouched ng-not-empty ng-invalid ng-invalid-maxlength">,
-                            <span class="select-risk">
+                            <!-- I want to invest Rs. -->
+                            <!-- <input type="text" style="display: inline-block" currency-input="" ng-model="haveSomeMoney.amt" placeholder="enter amount" maxlength="7" ng-blur="validateHaveSomeMoneyAmt()" class="only-amount amount-field ng-pristine ng-untouched ng-not-empty ng-invalid ng-invalid-maxlength">, -->
+                            <!-- <span class="select-risk"> -->
                                 <span class="roboto-bold black">
                                     <div class="drop-box">
                                         <div class="arrow-hide">
-                                            <select ng-model="haveSomeMoney.is_lumpsum" ng-change="durationChanged()" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                            <!-- <select ng-model="haveSomeMoney.is_lumpsum" ng-change="durationChanged()" class="ng-pristine ng-untouched ng-valid ng-not-empty">
                                                 <option value="false" selected="selected" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="I have some money " gtmdir-key="GPSLandingPage">Monthly</option>
                                                 <option value="true" ng-selected="" gtmdir-config="" gtmdir-text="dropdown" gtmdir-label="onetime" gtmdir-key="GPSLandingPage">One-Time</option>
-                                            </select>
+                                            </select> -->
                                         </div><i class="icon-arrow-down "></i>
-                                    </div>.
+                                    </div>
                                 </span>
-                            </span>I'm
-                            <input type="text" style="display:inline-block" integer="" ng-model="haveSomeMoney.qa[0].ans" placeholder="age" class="age-field ng-pristine ng-untouched ng-empty ng-valid-maxlength ng-pending" min="1" max="99" ng-blur="validateAge()" maxlength="2">years old,
+                            <!-- </span>I'm -->
+                            <!-- <input type="text" style="display:inline-block" integer="" ng-model="haveSomeMoney.qa[0].ans" placeholder="age" class="age-field ng-pristine ng-untouched ng-empty ng-valid-maxlength ng-pending" min="1" max="99" ng-blur="validateAge()" maxlength="2">years old, -->
                             <span class="grey"></span> <!--onkeypress="return event.charCode >= 48 && event.charCode <= 57"-->
                             <!--with  <input type="text" placeholder="" ng-model="haveSomeMoney.qa[0].ans" class="experiene-field"> years of <br />investment experience in Equity &amp; Mutual Funds.-->
                         </div>
   
                         <div class="risk mg-b20 field-area">
-                            and prefer
+                            <!-- and prefer -->
                             <div class="select-risk inline roboto-bold roboto-italic grey" ng-class="{'roboto-italic grey' : !haveSomeMoney.qa[1].ans, 'black': haveSomeMoney.qa[1].ans}">
-                                <a href="" ng-click="showRiskBox($event);isRiskboxToolTip = false;" style="font-size:26px" ng-keyup="keyCodeEvent($event)" class="ng-binding">
+                                <!-- <a href="" ng-click="showRiskBox($event);isRiskboxToolTip = false;" style="font-size:26px" ng-keyup="keyCodeEvent($event)" class="ng-binding">
                                     select a risk profile
                                     <i ng-class="{'icon-arrow-down': !isRiskboxOpened, 'icon-up-down':isRiskboxOpened}" id="riskboxarrow" class="icon-arrow-down"></i>
-                                </a>
+                                </a> -->
   
                                 <!--<div class="ng-isolate-scope in gba-riskprofile-tooltip" uib-tooltip-popup="" content="{{riskToolTip}}" placement="auto right" popup-class="" ng-show="!isRiskboxToolTip && funToolTip();">
                                 <div class="tooltip-arrow"></div>
@@ -128,24 +128,24 @@
   <!--<button type="button" class="close riskbox-close" aria-label="Close" ng-click="hideRiskBox()"><span aria-hidden="true">×</span></button>-->
   <a href="" class="close-button-right" ng-click="hideRiskBox()"></a>
   
-  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
+  <!-- <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
     <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[0].key}" id="lwrisk">
         <div class="img-box yellow"><img src="../assets/images/meter-low-risk.png" alt="meter"></div>
         <div class="textbox yellow">
             <h4>Low Risk</h4>
             <p>I want to protect my savings.</p>
-            <!--<p>I want to protect my savings, even if it means lower returns.</p>-->
+            <p>I want to protect my savings, even if it means lower returns.</p>
         </div>
     </div>
-  </div>
-  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[1].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="medium risk" gtmdir-key="GPSrisktabs">
+  </div> -->
+  <!-- <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[1].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="medium risk" gtmdir-key="GPSrisktabs">
     <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[1].key}" id="mdrisk">
         <div class="img-box orange"><img src="../assets/images/meter-medium-risk.png" alt="meter"></div>
         <div class="textbox orange">
             <h4>Medium Risk</h4>
             <p>I invest to earn more than FD returns even if there are few risks.</p>
-            <!--<p>I invest to earn more than FD returns. I am ok with some fluctuations in my portfolio value to acheive the same.</p>-->
-            <!--<p>I want my money to beat the inflation rate and I’m generally ok with fluctuations in my portfolio value.</p>-->
+            <p>I invest to earn more than FD returns. I am ok with some fluctuations in my portfolio value to acheive the same.</p>
+            <p>I want my money to beat the inflation rate and I’m generally ok with fluctuations in my portfolio value.</p>
         </div>
     </div>
   </div>
@@ -157,23 +157,23 @@
             <p>I love winning big, even if there is higher risk.</p>
         </div>
     </div>
-  </div>
-  <div class="clearfix"></div>
+  </div> -->
+  <!-- <div class="clearfix"></div>
   <div class="help text-right"><a class="helpright" href="" ng-click="showRiskDropdown($event)" ng-keyup="($event.keyCode==27)?hideRiskBox():return" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="im not sure" gtmdir-key="GPSrisktabs">I’m not sure, help me decide.</a></div>
   </div>
-  </div>
-  <div class="select-dropdown risk-dropdown mg-b30 risk-help-reason-money" ng-class="type=='portfolio'?'risk-help-portfolio':(type=='reason-money'?'risk-help-reason-money':(type=='reason-target'?'risk-help-reason-target':''))" style="">
+  </div> -->
+  <!-- <div class="select-dropdown risk-dropdown mg-b30 risk-help-reason-money" ng-class="type=='portfolio'?'risk-help-portfolio':(type=='reason-money'?'risk-help-reason-money':(type=='reason-target'?'risk-help-reason-target':''))" style=""> -->
   <!--<h3 class="heading hidden-xs hidden-sm">Answer the questions below and we will help you assess your risk appetite</h3>-->
-  <div id="reason-moneyriskSlider" class="carousel slide risk-slider" data-ride="" data-interval="false">
+  <!-- <div id="reason-moneyriskSlider" class="carousel slide risk-slider" data-ride="" data-interval="false"> -->
   <ol class="carousel-indicators">
     <!-- ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="active" data-slide-to="0" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="1" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})" style=""></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="2" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="3" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="4" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="5" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="6" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="7" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><li data-target="#reason-moneyriskSlider" class="" data-slide-to="8" ng-click="indicatorSlideChange($index)" ng-repeat="qas in   filteredlist = (riskQAS| filter:{rank:'!0'})"></li><!-- end ngRepeat: qas in   filteredlist = (riskQAS| filter:{rank:'!0'}) -->
   </ol>
   <div class="carousel-inner" role="listbox">
     <!-- ngRepeat: qn in   filteredlist = (riskQAS| filter:{rank:'!0'}) --><div class="item active" ng-repeat="qn in   filteredlist = (riskQAS| filter:{rank:'!0'})" data-questionid="1" style="">
         <!--| filter: filterfn as qnRank-->
-        <h3 class="heading hidden-xs hidden-sm ng-binding">
+        <!-- <h3 class="heading hidden-xs hidden-sm ng-binding">
             This quiz will help us understand your risk appetite. It is also mandatory under SEBI guidelines. 
-        </h3>
+        </h3> -->
         <div class="carousel-caption">
             <div class="question ng-binding">
                 My investment experience with Stocks & Mutual Funds is…
@@ -698,7 +698,7 @@
   </div>
   <!--<div class="help text-right"><a href ng-click="requestRiskRating()" class="helpright"><i class="fa fa-angle-left"></i> Submit </a></div>-->
   
-  <div class="help text-right"><a href="" ng-click="showRiskBox($event,true)" class="helpright" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="click" gtmdir-label="I know my risk type" gtmdir-key="GPSriskquiz">&lt; I know my risk type, take me back</a></div>
+  <!-- <div class="help text-right"><a href="" ng-click="showRiskBox($event,true)" class="helpright" gtmdir-config="" gtmdir-cat="risk quiz- i have some money" gtmdir-text="click" gtmdir-label="I know my risk type" gtmdir-key="GPSriskquiz">&lt; I know my risk type, take me back</a></div> -->
   
   </div>
   </div>
@@ -765,10 +765,10 @@
                         </form>
                     </div>
                     <div class="clearfix"></div>
-                    <a href="" class="continue btn btn-primary disabled" ng-disabled="merror || !preValidateShowMe() || haveSomeMoney.qa[0].ans < 18 || !disclairmer1 || !disclairmer2" ng-hide="haveSomeMoneyAmtFourLakhs" ng-click="isRiskboxToolTip = false;getPortFolio();" gtmdir-config="" gtmdir-text="i have some money" gtmdir-key="GpsPreloginPortfolioButton" disabled="disabled">
-                        <!--ng-click="getPortFolio()"-->
+                    <!-- <a href="" class="continue btn btn-primary disabled" ng-disabled="merror || !preValidateShowMe() || haveSomeMoney.qa[0].ans < 18 || !disclairmer1 || !disclairmer2" ng-hide="haveSomeMoneyAmtFourLakhs" ng-click="isRiskboxToolTip = false;getPortFolio();" gtmdir-config="" gtmdir-text="i have some money" gtmdir-key="GpsPreloginPortfolioButton" disabled="disabled">
+                        ng-click="getPortFolio()"
                         Show Me My Portfolio
-                    </a>
+                    </a> -->
                 </div>
                 <div class="financial-target tab-inner ng-hide" ng-show="prelogin.selectedTab === 'financialTarget'" id="financialTarget">
                     <!--1-->
@@ -831,16 +831,16 @@
   <div class="row drop-down riskbox-arrow-reason-target" ng-class="type=='portfolio'?
   'riskbox-arrow':(type=='reason-money'?'riskbox-arrow-reason-money':(type=='reason-target'?'riskbox-arrow-reason-target':''))" style="">
   <!--<button type="button" class="close riskbox-close" aria-label="Close" ng-click="hideRiskBox()"><span aria-hidden="true">×</span></button>-->
-  <a href="" class="close-button-right" ng-click="hideRiskBox()"></a>
+  <!-- <a href="" class="close-button-right" ng-click="hideRiskBox()"></a> -->
   
-  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
+  <!-- <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[0].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="low risk" gtmdir-key="GPSrisktabs">
     <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[0].key}" id="lwrisk">
         <div class="img-box yellow"><img src="../assets/images/meter-low-risk.png" alt="meter"></div>
         <div class="textbox yellow">
             <h4>Low Risk</h4>
-            <p>I want to protect my savings.</p>
+            <p>I want to protect my savings.</p> -->
             <!--<p>I want to protect my savings, even if it means lower returns.</p>-->
-        </div>
+        <!-- </div>
     </div>
   </div>
   <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[1].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="medium risk" gtmdir-key="GPSrisktabs">
@@ -848,21 +848,21 @@
         <div class="img-box orange"><img src="../assets/images/meter-medium-risk.png" alt="meter"></div>
         <div class="textbox orange">
             <h4>Medium Risk</h4>
-            <p>I invest to earn more than FD returns even if there are few risks.</p>
+            <p>I invest to earn more than FD returns even if there are few risks.</p> -->
             <!--<p>I invest to earn more than FD returns. I am ok with some fluctuations in my portfolio value to acheive the same.</p>-->
             <!--<p>I want my money to beat the inflation rate and I’m generally ok with fluctuations in my portfolio value.</p>-->
-        </div>
+        <!-- </div>
     </div>
-  </div>
-  <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[2].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="high risk" gtmdir-key="GPSrisktabs">
+  </div> -->
+  <!-- <div class="col-md-4 row-drop-down" ng-click="startInvestingData = gbaComn.riskProfileTranslation[2].key;hideRiskBox()" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="high risk" gtmdir-key="GPSrisktabs">
     <div class="inner-wrap" ng-class="{'selected':startInvestingData == gbaComn.riskProfileTranslation[2].key}" id="hgrisk">
         <div class="img-box red"><img src="../assets/images/meter-high-risk.png" alt="meter"></div>
         <div class="textbox red">
             <h4>High Risk</h4>
             <p>I love winning big, even if there is higher risk.</p>
         </div>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
   <div class="clearfix"></div>
   <div class="help text-right"><a class="helpright" href="" ng-click="showRiskDropdown($event)" ng-keyup="($event.keyCode==27)?hideRiskBox():return" gtmdir-config="" gtmdir-text="i have some money" gtmdir-label="im not sure" gtmdir-key="GPSrisktabs">I’m not sure, help me decide.</a></div>
   </div>
