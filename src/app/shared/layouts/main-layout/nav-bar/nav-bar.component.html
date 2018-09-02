@@ -59,16 +59,16 @@
                           </li>
                       </ul>
                       <ul class="nav navbar-nav nav-second">
-                          <li gtmdir-config="" gtmdir-text="Watch MARKETS" gtmdir-url="market" gtmdir-key=" Menuitems" ng-class="{ 'active' : active=='market' }"><a ui-sref="market" href="/market"><span>Watch</span> MARKETS</a></li>
-                          <li ng-class="{ 'active' : active=='research' || active=='activeTrader'}">
-                              <a ui-sref="research" gtmdir-config="" gtmdir-text="View Research" gtmdir-url="research" gtmdir-key=" Menuitems" href="/research"><span>View</span>RESEARCH</a>
+                          <li><a  routerLink="/market" routerLinkActive="active"><span>Watch</span> MARKETS</a></li>
+                          <li>
+                              <a  routerLink="/research" routerLinkActive="active"><span>View</span>RESEARCH</a>
                               <!-- Start Header sub menu -->
                               <div class="headerSubMneu" id="viewResearch">
                                   <div class="container">
                                       <div class="SpaceLeft viewRrch">
                                           <ul class="list-unstyled OwnInvestmenu">
-                                              <li ng-class="{ 'active' : active=='research' }"><a ui-sref="research" gtmdir-config="" gtmdir-text="View Research | Reports" gtmdir-url="research" gtmdir-key="Menuitems" href="/research">Reports</a></li>
-                                              <li ng-class="{'active' : active=='activeTrader' }"><a ui-sref="allRecoForActiveTradersEQ({redirectParam:'EQ,Long term'})" gtmdir-config="" gtmdir-text="View Research | Recommendations" gtmdir-url="oyo/equity/top-market-and-stock-recommendations/equity" gtmdir-key="Menuitems" href="/oyo/equity/top-market-and-stock-recommendations/equity?redirectParam=EQ%2CLong%20term">Recommendations</a></li>
+                                              <li><a routerLink="/research" routerLinkActive="active">Reports</a></li>
+                                              <li><a>Recommendations(Not Done)</a></li>
                                           </ul>
                                       </div>
                                   </div>
@@ -82,8 +82,8 @@
                                   <div class="container">
                                       <div class="SpaceLeft">
                                           <ul class="list-unstyled OwnInvestmenu">
-                                              <li ng-class="{'active' : active=='insight' }"><a ui-sref="insight" gtmdir-config="" gtmdir-text="Gain Knowledge | Insight" gtmdir-url="insight" gtmdir-key="Menuitems" href="/insight">Insights</a></li>
-                                              <li ng-class="{ 'active' : active=='learner' }"><a ui-sref="learner" gtmdir-config="" gtmdir-text="Gain Knowledge | Investology" gtmdir-url="Investology" gtmdir-key="Menuitems" href="/investology">Investology</a></li>
+                                              <li><a routerLink="/insight" routerLinkActive="active">Insights</a></li>
+                                              <li><a routerLink="/investology" routerLinkActive="active">Investology</a></li>
                                           </ul>
                                       </div>
                                   </div>
